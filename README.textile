@@ -1,0 +1,5 @@
+h1. Sandbox
+
+h2. CoffeeScript
+
+Some CoffeeScript exercices
