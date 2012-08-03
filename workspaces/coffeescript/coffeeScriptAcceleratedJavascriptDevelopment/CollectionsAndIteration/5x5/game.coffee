@@ -77,6 +77,8 @@ moveCount = 0
 score = 0
 usedWords = []
 
+minWordLength = Math.min.apply wordList
+
 wordsThroughTile = (grid, x, y) ->
 	strings = []
 	for length in [MIN_WORD_LENGTH..GRID_SIZE]

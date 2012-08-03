@@ -1,6 +1,5 @@
 syntax on
 set ai
-set paste
 set background=dark
 set ruler                     " show the line number on the bar
 set more                      " use more prompt
@@ -62,3 +61,5 @@ endif
 nmap <LocalLeader>tl :set list!<cr>
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
+
+set paste
