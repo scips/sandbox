@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SCiPS' Sandbox: H264 moz activity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sandboxed tests: h264 moz activity">
+  <meta name="author" content="Sébastien Barbieri">
+
+</head>
+<body>
+  <div class="js-activity-result">
+    
+  </div>
+  <script>
+if(
+  typeof MozActivity !== "undefined" 
+  && MozActivity !== null
+){
+  var activity = new MozActivity({
+      name: "view",
+      data: {
+          type: ["video/mp4"],
+          url: "http://techslides.com/demos/sample-videos/small.mp4"
+      }
+  });
+  activity.onerror = function(e){
+    console.log("Error");
+    console.log(e);
+    document.querySelector('.js-activity-result').innerText="Error";
+  }
+  activity.onsuccess = function(){
+    console.log("Success");
+    document.querySelector('.js-activity-result').innerText="Success";
+  }
+}else{
+  document.querySelector('.js-activity-result').innerText="No MozActivity defined";
+}
+  </script>
+</body>
+</html>
