@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys
 
 encryptedMsgs = [
@@ -8,24 +9,24 @@ encryptedMsgs = [
 ]
 
 def xor2HexStrings(hs1,hs2):
-	if len(hs1) > len(hs2):
-		return "".join([chr(ord(x)^ord(y)) for (x, y) in zip(hs1[:len(hs2)], hs2)])
-	else:
-		return "".join([chr(ord(x)^ord(y)) for (x, y) in zip(hs1, hs2[:len(hs2)])])
+    if len(hs1) > len(hs2):
+        return "".join([chr(ord(x)^ord(y)) for (x, y) in zip(hs1[:len(hs2)], hs2)])
+    else:
+        return "".join([chr(ord(x)^ord(y)) for (x, y) in zip(hs1, hs2[:len(hs2)])])
 
 def arrayPrint ( arr ):
-	for (i) in arr:
-		print i,"\n"
+    for (i) in arr:
+        print i,"\n"
 
 def xorAll( arr ):
-	for (i) in arr:
-		for (j) in arr:
-			if i != j:
-				print "xoring ",i,j
-				xored = xor2HexStrings(i.decode('hex'),j.decode('hex'))
-				print "xored:",xored.encode('hex'),"\n"
+    for (i) in arr:
+        for (j) in arr:
+            if i != j:
+                print "xoring ",i,j
+                xored = xor2HexStrings(i.decode('hex'),j.decode('hex'))
+                print "xored:",xored.encode('hex'),"\n"
 
 def main():
-	xorAll(encryptedMsgs)
+    xorAll(encryptedMsgs)
 
 main()
