@@ -1,0 +1,31 @@
+<head>
+    <link type="text/css" rel="stylesheet" href="styles/main.css" />
+    <meta charset="utf-8">
+</head>
+<body>
+    <canvas class="main-display">
+        Canvas not supported
+    </canvas>
+    <script src="js/lib/glmatrix.js"></script>
+    <script src="js/lib/traceur.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <script>
+      traceur.options.experimental = true;
+    </script>
+    <script type="module" src="js/init.js"></script>
+    <script id="shader-fs" type="x-shader/x-fragment">
+      void main(void) {
+        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+      }
+    </script>
+    <script id="shader-vs" type="x-shader/x-vertex">
+      attribute vec3 aVertexPosition;
+
+      uniform mat4 uMVMatrix;
+      uniform mat4 uPMatrix;
+      
+      void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+      }
+    </script>
+</body>
