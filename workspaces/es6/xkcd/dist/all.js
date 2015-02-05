@@ -5,6 +5,7 @@ var _prototypeProperties = function (child, staticProps, instanceProps) { if (st
 var Application = (function () {
     function Application() {
         this.dataProvider = new Provider("http://xkcd.com/info.0.json", "http://xkcd.com/{id}/info.0.json");
+        this.ui = new Ui();
     }
 
     _prototypeProperties(Application, null, {
@@ -14,6 +15,9 @@ var Application = (function () {
                 $("body").on("dataloaded", function () {
                     _this.render();
                 });
+                $("body").on("bottomreached", function () {
+                    console.log("bottom reached");
+                });
             },
             writable: true,
             configurable: true
@@ -21,18 +25,8 @@ var Application = (function () {
         start: {
             value: function start() {
                 this.listen();
+                this.ui.listen();
                 this.itemTemplate = Handlebars.compile($("#js-tpl-image-item").html());
-                this.dataProvider.fetchLast();
-            },
-            writable: true,
-            configurable: true
-        },
-        render: {
-            value: function render() {
-                var current = this.dataProvider.list.current();
-                var image = new Image(current.transcript, current.img);
-                image.setTemplate(this.itemTemplate);
-                image.render(".js-image-list");
             },
             writable: true,
             configurable: true
@@ -208,5 +202,35 @@ var Provider = (function () {
     });
 
     return Provider;
+})();
+"use strict";
+
+var _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
+
+var Ui = (function () {
+    function Ui() {
+        this.infinite = null;
+    }
+
+    _prototypeProperties(Ui, null, {
+        listen: {
+            value: function listen() {
+                this.infinite = new Waypoint.Infinite({
+                    element: $("footer")[0]
+                });
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                        console.log($(window).scrollTop(), "+", $(window).height(), " == ", $(document).height());
+                        var e = $.Event("bottomreached");
+                        $("body").trigger(e);
+                    }
+                });
+            },
+            writable: true,
+            configurable: true
+        }
+    });
+
+    return Ui;
 })();
 //# sourceMappingURL=all.js.map

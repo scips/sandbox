@@ -1,0 +1,28 @@
+ul.image-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.image-item {
+    position: relative;
+}
+
+.date {
+    height: 100%;
+    width: 30px;
+    display: block;
+    float: left;
+}
+
+.date p {
+    transform: rotate(-90deg) translate(-100px,0px);
+}
+
+.item {
+    margin-left: 30px;
+}
+
+.image {
+    width: auto;
+    height: auto;
+}

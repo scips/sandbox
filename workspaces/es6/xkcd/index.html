@@ -2,18 +2,69 @@
     <head>
         <meta charset="utf-8">
         <title>XKCD</title>
+        <link rel="stylesheet" media="all" href="css/reset.min.css"  type="text/css" />
+        <link rel="stylesheet" media="all" href="css/general.css"  type="text/css" />
     </head>
     <body>
-        <ul class="js-image-list">
+        <ul class="js-image-list image-list">
+            <li class="image-item">
+                <div class="date">
+                    <p>05/02/2014</p>
+                </div>
+                <div class="item">
+                    <h3>#NowPlaying</h3>
+                    <figure>
+                        <img src="http://imgs.xkcd.com/comics/nowplaying.png" class="image" />
+                        <figcaption>If you click on the post, it takes you to search results for the note on various online music stores.</figcaption>
+                    </figure>
+                </div>
+            </li>
+            <li class="image-item">
+                <div class="date">
+                    <p>04/02/2014</p>
+                </div>
+                <div class="item">
+                    <h3>API</h3>
+                    <figure>
+                        <img src="http://imgs.xkcd.com/comics/api.png" class="image" />
+                        <figcaption>ACCESS LIMITS: Clients may maintain connections to the server for no more than 86,400 seconds per day. If you need additional time, you may contact IERS to file a request for up to one additional second.</figcaption>
+                    </figure>
+                </div>
+            </li>
+            <li class="image-item">
+                <div class="date">
+                    <p>03/02/2014</p>
+                </div>
+                <div class="item">
+                    <h3>Super Bowl</h3>
+                    <figure>
+                        <img src="http://imgs.xkcd.com/comics/super_bowl.png" class="image" />
+                        <figcaption>My hobby: Pretending to miss the sarcasm when people show off their lack of interest in football by talking about 'sportsball' and acting excited to find someone else who's interested, then acting confused when they try to clarify.</figcaption>
+                    </figure>
+                </div>
+            </li>
         </ul>
+        <footer>
+            <p>SBW 2015</p>
+        </footer>
         <script language="text/template" id="js-tpl-image-item">
             <li class="image-item">
-                <h3>{{title}}</h3>
-                <img src="{{url}}" />
+                <div class="date">
+                    <p>{{date}}</p>
+                </div>
+                <div class="item">
+                    <h3>{{title}}</h3>
+                    <figure>
+                        <img src="{{image}}" class="image" />
+                        <figcaption>{{caption}}</figcaption>
+                    </figure>
+                </div>
             </li>
         </script>
         <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
         <script language="javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script language="javascript" src="dist/vendor/jquery.waypoints.min.js"></script>
+        <script language="javascript" src="dist/vendor/shortcuts/infinite.min.js"></script>
         <script language="javascript" src="dist/all.js"></script>
     </body>
 </html>
