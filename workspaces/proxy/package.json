@@ -1,0 +1,10 @@
+{
+  "name": "your-app-name",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "http-proxy": "0.8.x",
+    "connect": "2.3.x"
+  }
+}
+

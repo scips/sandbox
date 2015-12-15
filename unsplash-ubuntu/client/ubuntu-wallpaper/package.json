@@ -1,0 +1,26 @@
+{
+  "name": "ubuntu-wallpaper",
+  "version": "0.0.0",
+  "description": "Ubuntu wallpaper organizer",
+  "main": "wallpaperify.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:scips/unsplash-ubuntu.git"
+  },
+  "keywords": [
+    "ubuntu",
+    "wallpaper",
+    "unsplash"
+  ],
+  "author": "Sébastien Barbieri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scips/unsplash-ubuntu/issues"
+  },
+  "devDependencies": {
+    "glob": "^6.0.1"
+  }
+}
