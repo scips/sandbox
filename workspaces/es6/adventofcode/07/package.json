@@ -1,0 +1,19 @@
+{
+  "name": "advent-day-07",
+  "version": "0.0.0",
+  "description": "advent calendar BDD poc",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "NODE_PATH=lib mocha -R spec"
+  },
+  "author": "Sébastien Barbieri <sebastien.barbieri@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2"
+  }
+}
