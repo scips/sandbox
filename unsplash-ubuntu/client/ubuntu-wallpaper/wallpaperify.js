@@ -28,6 +28,8 @@ var xml = {
   head: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE wallpapers SYSTEM \"gnome-wp-list.dtd\">\n<wallpapers>\n",
   body: "",
   options: "<wallpaper><name>{{name}}</name><filename>{{filename}}</filename><options>{{options}}</options><pcolor>{{pcolor}}</pcolor><scolor>{{scolor}}</scolor><shade_type>{{shadetype}}</shade_type></wallpaper>",
+  starttime: "<starttime><year>2012</year><month>01</month><day>01</day><hour>00</hour><minute>00</minute><second>00</second></starttime>",
+  item: "",
   end: "</wallpapers>"
 };
 
