@@ -1,0 +1,26 @@
+(
+ :root-dir "/home/scips/Workspace/sandbox/Coursera/scala-101"
+ :cache-dir "/home/scips/Workspace/sandbox/Coursera/scala-101/.ensime_cache"
+ :scala-compiler-jars ("/home/scips/.sbt/boot/scala-2.10.6/lib/scala-compiler.jar" "/home/scips/.sbt/boot/scala-2.10.6/lib/scala-library.jar" "/home/scips/.sbt/boot/scala-2.10.6/lib/scala-reflect.jar" "/home/scips/.ivy2/cache/org.scala-lang/scalap/jars/scalap-2.10.6.jar")
+ :name "scala-101"
+ :java-home "/usr/lib/jvm/java-7-oracle"
+ :java-flags ("-Xss2m" "-Xms1024m" "-Xmx1024m" "-XX:ReservedCodeCacheSize=128m" "-XX:MaxMetaspaceSize=256m")
+ :java-compiler-args nil
+ :reference-source-roots ("/usr/lib/jvm/java-7-oracle/src.zip")
+ :scala-version "2.10.6"
+ :compiler-args ("-feature" "-deprecation" "-Xlint" "-Yinline-warnings" "-Yno-adapted-args" "-Ywarn-dead-code" "-Ywarn-numeric-widen" "-Xfuture")
+ :formatting-prefs nil
+ :disable-source-monitoring nil
+ :disable-class-monitoring nil
+ :subprojects ((
+   :name "scala-101"
+   :source-roots nil
+   :targets ("/home/scips/Workspace/sandbox/Coursera/scala-101/target/scala-2.10/classes")
+   :test-targets ("/home/scips/Workspace/sandbox/Coursera/scala-101/target/scala-2.10/test-classes")
+   :depends-on-modules nil
+   :compile-deps ("/home/scips/.sbt/boot/scala-2.10.6/lib/scala-library.jar")
+   :runtime-deps nil
+   :test-deps nil
+   :doc-jars ("/home/scips/Workspace/sandbox/Coursera/scala-101/target/scala-2.10/scala-101_2.10-0.1-SNAPSHOT-javadoc.jar" "/home/scips/.ivy2/cache/org.scala-lang/scala-library/docs/scala-library-2.10.6-javadoc.jar")
+   :reference-source-roots ("/home/scips/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.10.6-sources.jar")))
+)

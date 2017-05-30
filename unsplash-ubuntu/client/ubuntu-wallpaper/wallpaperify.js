@@ -14,7 +14,10 @@
 // * **filename**: the filename that will be used to store the wallpaper transition xml 
 'use strict';
 
-var glob = require("glob");
+global.fetch = require('node-fetch');
+var Unsplash = require('unsplash-js').default;
+var toJson = require('unsplash-js').toJson;
+var glob = require('glob');
 var fs = require('fs');
 
 // general script options
@@ -23,6 +26,19 @@ var options = {
   recusrive: false, // by default don't go recursively
   filename: null
 };
+
+var unsplash = new Unsplash({
+  applicationId: "b8237165390ff7bbf37ab883edc6c25376f8805f087dd0fd04c9487f341118ad",
+  secret: "abfcf51b8d1b896499c9a5f316115ef8aa6ba9a3ade38e9ce401d6c225e364f2",
+  callbackUrl: "urn:ietf:wg:oauth:2.0:oob",
+  bearerToken: "cf32bf1543cb6f61c1e0e29dda37d0b09c045bd46921509076f1fc6df52a4747"
+});
+
+unsplash.users.collections("scips", 1, 10)
+  .then(toJson)
+  .then(function collectionJson (json) {
+    console.log(json);
+  });
 
 var xml = {
   head: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE wallpapers SYSTEM \"gnome-wp-list.dtd\">\n<wallpapers>\n",

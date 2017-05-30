@@ -22,5 +22,9 @@
   },
   "devDependencies": {
     "glob": "^6.0.1"
+  },
+  "dependencies": {
+    "node-fetch": "^1.5.2",
+    "unsplash-js": "^4.1.0"
   }
 }

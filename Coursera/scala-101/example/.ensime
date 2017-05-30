@@ -1,0 +1,26 @@
+(
+ :root-dir "/home/scips/Workspace/sandbox/Coursera/scala-101/example"
+ :cache-dir "/home/scips/Workspace/sandbox/Coursera/scala-101/example/.ensime_cache"
+ :scala-compiler-jars ("/home/scips/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.11.7.jar" "/home/scips/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar" "/home/scips/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.7.jar" "/home/scips/.ivy2/cache/org.scala-lang/scalap/jars/scalap-2.11.7.jar")
+ :name "root"
+ :java-home "/usr/lib/jvm/java-7-oracle"
+ :java-flags ("-Xss2m" "-Xms1024m" "-Xmx1024m" "-XX:ReservedCodeCacheSize=128m" "-XX:MaxMetaspaceSize=256m")
+ :java-compiler-args nil
+ :reference-source-roots ("/usr/lib/jvm/java-7-oracle/src.zip")
+ :scala-version "2.11.7"
+ :compiler-args ("-deprecation" "-feature" "-Xlint" "-Yinline-warnings" "-Yno-adapted-args" "-Ywarn-dead-code" "-Ywarn-numeric-widen" "-Xfuture" "-Ywarn-unused-import" "-Ymacro-expand:discard")
+ :formatting-prefs nil
+ :disable-source-monitoring nil
+ :disable-class-monitoring nil
+ :subprojects ((
+   :name "root"
+   :source-roots ("/home/scips/Workspace/sandbox/Coursera/scala-101/example/src/main/scala" "/home/scips/Workspace/sandbox/Coursera/scala-101/example/src/test/scala")
+   :targets ("/home/scips/Workspace/sandbox/Coursera/scala-101/example/target/scala-2.11/classes")
+   :test-targets ("/home/scips/Workspace/sandbox/Coursera/scala-101/example/target/scala-2.11/test-classes")
+   :depends-on-modules nil
+   :compile-deps ("/home/scips/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar" "/home/scips/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar" "/home/scips/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.2.jar" "/home/scips/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.2.jar" "/home/scips/.ivy2/cache/org.scalatest/scalatest_2.11/bundles/scalatest_2.11-2.2.4.jar")
+   :runtime-deps nil
+   :test-deps ("/home/scips/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.1.jar" "/home/scips/.ivy2/cache/junit/junit/jars/junit-4.10.jar")
+   :doc-jars ("/home/scips/.ivy2/cache/junit/junit/docs/junit-4.10-javadoc.jar" "/home/scips/Workspace/sandbox/Coursera/scala-101/example/target/scala-2.11/progfun1-example_2.11-0.1-SNAPSHOT-javadoc.jar" "/home/scips/.ivy2/cache/org.scala-lang/scala-library/docs/scala-library-2.11.7-javadoc.jar" "/home/scips/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/docs/scala-parser-combinators_2.11-1.0.4-javadoc.jar" "/home/scips/.ivy2/cache/org.scala-lang/scala-reflect/docs/scala-reflect-2.11.2-javadoc.jar" "/home/scips/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/docs/scala-xml_2.11-1.0.2-javadoc.jar" "/home/scips/.ivy2/cache/org.scalatest/scalatest_2.11/docs/scalatest_2.11-2.2.4-javadoc.jar")
+   :reference-source-roots ("/home/scips/.ivy2/cache/org.hamcrest/hamcrest-core/srcs/hamcrest-core-1.1-sources.jar" "/home/scips/.ivy2/cache/junit/junit/srcs/junit-4.10-sources.jar" "/home/scips/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.11.7-sources.jar" "/home/scips/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/srcs/scala-parser-combinators_2.11-1.0.4-sources.jar" "/home/scips/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.11.2-sources.jar" "/home/scips/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/srcs/scala-xml_2.11-1.0.2-sources.jar" "/home/scips/.ivy2/cache/org.scalatest/scalatest_2.11/srcs/scalatest_2.11-2.2.4-sources.jar")))
+)
