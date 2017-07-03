@@ -1,0 +1,1296 @@
+[
+    {
+        "id": 96628,
+        "title": "PureVision",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "Pure FM",
+                "alt": "Pure FM",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Pure FM",
+                "alt": "Pure FM",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/180x100/b/b/f/bbf643bdbf3d146cd34b.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/370x208/b/b/f/bbf643bdbf3d146cd34b.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/770x433/b/b/f/bbf643bdbf3d146cd34b.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/1248x702/b/b/f/bbf643bdbf3d146cd34b.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/1920x1080/b/b/f/bbf643bdbf3d146cd34b.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-03T00:00:00+02:00",
+        "end_date": "2017-07-03T23:59:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/abb1916b08d3b03ffd00218d3d48deda80aa3898/purevision.m3u8?token=04fe5b90b1d52355f235d"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_pure-fm?lid=96628",
+        "url_share": "https://www.rtbf.be/auvio/detail_pure-fm?lid=96628",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_radiopurefm_purefm_livevideo_-preroll/du86340/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_radiopurefm_purefm_livevideo_-midroll/du86340/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_radiopurefm_purefm_livevideo_-postroll/du86340/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/purevision.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/purevision.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "purefm",
+            "label": "Pure"
+        },
+        "program": {
+            "id": 134,
+            "label": "Pure FM"
+        },
+        "category": {
+            "id": 26,
+            "label": "Purefm"
+        },
+        "is_radio": true
+    },
+    {
+        "id": 94958,
+        "title": "La France des mystères",
+        "subtitle": "Sorciers et prophètes",
+        "type": "livevideo",
+        "description": "Un peu partout en France, légendes et histoires prenant place dans des lieux magnifiques se transmettent de génération en génération. \n La mystérieuse forêt de Brocéliande, en Bretagne, serait le royaume d'un personnage mythique inspiré de la légende du Roi Arthur: Merlin. Le célèbre enchanteur doté de pouvoirs exceptionnels serait le maître de ce lieu où résonnent encore les noms de Lancelot, Morgane et Uther Pendragon.   En 1955, en Provence, un certain Nostradamus publie ses Prophéties, ouvrage rempli de versets poétiques prédisant l'avenir jusqu'en 3797! L'homme avait-il une mémoire divine? Des pouvoirs surnaturels? Ses prophéties sont connues de tous, mais avait-il vu juste? D'autres lieux moins connus ont aussi leurs parts de secrets comme au Pays Basque dans le château de Saint-Pée-sur-Nivelle, près de Bayonne où le juge Pierre de Lancre a mené 400 sorcières à la mort. Dans le Béarn, un peuple maudit, celui des cagots a été accusé de sorcellerie et condamné à vivre dans des conditions impensables. Mais qui étaient-ils ? Des descendants des Wisigoths, des Sarrasins, des Cathares? Leurs origines divisent encore les historiens. Dans le Haut-Rhin, la colline de Bollenberg est au coeur des histoires de sorcellerie. Au 16 ème et 17 ème siècles, les rares personnes qui s'y aventuraient étaient traitées de sorciers. Ce documentaire revient sur les traces en France, de figures de la sorcellerie et de la magie et interroge sur l'héritage qu'ils nous ont laissé.   \n",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "La France mystérieuse",
+                "alt": "La France mystérieuse",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "La France mystérieuse",
+                "alt": "La France mystérieuse",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_45a46424d0704ebd2589-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_45a46424d0704ebd2589-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_45a46424d0704ebd2589-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_45a46424d0704ebd2589-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_45a46424d0704ebd2589-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-03T22:38:00+02:00",
+        "end_date": "2017-07-04T00:29:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/bc1e985c9592276a91bf1db4a6dd366efc9fc11e/laune.m3u8?token=0db0ad0d41931810f148c"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_la-france-mysterieuse?lid=94958",
+        "url_share": "https://www.rtbf.be/auvio/detail_la-france-mysterieuse?lid=94958",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_documentairessociete_lafrancemysterieuse_livevideo_-preroll/du6660/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_documentairessociete_lafrancemysterieuse_livevideo_-midroll/du6660/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_documentairessociete_lafrancemysterieuse_livevideo_-postroll/du6660/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/laune.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/laune.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "laune",
+            "label": "La Une"
+        },
+        "program": {
+            "id": 10051,
+            "label": "La France mystérieuse"
+        },
+        "category": {
+            "id": 99,
+            "label": "Société"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 94959,
+        "title": "Archives Sonuma",
+        "subtitle": "Rochefort 87 - Le 7e Festival International du Rire (1)",
+        "type": "livevideo",
+        "description": "En 1987 a eu lieu le 7ème Festival International du Rire de Rochefort où se sont succédés, dans la joie et la bonne humeur, une série de vedettes, humoristes et chanteurs.\nAu programme du premier numéro, présenté par Pierre Collard Bovy, nous entendrons :\nCocagne et Delaunay, Dadzu, Pipou et Philippe Lafontaine, Victor Gravy et Le groupe Afro-Diziak.",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "Archives Sonuma",
+                "alt": "Archives Sonuma",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Archives Sonuma",
+                "alt": "Archives Sonuma",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-03T23:08:00+02:00",
+        "end_date": "2017-07-04T00:06:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/2e54586bb99b57a87004a7cafba990a213361120/latrois.m3u8?token=00ed017e3c279a25b31fa"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_archives-sonuma?lid=94959",
+        "url_share": "https://www.rtbf.be/auvio/detail_archives-sonuma?lid=94959",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_archivessonuma_livevideo_-preroll/du3480/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_archivessonuma_livevideo_-midroll/du3480/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_archivessonuma_livevideo_-postroll/du3480/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "latrois",
+            "label": "La Trois"
+        },
+        "program": {
+            "id": 2311,
+            "label": "Archives Sonuma"
+        },
+        "category": {
+            "id": 18,
+            "label": "Culture"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 94960,
+        "title": "Des Vies",
+        "subtitle": "Cédric GERVY",
+        "type": "livevideo",
+        "description": "Chanteur, humoriste et chroniqueur radio (\" C'est presque sérieux \" sur La Prem1ère), Cédric Gervy est un homme engagé et multiple qui épingle avec un humour assassin, mais aussi beaucoup de sensibilité, les tragédies et dysfonctionnements de la société. En effet, l'actualité est sa première source d'inspiration.\n\nOriginaire de Rixensart, ce trublion des médias a plusieurs casquettes, professeur de néerlandais à la ville et chanteur sensible et critique sur antenne ou sur scène. Capable de belles pirouettes humoristiques, Cédric Gervy vise juste, sans concessions. Les sujets chauds de l'année, il les intègre dans des textes bien trempés. Et l'on rit jaune à l'écouter.\n\nPour ses chansons à la guitare, qu'il poste sur son site, il part d'airs connus et les remanient à sa sauce, y incrustant ses propres paroles. Habitué des festivals (Francofolies de Spa, Fiesta City, Lasemo...), il s'est produit avec son groupe et fait les premières parties de différents artistes connus. Et à chaque fois, il crée l'ambiance.\n\nIl a sorti plusieurs albums, dont le célèbre \" Bonne année quand même ! \", titre qu'il remanie régulièrement en fonction des circonstances. Mais aussi \" J'aimerais trop \" ou \" Z'Acoust'hits \", enregistré en une heure, et qui reprend cinq parodies, cinq compos qui le suivent toujours : Cotcha-Ca, Playstation, Il faut savoir, Mir-Laine.\n",
+        "geolock": {
+            "id": 3,
+            "name": "eu",
+            "title": "Europe"
+        },
+        "images": {
+            "cover": {
+                "title": "Des Vies - vidéo",
+                "alt": "Des Vies - vidéo",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Des Vies - vidéo",
+                "alt": "Des Vies - vidéo",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_02492cf456813ac2bc37-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_02492cf456813ac2bc37-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_02492cf456813ac2bc37-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_02492cf456813ac2bc37-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_02492cf456813ac2bc37-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-03T23:48:00+02:00",
+        "end_date": "2017-07-04T00:35:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/2e54586bb99b57a87004a7cafba990a213361120/latrois.m3u8?token=00ed017e3c279a25b31fa"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_des-vies?lid=94960",
+        "url_share": "https://www.rtbf.be/auvio/detail_des-vies?lid=94960",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_divertissementmagazines_desviesvideo_livevideo_-preroll/du2820/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_divertissementmagazines_desviesvideo_livevideo_-midroll/du2820/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_divertissementmagazines_desviesvideo_livevideo_-postroll/du2820/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "latrois",
+            "label": "La Trois"
+        },
+        "program": {
+            "id": 11244,
+            "label": "Des Vies - vidéo"
+        },
+        "category": {
+            "id": 30,
+            "label": "Magazines"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 96629,
+        "title": "PureVision",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "Pure FM",
+                "alt": "Pure FM",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Pure FM",
+                "alt": "Pure FM",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/180x100/b/b/f/bbf643bdbf3d146cd34b.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/370x208/b/b/f/bbf643bdbf3d146cd34b.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/770x433/b/b/f/bbf643bdbf3d146cd34b.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/1248x702/b/b/f/bbf643bdbf3d146cd34b.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/1920x1080/b/b/f/bbf643bdbf3d146cd34b.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T00:00:00+02:00",
+        "end_date": "2017-07-04T23:59:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/abb1916b08d3b03ffd00218d3d48deda80aa3898/purevision.m3u8?token=04fe5b90b1d52355f235d"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_pure-fm?lid=96629",
+        "url_share": "https://www.rtbf.be/auvio/detail_pure-fm?lid=96629",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_radiopurefm_purefm_livevideo_-preroll/du86340/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_radiopurefm_purefm_livevideo_-midroll/du86340/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_radiopurefm_purefm_livevideo_-postroll/du86340/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/purevision.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/purevision.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "purefm",
+            "label": "Pure"
+        },
+        "program": {
+            "id": 134,
+            "label": "Pure FM"
+        },
+        "category": {
+            "id": 26,
+            "label": "Purefm"
+        },
+        "is_radio": true
+    },
+    {
+        "id": 96224,
+        "title": "Tour de France - Le Tour au quotidien",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "Le Tour au quotidien",
+                "alt": "Le Tour au quotidien",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Le Tour au quotidien",
+                "alt": "Le Tour au quotidien",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T00:18:00+02:00",
+        "end_date": "2017-07-04T01:09:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/bc1e985c9592276a91bf1db4a6dd366efc9fc11e/laune.m3u8?token=0db0ad0d41931810f148c"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_le-tour-au-quotidien?lid=96224",
+        "url_share": "https://www.rtbf.be/auvio/detail_le-tour-au-quotidien?lid=96224",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_sportcyclismetourdefrance_letourauquotidien_livevideo_-preroll/du3060/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_sportcyclismetourdefrance_letourauquotidien_livevideo_-midroll/du3060/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_sportcyclismetourdefrance_letourauquotidien_livevideo_-postroll/du3060/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/laune.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/laune.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "laune",
+            "label": "La Une"
+        },
+        "program": {
+            "id": 10027,
+            "label": "Le Tour au quotidien"
+        },
+        "category": {
+            "id": 62,
+            "label": "Tour de France"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 94962,
+        "title": "Vis Ta Mine ! (Boucle de nuit)",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "Toute l'équipe de Vis Ta Mine ! vous donne rendez-vous quotidien de 40 minutes d'infos santé/bien-être.\nAutour d'Adrien, toute une bande d'experts et de spécialistes se relayeront pour répondre à vos questions.",
+        "geolock": {
+            "id": 4,
+            "name": "open",
+            "title": "Ouvert à tous"
+        },
+        "images": {
+            "cover": {
+                "title": "Vis Ta Mine !",
+                "alt": "Vis Ta Mine !",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Vis Ta Mine !",
+                "alt": "Vis Ta Mine !",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T00:48:00+02:00",
+        "end_date": "2017-07-04T01:42:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/87d88b36830bb0d0ff43b139615cffd0a4a93440/ladeux.m3u8?token=0f4d7af3370022aee98bf"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_vis-ta-mine?lid=94962",
+        "url_share": "https://www.rtbf.be/auvio/detail_vis-ta-mine?lid=94962",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-preroll/du3240/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-midroll/du3240/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-postroll/du3240/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/ladeux.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/ladeux.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "ladeux",
+            "label": "La Deux"
+        },
+        "program": {
+            "id": 10246,
+            "label": "Vis Ta Mine !"
+        },
+        "category": {
+            "id": 82,
+            "label": "Sciences/Santé"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 94961,
+        "title": "Dites-moi",
+        "subtitle": "Marion Hänsel (Boucle de nuit)",
+        "type": "livevideo",
+        "description": "Emission réalisée en 1987.\nMichèle Cédric s'entretient avec Marion Hänsel, cinéaste belge née à Marseille en 1949 et élevée à Anvers.\nAprès avoir fréquenté deux écoles dramatiques à Bruxelles (dont l'I.A.D.), le Lee Strasberg Actor's Studio à New York et le Fratellini Circus à Paris, Marion Hansel a débuté dans le monde du spectacle en tant que comédienne. Au théâtre, elle a notamment joué Ionesco, Arrabal et Feydeau. Depuis, elle s'est consacrée à la réalisation de films industriels, de courts et longs-métrages :\n- \"Le lit\" avec Heinz Bennent\n- \"Dust\" avec Jane Birkin et Trevor Howard, qui lui a valu le Lion d'Argent à Venise en 1986\n- \"Les Noces Barbares\", le dernier né, avec Marianne Basler, est tiré du roman de Yann Queffelec, qui a obtenu le Prix Goncourt en 1985.\n\nPetite, garçonne, dynamique et prompte à sourire, Marion Hänsel s'est imposée en quelques années aux yeux des professionnels et du public, avec des oeuvres à la fois douloureuses et graves qui semblent à l'opposé de ce qu'elle montre d'elle-même. En effet, ses thèmes favoris qui se retrouvent dans ses trois longs-métrages, sont la solitude, la mort et l'amour. \"Son\" monde, la cinéaste le définit très bien : \"C'est un univers où l'on lutte pour l'amour. C'est un monde fait de tristesse, d'agression, de violence et de rapports passionnés\".\n\n\"Le lit\" est un film empreint de pudeur et d'éducation, qui parle de la souffrance traversée lors de la mort d'un être proche, de la vie qui continue. \"Dust\" est un huis-clos dramatique qui se passe en\nAfrique du Sud, dans une ferme perdue au coeur d'un paysage aride et désertique, où s'opposent un père et sa fille, les blancs et les noirs, les maîtres et les serviteurs. Un film qui aboutit sur la réclusion volontaire d'une femme qui s'enferme par amour pour sa terre.\n\"Noces Barbares\" est l'histoire d'un amour-haine entre une jeune femme et son enfant, né d'un viol, qu'elle va détester parce qu'il lui rappelle les tortures qu'elle a subies.\n\nCe qui caractérise Marion Hänsel dans chacun de ces films, c'est sa grande maîtrise du rythme et du souffle dramatique, obtenue grâce à l'utilisation des silences, des clairs-obscurs chromatiques très forts et à sa capacité de dominer un petit enfer claustrophobe avec un regard pénétrant et ferme.\n\n(Avec les témoignages de Jane Birkin, de Francine Blistin (comédienne) et de Roger Domani (directeur du Théâtre de Poche)).",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "Dites-moi",
+                "alt": "Dites-moi",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Dites-moi",
+                "alt": "Dites-moi",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T01:03:00+02:00",
+        "end_date": "2017-07-04T02:11:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/2e54586bb99b57a87004a7cafba990a213361120/latrois.m3u8?token=00ed017e3c279a25b31fa"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_dites-moi?lid=94961",
+        "url_share": "https://www.rtbf.be/auvio/detail_dites-moi?lid=94961",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_ditesmoi_livevideo_-preroll/du4080/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_ditesmoi_livevideo_-midroll/du4080/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_ditesmoi_livevideo_-postroll/du4080/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "latrois",
+            "label": "La Trois"
+        },
+        "program": {
+            "id": 5610,
+            "label": "Dites-moi"
+        },
+        "category": {
+            "id": 18,
+            "label": "Culture"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 96225,
+        "title": "Tour de France - Le Tour au quotidien (Boucle de nuit)",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "Le Tour au quotidien",
+                "alt": "Le Tour au quotidien",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Le Tour au quotidien",
+                "alt": "Le Tour au quotidien",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_6e8ade2b27d9be17de4b-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T01:58:00+02:00",
+        "end_date": "2017-07-04T02:47:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/bc1e985c9592276a91bf1db4a6dd366efc9fc11e/laune.m3u8?token=0db0ad0d41931810f148c"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_le-tour-au-quotidien?lid=96225",
+        "url_share": "https://www.rtbf.be/auvio/detail_le-tour-au-quotidien?lid=96225",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_sportcyclismetourdefrance_letourauquotidien_livevideo_-preroll/du2940/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_sportcyclismetourdefrance_letourauquotidien_livevideo_-midroll/du2940/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_sportcyclismetourdefrance_letourauquotidien_livevideo_-postroll/du2940/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/laune.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/laune.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "laune",
+            "label": "La Une"
+        },
+        "program": {
+            "id": 10027,
+            "label": "Le Tour au quotidien"
+        },
+        "category": {
+            "id": 62,
+            "label": "Tour de France"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 96390,
+        "title": "Vis Ta Mine ! (Boucle de nuit)",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "Toute l'équipe de Vis Ta Mine ! vous donne rendez-vous quotidien de 40 minutes d'infos santé/bien-être.\nAutour d'Adrien, toute une bande d'experts et de spécialistes se relayeront pour répondre à vos questions.",
+        "geolock": {
+            "id": 4,
+            "name": "open",
+            "title": "Ouvert à tous"
+        },
+        "images": {
+            "cover": {
+                "title": "Vis Ta Mine !",
+                "alt": "Vis Ta Mine !",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Vis Ta Mine !",
+                "alt": "Vis Ta Mine !",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T01:59:00+02:00",
+        "end_date": "2017-07-04T02:53:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/87d88b36830bb0d0ff43b139615cffd0a4a93440/ladeux.m3u8?token=0f4d7af3370022aee98bf"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_vis-ta-mine?lid=96390",
+        "url_share": "https://www.rtbf.be/auvio/detail_vis-ta-mine?lid=96390",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-preroll/du3240/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-midroll/du3240/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-postroll/du3240/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/ladeux.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/ladeux.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "ladeux",
+            "label": "La Deux"
+        },
+        "program": {
+            "id": 10246,
+            "label": "Vis Ta Mine !"
+        },
+        "category": {
+            "id": 82,
+            "label": "Sciences/Santé"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 96387,
+        "title": "Dites-moi",
+        "subtitle": "Marion Hänsel (Boucle de nuit)",
+        "type": "livevideo",
+        "description": "Emission réalisée en 1987.\nMichèle Cédric s'entretient avec Marion Hänsel, cinéaste belge née à Marseille en 1949 et élevée à Anvers.\nAprès avoir fréquenté deux écoles dramatiques à Bruxelles (dont l'I.A.D.), le Lee Strasberg Actor's Studio à New York et le Fratellini Circus à Paris, Marion Hansel a débuté dans le monde du spectacle en tant que comédienne. Au théâtre, elle a notamment joué Ionesco, Arrabal et Feydeau. Depuis, elle s'est consacrée à la réalisation de films industriels, de courts et longs-métrages :\n- \"Le lit\" avec Heinz Bennent\n- \"Dust\" avec Jane Birkin et Trevor Howard, qui lui a valu le Lion d'Argent à Venise en 1986\n- \"Les Noces Barbares\", le dernier né, avec Marianne Basler, est tiré du roman de Yann Queffelec, qui a obtenu le Prix Goncourt en 1985.\n\nPetite, garçonne, dynamique et prompte à sourire, Marion Hänsel s'est imposée en quelques années aux yeux des professionnels et du public, avec des oeuvres à la fois douloureuses et graves qui semblent à l'opposé de ce qu'elle montre d'elle-même. En effet, ses thèmes favoris qui se retrouvent dans ses trois longs-métrages, sont la solitude, la mort et l'amour. \"Son\" monde, la cinéaste le définit très bien : \"C'est un univers où l'on lutte pour l'amour. C'est un monde fait de tristesse, d'agression, de violence et de rapports passionnés\".\n\n\"Le lit\" est un film empreint de pudeur et d'éducation, qui parle de la souffrance traversée lors de la mort d'un être proche, de la vie qui continue. \"Dust\" est un huis-clos dramatique qui se passe en\nAfrique du Sud, dans une ferme perdue au coeur d'un paysage aride et désertique, où s'opposent un père et sa fille, les blancs et les noirs, les maîtres et les serviteurs. Un film qui aboutit sur la réclusion volontaire d'une femme qui s'enferme par amour pour sa terre.\n\"Noces Barbares\" est l'histoire d'un amour-haine entre une jeune femme et son enfant, né d'un viol, qu'elle va détester parce qu'il lui rappelle les tortures qu'elle a subies.\n\nCe qui caractérise Marion Hänsel dans chacun de ces films, c'est sa grande maîtrise du rythme et du souffle dramatique, obtenue grâce à l'utilisation des silences, des clairs-obscurs chromatiques très forts et à sa capacité de dominer un petit enfer claustrophobe avec un regard pénétrant et ferme.\n\n(Avec les témoignages de Jane Birkin, de Francine Blistin (comédienne) et de Roger Domani (directeur du Théâtre de Poche)).",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "Dites-moi",
+                "alt": "Dites-moi",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Dites-moi",
+                "alt": "Dites-moi",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T02:50:00+02:00",
+        "end_date": "2017-07-04T03:58:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/2e54586bb99b57a87004a7cafba990a213361120/latrois.m3u8?token=00ed017e3c279a25b31fa"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_dites-moi?lid=96387",
+        "url_share": "https://www.rtbf.be/auvio/detail_dites-moi?lid=96387",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_ditesmoi_livevideo_-preroll/du4080/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_ditesmoi_livevideo_-midroll/du4080/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_ditesmoi_livevideo_-postroll/du4080/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "latrois",
+            "label": "La Trois"
+        },
+        "program": {
+            "id": 5610,
+            "label": "Dites-moi"
+        },
+        "category": {
+            "id": 18,
+            "label": "Culture"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 96391,
+        "title": "Vis Ta Mine ! (Boucle de nuit)",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "Toute l'équipe de Vis Ta Mine ! vous donne rendez-vous quotidien de 40 minutes d'infos santé/bien-être.\nAutour d'Adrien, toute une bande d'experts et de spécialistes se relayeront pour répondre à vos questions.",
+        "geolock": {
+            "id": 4,
+            "name": "open",
+            "title": "Ouvert à tous"
+        },
+        "images": {
+            "cover": {
+                "title": "Vis Ta Mine !",
+                "alt": "Vis Ta Mine !",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Vis Ta Mine !",
+                "alt": "Vis Ta Mine !",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T03:14:00+02:00",
+        "end_date": "2017-07-04T04:08:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/87d88b36830bb0d0ff43b139615cffd0a4a93440/ladeux.m3u8?token=0f4d7af3370022aee98bf"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_vis-ta-mine?lid=96391",
+        "url_share": "https://www.rtbf.be/auvio/detail_vis-ta-mine?lid=96391",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-preroll/du3240/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-midroll/du3240/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-postroll/du3240/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/ladeux.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/ladeux.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "ladeux",
+            "label": "La Deux"
+        },
+        "program": {
+            "id": 10246,
+            "label": "Vis Ta Mine !"
+        },
+        "category": {
+            "id": 82,
+            "label": "Sciences/Santé"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 96386,
+        "title": "Archives Sonuma",
+        "subtitle": "Wallonie immédiate - Jean-Jacques Andrien (Boucle de nuit)",
+        "type": "livevideo",
+        "description": "Reportage réalisé en 1980.\nRencontre avec Jean-Jacques Andrien, qui entame le tournage de son long métrage de fiction \"Le Grand Paysage d'Alexis Droeven\" dans la région d'Aubel. \nLe devenir de l'agriculture en Wallonie étant le thème central du film !",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "Archives Sonuma",
+                "alt": "Archives Sonuma",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Archives Sonuma",
+                "alt": "Archives Sonuma",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_1369850047-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T03:53:00+02:00",
+        "end_date": "2017-07-04T04:23:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/2e54586bb99b57a87004a7cafba990a213361120/latrois.m3u8?token=00ed017e3c279a25b31fa"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_archives-sonuma?lid=96386",
+        "url_share": "https://www.rtbf.be/auvio/detail_archives-sonuma?lid=96386",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_archivessonuma_livevideo_-preroll/du1800/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_archivessonuma_livevideo_-midroll/du1800/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_archivessonuma_livevideo_-postroll/du1800/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "latrois",
+            "label": "La Trois"
+        },
+        "program": {
+            "id": 2311,
+            "label": "Archives Sonuma"
+        },
+        "category": {
+            "id": 18,
+            "label": "Culture"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 95482,
+        "title": "VivaCité Matin",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "",
+        "geolock": {
+            "id": 4,
+            "name": "open",
+            "title": "Ouvert à tous"
+        },
+        "images": {
+            "cover": {
+                "title": "Vivacité Matin",
+                "alt": "Vivacité Matin",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Vivacité Matin",
+                "alt": "Vivacité Matin",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_c3ba2296b8df4c900653-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_c3ba2296b8df4c900653-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_c3ba2296b8df4c900653-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_c3ba2296b8df4c900653-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_c3ba2296b8df4c900653-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T04:00:00+02:00",
+        "end_date": "2017-07-04T06:00:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/7c0c51a7546e72c823e08b6dff63d8d2d86413e9/vivacitevision.m3u8?token=0be710476533d5870f7d3"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_vivacite-matin?lid=95482",
+        "url_share": "https://www.rtbf.be/auvio/detail_vivacite-matin?lid=95482",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_divertissement_vivacitematin_livevideo_-preroll/du7200/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_divertissement_vivacitematin_livevideo_-midroll/du7200/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_divertissement_vivacitematin_livevideo_-postroll/du7200/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/vivacitevision.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/vivacitevision.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "vivacite",
+            "label": "Vivacité"
+        },
+        "program": {
+            "id": 1271,
+            "label": "Vivacité Matin"
+        },
+        "category": {
+            "id": 29,
+            "label": "Divertissement"
+        },
+        "is_radio": true
+    },
+    {
+        "id": 96392,
+        "title": "Vis Ta Mine ! (Boucle de nuit)",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "Toute l'équipe de Vis Ta Mine ! vous donne rendez-vous quotidien de 40 minutes d'infos santé/bien-être.\nAutour d'Adrien, toute une bande d'experts et de spécialistes se relayeront pour répondre à vos questions.",
+        "geolock": {
+            "id": 4,
+            "name": "open",
+            "title": "Ouvert à tous"
+        },
+        "images": {
+            "cover": {
+                "title": "Vis Ta Mine !",
+                "alt": "Vis Ta Mine !",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Vis Ta Mine !",
+                "alt": "Vis Ta Mine !",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_9784a166a68096cf2fe3-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T04:23:00+02:00",
+        "end_date": "2017-07-04T05:17:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/87d88b36830bb0d0ff43b139615cffd0a4a93440/ladeux.m3u8?token=0f4d7af3370022aee98bf"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_vis-ta-mine?lid=96392",
+        "url_share": "https://www.rtbf.be/auvio/detail_vis-ta-mine?lid=96392",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-preroll/du3240/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-midroll/du3240/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_viequotidiennesciencessante_vistamine_livevideo_-postroll/du3240/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/ladeux.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/ladeux.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "ladeux",
+            "label": "La Deux"
+        },
+        "program": {
+            "id": 10246,
+            "label": "Vis Ta Mine !"
+        },
+        "category": {
+            "id": 82,
+            "label": "Sciences/Santé"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 96388,
+        "title": "Dites-moi",
+        "subtitle": "Marion Hänsel (Boucle de nuit)",
+        "type": "livevideo",
+        "description": "Emission réalisée en 1987.\nMichèle Cédric s'entretient avec Marion Hänsel, cinéaste belge née à Marseille en 1949 et élevée à Anvers.\nAprès avoir fréquenté deux écoles dramatiques à Bruxelles (dont l'I.A.D.), le Lee Strasberg Actor's Studio à New York et le Fratellini Circus à Paris, Marion Hansel a débuté dans le monde du spectacle en tant que comédienne. Au théâtre, elle a notamment joué Ionesco, Arrabal et Feydeau. Depuis, elle s'est consacrée à la réalisation de films industriels, de courts et longs-métrages :\n- \"Le lit\" avec Heinz Bennent\n- \"Dust\" avec Jane Birkin et Trevor Howard, qui lui a valu le Lion d'Argent à Venise en 1986\n- \"Les Noces Barbares\", le dernier né, avec Marianne Basler, est tiré du roman de Yann Queffelec, qui a obtenu le Prix Goncourt en 1985.\n\nPetite, garçonne, dynamique et prompte à sourire, Marion Hänsel s'est imposée en quelques années aux yeux des professionnels et du public, avec des oeuvres à la fois douloureuses et graves qui semblent à l'opposé de ce qu'elle montre d'elle-même. En effet, ses thèmes favoris qui se retrouvent dans ses trois longs-métrages, sont la solitude, la mort et l'amour. \"Son\" monde, la cinéaste le définit très bien : \"C'est un univers où l'on lutte pour l'amour. C'est un monde fait de tristesse, d'agression, de violence et de rapports passionnés\".\n\n\"Le lit\" est un film empreint de pudeur et d'éducation, qui parle de la souffrance traversée lors de la mort d'un être proche, de la vie qui continue. \"Dust\" est un huis-clos dramatique qui se passe en\nAfrique du Sud, dans une ferme perdue au coeur d'un paysage aride et désertique, où s'opposent un père et sa fille, les blancs et les noirs, les maîtres et les serviteurs. Un film qui aboutit sur la réclusion volontaire d'une femme qui s'enferme par amour pour sa terre.\n\"Noces Barbares\" est l'histoire d'un amour-haine entre une jeune femme et son enfant, né d'un viol, qu'elle va détester parce qu'il lui rappelle les tortures qu'elle a subies.\n\nCe qui caractérise Marion Hänsel dans chacun de ces films, c'est sa grande maîtrise du rythme et du souffle dramatique, obtenue grâce à l'utilisation des silences, des clairs-obscurs chromatiques très forts et à sa capacité de dominer un petit enfer claustrophobe avec un regard pénétrant et ferme.\n\n(Avec les témoignages de Jane Birkin, de Francine Blistin (comédienne) et de Roger Domani (directeur du Théâtre de Poche)).",
+        "geolock": {
+            "id": 2,
+            "name": "be",
+            "title": "Belgique"
+        },
+        "images": {
+            "cover": {
+                "title": "Dites-moi",
+                "alt": "Dites-moi",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Dites-moi",
+                "alt": "Dites-moi",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_8b1180248361c8f3d194-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T04:53:00+02:00",
+        "end_date": "2017-07-04T06:00:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/2e54586bb99b57a87004a7cafba990a213361120/latrois.m3u8?token=00ed017e3c279a25b31fa"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_dites-moi?lid=96388",
+        "url_share": "https://www.rtbf.be/auvio/detail_dites-moi?lid=96388",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_ditesmoi_livevideo_-preroll/du4020/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_ditesmoi_livevideo_-midroll/du4020/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_culture_ditesmoi_livevideo_-postroll/du4020/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/latrois.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "latrois",
+            "label": "La Trois"
+        },
+        "program": {
+            "id": 5610,
+            "label": "Dites-moi"
+        },
+        "category": {
+            "id": 18,
+            "label": "Culture"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 94963,
+        "title": "Le 6/8",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "Le 6-8 est la matinale qui vous réveille en images ! Rythmée par l'info-trafic et la météo, l'émission animée par Sara De Paduwa accueille chaque matin une bande sympathique pour des chroniques variées.\nAu programme du jour : ",
+        "geolock": {
+            "id": 4,
+            "name": "open",
+            "title": "Ouvert à tous"
+        },
+        "images": {
+            "cover": {
+                "title": "Le 6-8",
+                "alt": "Le 6-8",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Le 6-8",
+                "alt": "Le 6-8",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_d7da2758f619cefa4836-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_d7da2758f619cefa4836-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_d7da2758f619cefa4836-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_d7da2758f619cefa4836-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_d7da2758f619cefa4836-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T05:58:00+02:00",
+        "end_date": "2017-07-04T08:16:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/bc1e985c9592276a91bf1db4a6dd366efc9fc11e/laune.m3u8?token=0db0ad0d41931810f148c"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_le-6-8?lid=94963",
+        "url_share": "https://www.rtbf.be/auvio/detail_le-6-8?lid=94963",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_divertissementtalkshow_le68_livevideo_-preroll/du8280/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_divertissementtalkshow_le68_livevideo_-midroll/du8280/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_divertissementtalkshow_le68_livevideo_-postroll/du8280/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/laune.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/laune.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "laune",
+            "label": "La Une"
+        },
+        "program": {
+            "id": 8801,
+            "label": "Le 6-8"
+        },
+        "category": {
+            "id": 108,
+            "label": "Talk show"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 92716,
+        "title": "Matin Première suivi de Jour Première",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "",
+        "geolock": {
+            "id": 4,
+            "name": "open",
+            "title": "Ouvert à tous"
+        },
+        "images": {
+            "cover": {
+                "title": "Matin Première - vidéo",
+                "alt": "Matin Première - vidéo",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Matin Première - vidéo",
+                "alt": "Matin Première - vidéo",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/180x100/d/1/5/d15c4da3d6327d28c6c2.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/370x208/d/1/5/d15c4da3d6327d28c6c2.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/770x433/d/1/5/d15c4da3d6327d28c6c2.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/1248x702/d/1/5/d15c4da3d6327d28c6c2.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/1920x1080/d/1/5/d15c4da3d6327d28c6c2.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T05:58:00+02:00",
+        "end_date": "2017-07-04T10:02:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/31dfb588bbe265869cac1c3e719610a4b1c00d0e/lapremierevision.m3u8?token=0bd519d2ae89dc67d9b77"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_matin-premiere?lid=92716",
+        "url_share": "https://www.rtbf.be/auvio/detail_matin-premiere?lid=92716",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_infomagazines_matinpremierevideo_livevideo_-preroll/du14640/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_infomagazines_matinpremierevideo_livevideo_-midroll/du14640/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_infomagazines_matinpremierevideo_livevideo_-postroll/du14640/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/lapremierevision.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/lapremierevision.mp4?ts=201707032311"
+        },
+        "channel": {
+            "key": "lapremiere",
+            "label": "La Première"
+        },
+        "program": {
+            "id": 9650,
+            "label": "Matin Première - vidéo"
+        },
+        "category": {
+            "id": 98,
+            "label": "Magazines"
+        },
+        "is_radio": false
+    },
+    {
+        "id": 95497,
+        "title": "Hainaut Matin",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "",
+        "geolock": {
+            "id": 4,
+            "name": "open",
+            "title": "Ouvert à tous"
+        },
+        "images": {
+            "cover": {
+                "title": "Hainaut Matin",
+                "alt": "Hainaut Matin",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/default/image/180x180/default-auvio_0.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/default/image/370x370/default-auvio_0.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/default/image/770x770/default-auvio_0.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/default/image/1248x1248/default-auvio_0.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/default/image/1920x1920/default-auvio_0.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Hainaut Matin",
+                "alt": "Hainaut Matin",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_4482438159d51d6f3ac2-168x95.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_4482438159d51d6f3ac2-324x183@2x.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_4482438159d51d6f3ac2-324x183@2x.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_4482438159d51d6f3ac2-324x183@2x.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/media/program/image/ng_4482438159d51d6f3ac2-324x183@2x.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T06:00:00+02:00",
+        "end_date": "2017-07-04T08:00:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/7c0c51a7546e72c823e08b6dff63d8d2d86413e9/vivacitevision.m3u8?token=0be710476533d5870f7d3"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_hainaut-matin?lid=95497",
+        "url_share": "https://www.rtbf.be/auvio/detail_hainaut-matin?lid=95497",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_inforegions_hainautmatin_livevideo_-preroll/du7200/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_inforegions_hainautmatin_livevideo_-midroll/du7200/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_inforegions_hainautmatin_livevideo_-postroll/du7200/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/vivacitevision.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/vivacitevision.mp4?ts=201707032311"
+        },
+        "channel": [],
+        "program": {
+            "id": 1242,
+            "label": "Hainaut Matin"
+        },
+        "category": {
+            "id": 4,
+            "label": "Régions"
+        },
+        "is_radio": true
+    },
+    {
+        "id": 95512,
+        "title": "Bruxelles Matin",
+        "subtitle": "",
+        "type": "livevideo",
+        "description": "Julie VanH et Bruno Schmitz réveillent les auditeurs de la région dès 6h. Ils vous accompagnent au saut du lit et sur le chemin du travail, en musique et dans la bonne humeur. Infos Régionales à 6h30 et 7h30. Avec la météo de la région, un coup d'oeil permanent sur les conditions de circulation à Bruxelles et sur les grands axes. Au fil de l'émission, la vie va au cœur de votre région pour vivre et partager votre quotidien en toute complicité ! ",
+        "geolock": {
+            "id": 4,
+            "name": "open",
+            "title": "Ouvert à tous"
+        },
+        "images": {
+            "cover": {
+                "title": "Bruxelles Matin",
+                "alt": "Bruxelles Matin",
+                "1x1": {
+                    "180x180": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/10x10/180x180/2/7/4/274a52b517748342b4a1.jpg",
+                    "370x370": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/10x10/370x370/2/7/4/274a52b517748342b4a1.jpg",
+                    "770x770": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/10x10/770x770/2/7/4/274a52b517748342b4a1.jpg",
+                    "1248x1248": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/10x10/1248x1248/2/7/4/274a52b517748342b4a1.jpg",
+                    "1920x1920": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/10x10/1920x1920/2/7/4/274a52b517748342b4a1.jpg"
+                }
+            },
+            "illustration": {
+                "title": "Bruxelles Matin",
+                "alt": "Bruxelles Matin",
+                "16x9": {
+                    "180x100": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/180x100/e/b/9/eb929e8833decf6cb030.jpg",
+                    "370x208": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/370x208/e/b/9/eb929e8833decf6cb030.jpg",
+                    "770x433": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/770x433/e/b/9/eb929e8833decf6cb030.jpg",
+                    "1248x702": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/1248x702/e/b/9/eb929e8833decf6cb030.jpg",
+                    "1920x1080": "http:\/\/ds1.static.rtbf.be/image/livecenter/live/16x9/1920x1080/e/b/9/eb929e8833decf6cb030.jpg"
+                }
+            }
+        },
+        "start_date": "2017-07-04T06:00:00+02:00",
+        "end_date": "2017-07-04T08:00:00+02:00",
+        "url_streaming": {
+            "url_hls": "http://rtbf.l3.freecaster.net/live/rtbf/geo/open/d209c12448b8a8ee6175d11116b6ff13974e9a39/nocstream2.m3u8?token=09095e2e5c967dec350e0"
+        },
+        "url": "https://www.rtbf.be/auvio/detail_bruxelles-matin?lid=95512",
+        "url_share": "https://www.rtbf.be/auvio/detail_bruxelles-matin?lid=95512",
+        "url_vast": {
+            "pre-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_inforegions_bruxellesmatin_livevideo_-preroll/du7200/in;;www.rtbf.be;;;;/br/",
+            "mid-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_inforegions_bruxellesmatin_livevideo_-midroll/du7200/in;;www.rtbf.be;;;;/br/",
+            "post-roll": "https://ads-rmb.adhese.com/ad/sl_rtbf_inforegions_bruxellesmatin_livevideo_-postroll/du7200/in;;www.rtbf.be;;;;/br/"
+        },
+        "url_preview_loop": {
+            "url_mobile": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/nocstream2.mp4?ts=201707032311",
+            "url": "https://rtbf-vod.l3.freecaster.net/vod/rtbf/geo/preview/nocstream2.mp4?ts=201707032311"
+        },
+        "channel": [],
+        "program": {
+            "id": 6116,
+            "label": "Bruxelles Matin"
+        },
+        "category": {
+            "id": 4,
+            "label": "Régions"
+        },
+        "is_radio": true
+    }
+]
