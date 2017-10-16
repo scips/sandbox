@@ -30,31 +30,39 @@ In arrays it doesn't intercept immutable methods such as concat
 
 #### Mustache templating system
 
+{% raw %}
 ```vue
     {{ }} // is the mustache template system
 ```
+{% endraw %}
 
 inside there is a javascript expression => expression are evaluated to get a value. It is not a statement.
 
 **Those are expression**
 
+{% raw %}
 ```vue
     {{ message }}
 
     {{ message.split('').reverse().join('') }}
 ```
+{% endraw %}
 
 **This is not an expression**
 
+{% raw %}
 ```vue
     {{ if (foo) {} }}
 ```
+{% endraw %}
 
 So how to do conditional? Simply use ternary operator
 
+{% raw %}
 ```vue
     {{ ok ? 'true':'false' }}
 ```
+{% endraw %}
 
 ### v-*
 
@@ -63,9 +71,12 @@ Any attrivute that start with **v-** is a javscript expression
 #### v-html
 
 **v-html** is dangerous, use it only on things you can trust
+
+{% raw %}
 ```vue
     <div v-html="someHTML + 'foo'"></div>
 ```
+{% endraw %}
 
 #### v-pre
 
@@ -83,7 +94,6 @@ You can bind a lot of things: **class**, **style**
 
 The template block is an abstract component treated as a block
 They only exist in the virtual dom. v-show has no effect on virtual dom element.
-
 
 #### v-if / v-else
 
@@ -218,6 +228,7 @@ Mutliple check box can be binded to one model
 
 Must be have the same v-model and vue will consider them as the same radiobutton
 
+{% raw %}
 ```vue
         <input v-model="radio" value="one" type="radio" />
         <input v-model="radio" value="two" type="radio" />
@@ -231,6 +242,7 @@ Must be have the same v-model and vue will consider them as the same radiobutton
         radio: 'three'
         ...
 ```
+{% endraw %}
 
 ##### Select
 
@@ -250,6 +262,7 @@ see []()
 
 ### Add checkboxes
 
+{% raw %}
 ```vue
     <input v-model="newTodo" @keyup.enter="addNewTodo" />
     <ul>
@@ -258,6 +271,7 @@ see []()
         </li>
     </ul>
 ```
+{% endraw %}
 
 ```vue
       el: '#app',
@@ -485,6 +499,7 @@ Now it will check for an object
     </div>
 ```
 
+{% raw %}
 ```vue
     Vue.component('todo', {
         template: `<div>{{ todo.text }}</div>`,
@@ -497,6 +512,7 @@ Now it will check for an object
         }
     })
 ```
+{% endraw %}
 
 default must be a function otherwise all occurence will share the same object reference
 
@@ -512,6 +528,7 @@ You can create complex validator by simply specifying the validator in the props
     </div>
 ```
 
+{% raw %}
 ```vue
     Vue.component('todo', {
         template: `<div>{{ todo.text }}</div>`,
@@ -532,6 +549,7 @@ You can create complex validator by simply specifying the validator in the props
         }
     })
 ```
+{% endraw %}
 
 You will have an error for the second component because this is an object but not the right type (in this case must have text property with length > 0)
 
@@ -563,7 +581,7 @@ Instead we will use custome event "toggle".
 ```vue
         <todo :class="todo.done?`done`:``" v-for="todo in todos" v-bind:todo="todo" @toggle="toggleTodo(todo)"></todo>
 ```
-
+{% raw %}
 ```vue
     Vue.component('todo', {
         template: `
@@ -594,6 +612,7 @@ Instead we will use custome event "toggle".
         }
     })
 ```
+{% endraw %}
 
 #### Adding keys
 
@@ -613,6 +632,7 @@ For instance:
     </div>
 ```
 
+{% raw %}
 ```vue
     Vue.component('todo', {
         template: `
@@ -633,6 +653,7 @@ For instance:
         }
     })
 ```
+{% endraw %}
 
 Click first item, you will see "true"
 In console type:
@@ -692,6 +713,7 @@ could be used to clean a timer (setInterval, ...).
 
 If you want to change some value you can write something like that
 
+{% raw %}
 ```vue
     <div id="el">
         {{ msg }}
@@ -712,6 +734,7 @@ If you want to change some value you can write something like that
         }
     })
 ```
+{% endraw %}
 
 This will break at first click, you cannot change the value foo like this
 
@@ -723,6 +746,7 @@ Good practice is to use the **.sync** shortener and in general emit event
 
 Here below the two version of the same thing
 
+{% raw %}
 ```vue
     <div id="el">
         {{ msg }}
@@ -745,7 +769,7 @@ Here below the two version of the same thing
         },
     })
 ```
-
+{% endraw %}
 
 ### Exercise 2: TODO + component
 
