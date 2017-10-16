@@ -529,7 +529,11 @@ Instead we will use custome event "toggle".
 
 #### Adding keys
 
-Important to add keys. If we manually reverse the todos order some property may not match anymore.
+It's important to add keys. If we manually reverse the todos order some property may not match anymore.
+
+**see**:
+* [Live example without key](https://scips.github.io/sandbox/hackages/vuejs101/day1/component-without-key.html)
+
 
 There is a warning in the console that tells us that we need to use key.
 
@@ -565,7 +569,10 @@ In console type:
         vm.todos.reverse()
 
 The isEditing is linked to the item but the item change without **key** so the state is not maintained and linked.
-So it's good practice to add it to items and link **key** attribute to that *id*
+So it's good practice to add an *id* for instance to items and link **key** attribute to that *id*
+
+**see:**
+* [Live example with key](https://scips.github.io/sandbox/hackages/vuejs101/day1/component-with-key.html)
 
 ### Hooks and vue components lifecycle
 
@@ -669,7 +676,15 @@ Here below the two version of the same thing
     - hint: use v-if to toggle plaintext -> input box
     - on enter, emit an event to let parent update todo with new value
 
-#### The contract
+**see**:
+* [Exercise 2](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise2-1.html)
+* [Exercise 2 code](exercise2-1.html)
+* [Solution Exercise 2](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise2-2.html)
+* [Solution Exercise 2 code](exercise2-2.html)
+* [Solution Exercise 2 even better](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise2-3.html)
+* [Solution Exercise 2 even better code](exercise2-3.html)
+
+#### The component contract
 
         <todo-item
             v-for="todo in filteredTodos"
@@ -685,23 +700,39 @@ todo-item must have:
 * an edit method
 * a todo item with a key
 
+It's clear that designing a nice contract to a component allow the component to be:
+* re-usable
+* made by someone else
+* documented
+* automatically tested
 
 ### Input Components
 
 Create a common set of component that can works with v-model.
 
-V-model by default works only on input element.
+V-model by default works only on native input element.
 
-See: [form-component.html](form-component.html)
+But you can create your own input element and make it works with v-model.
 
+**See:**
+* [Own form component code](form-component.html)
+* [Own form component in action](https://scips.github.io/sandbox/hackages/vuejs101/day1/form-component.html)
 
 ### Slots
 
 Usefull to combine and append element together then render them in specific section.
 
+**see**:
+* [Slots Placeholder](https://scips.github.io/sandbox/hackages/vuejs101/day1/slots-placeholder.html)
+* [Slots Placeholder code](slots-placeholder.html)
+
 Also slots have access to parent and to their own scope.
 
-Usage: Calendar picker or huge list of component. It allows to inject arbitrary DOM content in the component
+**see**:
+* [Slots Placeholder](https://scips.github.io/sandbox/hackages/vuejs101/day1/slots-data-access.html)
+* [Slots Placeholder code](slots-data-access.html)
+
+Usage: Calendar picker or list&lt;component&gt;. It allows to inject arbitrary DOM content in the component.
 
 ### Exercise 3: Bonus
 
