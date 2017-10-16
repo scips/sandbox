@@ -18,6 +18,12 @@ You need a clear interface between the components to split the work and share th
 * It will use a virtual dom and a copy of the virtual dom then compare both (previous and actual) and determine what to do on the diff between the 2.
 * Why using virtual dom? To reduce the way we touch the dom, because dom is slow. And going through a tree of items is really fast. It also garantee that we only change the DOM that have change and not everything
 
+### Vue intercept mutable methods
+
+In arrays it intercept push, pull, splice, reverse, sort ...
+
+In arrays it doesn't intercept immutable methods such as concat
+
 ### Bindings
 
 #### Mustache templating system
@@ -142,11 +148,34 @@ by default if no args are passed to the method the native event object is passed
 
     <input :value='todo' @input="add" />
 
+and in vue
+
+
+
 Than can be replaced by
 
-    <input v-model="todo" />
+    <input v-model="newTodo" />
 
 v-model is just a sugar that do binding + data modification handling
+
+You will get a warning because it's not declared.
+
+If it's not declared that make things confusing, need a source of truth in one place and it should be in javascript not in the template.
+
+So we need to delcare it in the vue app
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        todos: [
+            {text: 'Learn Javascript', done: true},
+            {text: 'Learn Vue', done: false},
+        ],
+        newTodo: ''
+      },
+      methods: {
+
+
 
 ### Modifiers
 

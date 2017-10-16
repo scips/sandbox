@@ -5,7 +5,7 @@
 <!-- DOM -->
 
 <div id="app">
-    <input @keyup.enter="add"/>
+    <input v-model="newTodo" @keyup.enter="addNewTodo" />
     <ul>
         <li v-for="todo in todos" :class="{done: todo.done}" @click="toggle(todo)">
             {{ todo.text }}
@@ -27,15 +27,15 @@ const vm = new Vue({
         {text: 'Learn Javascript', done: true},
         {text: 'Learn Vue', done: false},
     ],
-    todoitem: ''
+    newTodo: ''
   },
   methods: {
     toggle(todo) {
         todo.done = !todo.done;
     },
-    add(event){
-        console.log(event.target.value);
-        this.todos.push({text: event.target.value, done: false});
+    addNewTodo(){
+        console.log(this.newTodo);
+        this.todos.push({text: this.newTodo, done: false});
     }
   }
 }).$mount("#app")
