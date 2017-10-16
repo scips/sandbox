@@ -529,6 +529,8 @@ could be used to clean a timer (setInterval, ...).
 
 #### Sync modifier
 
+[Two way example](two-way.html)
+
 If you want to change some value you can write something like that
 
     <div id="el">
@@ -550,6 +552,8 @@ If you want to change some value you can write something like that
     })
 
 This will break at first click, you cannot change the value foo like this
+
+[Two way example](two-way-sync.html)
 
 
 

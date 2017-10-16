@@ -12,7 +12,7 @@
     // Register the component globaly
     Vue.component('child', {
         props: ['foo'],
-        template: '<div @click="foo = 123">{{ foo }}</div>'
+        template: `<div @click="$emit('update:foo','bar')">{{ foo }}</div>`
     })
 
     var vm = new Vue({
@@ -20,6 +20,7 @@
         data: {
             msg: 'hello',
             foo: 'some message'
-        }
+        },
+
     })
 </script>
