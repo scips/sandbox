@@ -5,17 +5,23 @@
 
 <div id="app">
   <my-input
-    :value="foo"
-    @input="(newval) => foo = newVal"
+    v-model="foo"
+    label="hello"
     ></my-input>
 </div>
 
+<template id="my-input">
+      <div>
+        <span>{{ label }}</span>
+        <input :value="value"
+          @input="$emit('input', $event.target.value)">
+      </div>
+</template>
+
 <script>
     Vue.component('my-input', {
-      props: ['value'],
-      template: `
-      <input :value="value"
-        @input="$emit('input', $event.target.value)">`
+      props: ['value', 'label'],
+      template: '#my-input'
     })
 
     const vm = new Vue({
