@@ -1,14 +1,18 @@
-<script src="https://unpkg.com/vue/"></script>
+<script src="https://unpkg.com/vue"></script>
+
+<!-- DOM -->
 
 <div id="app">
   {{ message }}
 </div>
 
+<!-- Code + Data -->
+
 <script>
-var app = new Vue({
+const vm = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!'
   }
-})
+}).$mount("#app")
 </script>
