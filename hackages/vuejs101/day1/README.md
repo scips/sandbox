@@ -60,8 +60,21 @@ You can bind a lot of things: **class**, **style**
 #### template
 
 The template block is an abstract component treated as a block
+They only exist in the virtual dom. v-show has no effect on virtual dom element.
 
 
+#### v-if
+
+Completely remove the element.
+If it's used once, it's better to use v-if (especially when it's not supposed to be there).
+
+#### v-show
+
+Hide the component (css). Use it if the content is toggle very often. It only works with real DOM element (not template...)
+
+#### v-for
+
+you can use either **in** or **of** and it does a for around them and reproduce the current item
 
 ### Security rules
 
