@@ -5,13 +5,16 @@
 <!-- DOM -->
 
 <div id="app">
-    <div v-for="(item, i) in arr" :key="item.id">
-        {{ item.text }}
+    <div v-if="ok" key="one">
+        One
+    </div>
+    <div v-else="ok" key="two">
+        Two
     </div>
 </div>
 
 <pre>
-    in console, do: vm.arr.reverse()
+    in console, do: vm.ok = false
 </pre>
 <!-- Code + Data -->
 
@@ -19,11 +22,7 @@
 const vm = new Vue({
   el: '#app',
   data: {
-    arr: [
-        {text: 'a', id: 0},
-        {text: 'b', id: 1},
-        {text: 'b', id: 2},
-    ]
+    ok: true
   }
 }).$mount("#app")
 </script>
