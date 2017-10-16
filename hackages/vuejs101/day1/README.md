@@ -227,7 +227,75 @@ then
 
 ### Computed
 
-Computed data are just function that use data and are computed everytime the data linked to it has changed
+Computed data are just function that use data and are computed everytime the data linked to it has changed.
+
+What if someone use Date.now() inside computed properties.
+
+For instance:
+
+    computed: {
+        myMessage () {
+            return this.message + Date.now()
+        }
+    }
+
+You need to make the time a dependency
+
+    data: {
+        now: Date.now()
+    },
+    computed: {
+        myMessage () {
+            return this.message + this.now
+        }
+    }
+
+#### computed get, set
+
+Watchout using get / set in computed stuff you must keep consistency because you will modify some data.
+
+    computed: {
+        myMessage: {
+            get () {
+                return this.message + 1
+            },
+            set (val) {
+                this.msg = val - 1
+            }
+        }
+    }
+
+### Watch
+
+Most of the time, you don't need watch
+
+#### When to use watch?
+
+When you need to compare old and new value specifically
+
+In things that cannot be incorporated in the vue component: API, Canvas paint, ... anything that has side effects
+
+    data: {
+        msg: '',
+        arr: [1, 2, 3]
+    },
+    watch: {
+        msg (newValue, oldValue) {
+            // side effects
+            // sending api request to the server
+            // drawing to canvas
+        },
+        arr (newValue, oldValue) {
+            // is using reference so it's pointing to the same value
+        }
+    }
+
+If you want to watch an array you need to change the array by overwriting it.
+
+    vm.arr.push(4) // will simply mutate the object
+    vm.arr = vm.arr.concat(5) // will work because the newValue and oldValue are refering to different references
+
+
 
 ### Security rules
 
