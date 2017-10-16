@@ -21,8 +21,8 @@
             :class="{ done: todo.done }"
             :todo="todo"
             :key="todo.id"
-            @toggle="toggleTodo(todo)"
-            @edit="editTodo"></todo>
+            @toggle="toggleTodo"
+            @edit="editTodo"></todo-item>
     </div>
 
   </ul>
@@ -62,7 +62,7 @@
                 this.isEditing = false
             },
             toggle () {
-                this.$emit('toggle')
+                this.$emit('toggle', this.todo)
             }
         }
     })
