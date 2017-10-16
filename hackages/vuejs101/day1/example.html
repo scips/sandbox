@@ -8,24 +8,11 @@
     <div v-for="item in arr">
         {{ item }}
     </div>
-    <span v-for="item in arr">{{ item }}</span>
-    <div v-for="(item, index) in arr">
-        {{ index }} - {{ item }}
-    </div>
-    <div v-for="(item, key, index) in obj">
-        {{ index }} - {{ key }} - {{ item }}
-    </div>
-    <div>
-        <span v-for="i in 10">{{ i }},</span>
-    </div>
-    <div>
-    <span v-for="(_,i) in 10">{{ i }},</span>
-    </div>
-    <div>
-        <span v-for="i in longarr.slice(0,5)">{{ i }},</span>
-    </div>
 </div>
 
+<pre>
+    in console, do: vm.arr.reverse()
+</pre>
 <!-- Code + Data -->
 
 <script>

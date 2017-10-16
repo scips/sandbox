@@ -13,6 +13,11 @@ You don't have a good way to divide the work until you have a framework that all
 
 You need a clear interface between the components to split the work and share the work. As long as the public API (Interface) stay consistant.
 
+Vue use: Virtual dom
+
+* It will use a virtual dom and a copy of the virtual dom then compare both (previous and actual) and determine what to do on the diff between the 2.
+* Why using virtual dom? To reduce the way we touch the dom, because dom is slow. And going through a tree of items is really fast. It also garantee that we only change the DOM that have change and not everything
+
 ### Bindings
 
 #### Mustache templating system
@@ -74,7 +79,9 @@ Hide the component (css). Use it if the content is toggle very often. It only wo
 
 #### v-for
 
-you can use either **in** or **of** and it does a for around them and reproduce the current item
+you can use either **in** or **of** and it does a for around them and reproduce the current item.
+
+
 
 ### Security rules
 
