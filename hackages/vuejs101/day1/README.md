@@ -13,7 +13,7 @@ You don't have a good way to divide the work until you have a framework that all
 
 You need a clear interface between the components to split the work and share the work. As long as the public API (Interface) stay consistant.
 
-Vue use: Virtual dom
+### Vue use: Virtual dom
 
 * It will use a virtual dom and a copy of the virtual dom then compare both (previous and actual) and determine what to do on the diff between the 2.
 * Why using virtual dom? To reduce the way we touch the dom, because dom is slow. And going through a tree of items is really fast. It also garantee that we only change the DOM that have change and not everything
@@ -81,7 +81,13 @@ Hide the component (css). Use it if the content is toggle very often. It only wo
 
 you can use either **in** or **of** and it does a for around them and reproduce the current item.
 
+#### change in the data -> update the dom
 
+When data change by default only values are modified
+
+Use the **:key** to ensure that the whole dom element will be moved and not just the text inside. This can be usefull for input fields with focus for instance. The focus will be kept after the sort.
+
+A good idea is to use an object with unique ids.
 
 ### Security rules
 

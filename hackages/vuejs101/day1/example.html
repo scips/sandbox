@@ -5,8 +5,8 @@
 <!-- DOM -->
 
 <div id="app">
-    <div v-for="item in arr">
-        {{ item }}
+    <div v-for="(item, i) in arr" :key="item.id">
+        {{ item.text }}
     </div>
 </div>
 
@@ -19,12 +19,11 @@
 const vm = new Vue({
   el: '#app',
   data: {
-    arr: 'abc'.split(''),
-    obj: {
-        a: 'alpha',
-        b: 'beta'
-    },
-    longarr: 'abcdefghijklmnopqrstuvwyz'.split('')
+    arr: [
+        {text: 'a', id: 0},
+        {text: 'b', id: 1},
+        {text: 'b', id: 2},
+    ]
   }
 }).$mount("#app")
 </script>
