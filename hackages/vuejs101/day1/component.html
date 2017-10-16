@@ -4,25 +4,37 @@
 <!-- DOM -->
 
     <div id="el">
-        <my-component></my-component>
-        <my-component></my-component>
-        <my-component></my-component>
+        <todo v-bind:todo="{ text: 'hello', done: true}"></todo>
+        <todo v-bind:todo="{ }"></todo>
+        <todo></todo>
     </div>
 
 <!-- Code + Data -->
 
 <script>
     // Register the component globaly
-    Vue.component('my-component', {
-        template: `<div>{{ msg }}</div>`,
-        data () {
-            return {
-                msg : Math.random()
+    Vue.component('todo', {
+        template: `<div>{{ todo.text }}</div>`,
+        props: {
+            todo: {
+                validator (value) {
+                    const result = typeof value === 'object'
+                        && typeof value.text === 'string'
+                        && value.text.length > 0
+                    if (!result) {
+                        console.error("Bad props value for todo")
+                    }
+                },
+                type: Object,
+                required: true,
+                default: () => ({ text: 'foo '+Math.random(), done: false})
             }
         }
     })
 
     new Vue({
-        el: '#el'
+        el: '#el',
+        data: {
+        }
     })
 </script>

@@ -314,6 +314,86 @@ Don't declare a **data** section in vue component because the data will be share
 
 You need to use the **data: () =>** or the shorter version **data () {}** to reate a fresh copy of data for every new instance.
 
+### Communication between parent and component
+
+#### Using props
+
+**props** are property of the component, it is a custom attribute
+
+    <div id="el">
+        <todo v-bind:todo="{ text: 'hello'}"></todo>
+    </div>
+
+    Vue.component('todo', {
+        template: `<div>{{ todo.text }}</div>`,
+        props: ['todo']
+    })
+
+Will handle the todo property from attribute
+
+##### Specific type check
+
+    Vue.component('todo', {
+        template: `<div>{{ todo.text }}</div>`,
+        props: {
+            todo: Object
+        }
+    })
+
+Now it will check for an object
+
+##### Even more specific checking + default values
+
+    <div id="el">
+        <todo v-bind:todo="{ text: 'hello'}"></todo>
+        <todo></todo>
+        <todo></todo>
+    </div>
+
+    Vue.component('todo', {
+        template: `<div>{{ todo.text }}</div>`,
+        props: {
+            todo: {
+                type: Object,
+                required: true,
+                default: () => ({ text: 'foo '+Math.random()})
+            }
+        }
+    })
+
+default must be a function otherwise all occurence will share the same object reference
+
+##### Validators
+
+You can create complex validator by simply specifying the validator in the props
+
+    <div id="el">
+        <todo v-bind:todo="{ text: 'hello'}"></todo>
+        <todo v-bind:todo="{ }"></todo>
+        <todo></todo>
+    </div>
+
+    Vue.component('todo', {
+        template: `<div>{{ todo.text }}</div>`,
+        props: {
+            todo: {
+                validator (value) {
+                    const result = typeof value === 'object'
+                        && typeof value.text === 'string'
+                        && value.text.length > 0
+                    if (!result) {
+                        console.error("Bad props value for todo")
+                    }
+                },
+                type: Object,
+                required: true,
+                default: () => ({ text: 'foo '+Math.random()})
+            }
+        }
+    })
+
+You will have an error for the second component because this is an object but not the right type (in this case must have text property with length > 0)
+
 
 
 ### Security rules
