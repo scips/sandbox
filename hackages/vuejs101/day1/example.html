@@ -5,12 +5,8 @@
 <!-- DOM -->
 
 <div id="app">
-    <input v-model="newTodo" @keyup.enter="addNewTodo" />
-    <ul>
-        <li v-for="todo in todos" :class="{done: todo.done}" @click="toggle(todo)">
-            {{ todo.text }}
-        </li>
-    </ul>
+    <input v-model="checked" type="checkbox" />
+    {{ checked }}
 </div>
 
 <!-- Code + Data -->
@@ -23,20 +19,9 @@
 const vm = new Vue({
   el: '#app',
   data: {
-    todos: [
-        {text: 'Learn Javascript', done: true},
-        {text: 'Learn Vue', done: false},
-    ],
-    newTodo: ''
+    checked: true
   },
   methods: {
-    toggle(todo) {
-        todo.done = !todo.done;
-    },
-    addNewTodo(){
-        console.log(this.newTodo);
-        this.todos.push({text: this.newTodo, done: false});
-    }
   }
 }).$mount("#app")
 </script>
