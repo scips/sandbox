@@ -560,6 +560,24 @@ This will break at first click, you cannot change the value foo like this
 
 [start with todo component html](todo-component.html)
 
+##### The contract
+
+        <todo-item
+            v-for="todo in filteredTodos"
+            :class="{ done: todo.done }"
+            :todo="todo"
+            :key="todo.id"
+            @toggle="toggleTodo"
+            @edit="editTodo"></todo-item>
+
+todo-item must have:
+
+* a toggle method
+* an edit method
+* a todo item with a key
+
+
+
 **Challenge**:
 * turn each todo into a component
 * remember the props down, up events pattern

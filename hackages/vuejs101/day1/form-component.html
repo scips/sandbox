@@ -1,0 +1,27 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+
+</style>
+
+<div id="app">
+  <my-input
+    :value="foo"
+    @input="(newval) => foo = newVal"
+    ></my-input>
+</div>
+
+<script>
+    Vue.component('my-input', {
+      props: ['value'],
+      template: `
+      <input :value="value"
+        @input="$emit('input', $event.target.value)">`
+    })
+
+    const vm = new Vue({
+      data: {
+        foo: 'bar'
+      }
+    }).$mount('#app')
+
+</script>
