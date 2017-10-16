@@ -5,10 +5,10 @@
 <!-- DOM -->
 
 <div id="app">
-    <div :class="someVariable">Click me</div>
-    <!-- Won't work because of '-'
-    <div :style="{ font-size: 14px}">14px text</div>-->
-    <div :style="{ fontSize: `${size}px` }">14px text</div>
+    <template v-if="ok">
+        <div>Ok is true</div>
+        <div>Ok is true</div>
+    </template>
 </div>
 
 <!-- Code + Data -->
@@ -17,8 +17,7 @@
 const vm = new Vue({
   el: '#app',
   data: {
-    someVariable: ['foo', 'bar', 'active'],
-    size: 14
+    ok: true
   }
 }).$mount("#app")
 </script>

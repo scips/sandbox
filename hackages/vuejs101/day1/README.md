@@ -45,6 +45,24 @@ Any attrivute that start with **v-** is a javscript expression
 
     <div v-html="someHTML + 'foo'"></div>
 
+#### v-pre
+
+Is not rendered on purpose
+
+#### v-bind (or simply ':')
+
+**v-bind:id** or **:id**: bind dynamically html attribute to data. In this case this is the id attribute of the html dom element.
+
+You can bind a lot of things: **class**, **style**
+
+**:** is the shortcut of v-bind
+
+#### template
+
+The template block is an abstract component treated as a block
+
+
+
 ### Security rules
 
 Don't ever use component that you can't control/trust
