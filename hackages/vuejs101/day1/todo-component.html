@@ -16,37 +16,47 @@
     @keyup.enter="addNewTodo">
   <ul>
     <div id="el">
-        <todo
+        <todo-item
             v-for="todo in filteredTodos"
             :class="{ done: todo.done }"
             :todo="todo"
             :key="todo.id"
-            @toggle="toggleTodo(todo)"></todo>
+            @toggle="toggleTodo(todo)"
+            @edit="editTodo(todo, arguments[0])"></todo>
     </div>
 
   </ul>
 </div>
 
+<template id="todo-template">
+    <li :class="{ done: todo.done }">
+        <span v-if="!isEditing" @dblclick="isEditing = true">{{ todo.text }}</span>
+        <!-- Don't bind to v-model otherwise is bad practice for instance no cancel possible -->
+        <input v-else
+            @keyup.enter="onEditDone"
+            @blur="isEditing = false"
+            :value="todo.text"/>
+    </li>
+</template>
+
 <script>
-    Vue.component('todo', {
-        template: `
-        <div @click="isEditing?$emit('toggle-editing'):$emit('toggle')">
-            <input type="checkbox" v-model="todo.done">
-                <span @dblclick="isEditing = !isEditing">
-                    <span v-if="!isEditing">{{ todo.text }}</span>
-                    <span v-else="!isEditing"><input v-model="todo.text" @keyup.enter="isEditing = !isEditing"/></span>
-                </span> {{ isEditing?"Editing... press enter to confirm":"" }}
-        </div>`,
+    Vue.component('todo-item', {
+        template: '#todo-template',
         props: {
             todo: {
                 type: Object,
-                required: true,
-                default: () => ({ text: 'foo '+Math.random(), done: false})
+                required: true
             }
         },
         data () {
             return {
                 isEditing: false
+            }
+        },
+        methods: {
+            onEditDone () {
+                this.$emit('edit', event.target.value)
+                this.isEditing = false
             }
         }
     })
@@ -58,8 +68,8 @@
             // Source state
             mode: 'all',
             todos: [
-              { text: 'Learn JavaScript', done: true  },
-              { text: 'Learn Vue', done: false  }
+              { id: 1, text: 'Learn JavaScript', done: true  },
+              { id: 2, text: 'Learn Vue', done: false  }
             ]
           },
         computed: {
@@ -78,6 +88,9 @@
         methods: {
             toggleTodo (todo) {
               todo.done = !todo.done
+            },
+            editTodo (todo, newValue) {
+                todo.text = newValue
             },
             addNewTodo () {
               const newTodo = {
