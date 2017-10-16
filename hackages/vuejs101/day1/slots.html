@@ -1,0 +1,41 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+.app-header {color: red;}
+</style>
+
+<div id="app">
+  <app>
+    <div slot="header">Header!</div>
+    <div slot="footer">Footer!</div>
+    <div slot="content">Content!</div>
+    <span slot="header">additional stuff here</span>
+  </app>
+</div>
+
+<template id="app-tmpl">
+    <div class="app-root">
+      <div class="app-header">
+        <slot name="header"></slot>
+      </div>
+      <div class="app-content">
+        <slot name="content"></slot>
+      </div>
+      <div class="app-footer">
+        <slot name="footer"></slot>
+      </div>
+    </div>
+</template>
+
+<script>
+    Vue.component('app', {
+      props: ['value', 'label'],
+      template: '#app-tmpl'
+    })
+
+    const vm = new Vue({
+      data: {
+        foo: 'bar'
+      }
+    }).$mount('#app')
+
+</script>
