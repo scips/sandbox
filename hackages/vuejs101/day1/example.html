@@ -4,29 +4,22 @@
 </style>
 <!-- DOM -->
 
-<div id="app">
-    <input v-model="checked" type="checkbox" />
-    {{ checked }}
-    <input v-model="radio" value="one" type="radio" />
-    <input v-model="radio" value="two" type="radio" />
-    <input v-model="radio" value="three" type="radio" />
-    {{ radio }}
-</div>
+    <div id="app">
+        <input v-model="multiCheck" value="one" type="checkbox" />
+        <input v-model="multiCheck" value="two" type="checkbox" />
+        <input v-model="multiCheck" value="three" type="checkbox" />
+        {{ multiCheck }}
+    </div>
 
 <!-- Code + Data -->
 
 <script>
-    // 1. use v-for
-    // 2. Each class should have a different visual status :class
-    // 3. If you click on it it should toggle
-    // 4. Add input box
-const vm = new Vue({
-  el: '#app',
-  data: {
-    checked: true,
-    radio: 'three'
-  },
-  methods: {
-  }
-}).$mount("#app")
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        multiCheck: [],
+      },
+      methods: {
+      }
+    }).$mount("#app")
 </script>
