@@ -1,0 +1,28 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+</style>
+<!-- DOM -->
+
+    <div id="el">
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+    </div>
+
+<!-- Code + Data -->
+
+<script>
+    // Register the component globaly
+    Vue.component('my-component', {
+        template: `<div>{{ msg }}</div>`,
+        data () {
+            return {
+                msg : 'foo'
+            }
+        }
+    })
+
+    new Vue({
+        el: '#el'
+    })
+</script>

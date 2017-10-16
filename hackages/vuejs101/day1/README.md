@@ -295,6 +295,25 @@ If you want to watch an array you need to change the array by overwriting it.
     vm.arr.push(4) // will simply mutate the object
     vm.arr = vm.arr.concat(5) // will work because the newValue and oldValue are refering to different references
 
+## Components
+
+To create a **Component** **Class** simply extend Vue
+
+    var Component = Vue.extend(options)
+
+You need to register your component globally
+
+Don't declare a **data** section in vue component because the data will be shared accross all component of the same class.
+
+    Vue.component('my-component', {
+        template: `<div>{{ msg }}</div>`,
+        data: {
+            msg : 'foo'
+        }
+    })
+
+You need to use the **data: () =>** or the shorter version **data () {}** to reate a fresh copy of data for every new instance.
+
 
 
 ### Security rules
