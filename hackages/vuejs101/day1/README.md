@@ -579,6 +579,21 @@ Here below the two version of the same thing
     })
 
 
+#### Execrice TODO + component
+
+[start with todo component html](todo-component.html)
+
+**Challenge**:
+* turn each todo into a component
+* remember the props down, up events pattern
+* Bonus: double click edit todo in pace
+    - hint: use v-if to toggle plaintext -> input box
+    - on enter, emit an event to let parent update todo with new value
+
+
+
+
+
 
 ### Security rules
 
