@@ -7,8 +7,17 @@
 <!-- DOM -->
 
     <div id="el">
-        <todo :class="todo.done?`done`:``" v-for="todo in todos" v-bind:todo="todo" @toggle="toggleTodo(todo)"></todo>
+        <todo :class="todo.done?`done`:``" v-for="todo in todos" :todo="todo" :key="todo.id" @toggle="toggleTodo(todo)"></todo>
     </div>
+    <pre>
+        Click first item, you will see "true"
+
+        In console:
+
+                vm.todos.reverse()
+
+        Now the isEditing is moving thanks to the key attribute
+    </pre>
 
 <!-- Code + Data -->
 
@@ -16,8 +25,8 @@
     // Register the component globaly
     Vue.component('todo', {
         template: `
-        <div @click="$emit('toggle')">
-            {{ todo.text }}
+        <div @click="isEditing = !isEditing">
+            {{ todo.text }} / {{ isEditing }}
         </div>`,
         props: {
             todo: {
@@ -25,15 +34,20 @@
                 required: true,
                 default: () => ({ text: 'foo '+Math.random(), done: false})
             }
+        },
+        data () {
+            return {
+                isEditing: false
+            }
         }
     })
 
-    new Vue({
+    var vm = new Vue({
         el: '#el',
         data: {
             todos: [
-                {text: 'hello', done: true},
-                {text: 'bye', done: false},
+                {text: 'hello', done: true, id: 1},
+                {text: 'bye', done: false, id: 2},
             ]
         },
         methods: {

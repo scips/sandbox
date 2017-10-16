@@ -417,7 +417,110 @@ here the application set the data and change the data state, the logic stays in 
 
 Instead we will use custome event "toggle".
 
+        <todo :class="todo.done?`done`:``" v-for="todo in todos" v-bind:todo="todo" @toggle="toggleTodo(todo)"></todo>
 
+        Vue.component('todo', {
+        template: `
+        <div @click="$emit('toggle')">
+            {{ todo.text }}
+        </div>`,
+        props: {
+            todo: {
+                type: Object,
+                required: true,
+                default: () => ({ text: 'foo '+Math.random(), done: false})
+            }
+        }
+    })
+
+    new Vue({
+        el: '#el',
+        data: {
+            todos: [
+                {text: 'hello', done: true},
+                {text: 'bye', done: false},
+            ]
+        },
+        methods: {
+            toggleTodo (todo) {
+                todo.done = !todo.done
+            }
+        }
+    })
+
+#### Adding keys
+
+Important to add keys. If we manually reverse the todos order some property may not match anymore.
+
+There is a warning in the console that tells us that we need to use key.
+
+For instance:
+
+    <div id="el">
+        <todo :class="todo.done?`done`:``" v-for="todo in todos" v-bind:todo="todo" @toggle="toggleTodo(todo)"></todo>
+    </div>
+
+    Vue.component('todo', {
+        template: `
+        <div @click="isEditing = !isEditing">
+            {{ todo.text }} / {{ isEditing }}
+        </div>`,
+        props: {
+            todo: {
+                type: Object,
+                required: true,
+                default: () => ({ text: 'foo '+Math.random(), done: false})
+            }i
+        },
+        data () {
+            return {
+                isEditing: false
+            }
+        }
+    })
+
+
+Click first item, you will see "true"
+In console type:
+
+        vm.todos.reverse()
+
+The isEditing is linked to the item but the item change without **key** so the state is not maintained and linked.
+So it's good practice to add it to items and link **key** attribute to that *id*
+
+#### Hooks and vue components lifecycle
+
+![VuesJS lifecycle](https://vuejs.org/images/lifecycle.png)
+
+Most usefull hooks are: **created**, **mounted**, **updated**.
+
+Other are for very advanced usage.
+
+##### beforeCreate
+
+##### created
+
+Most usefull
+
+##### beforeMount
+
+Not really usefull, but included because there is a counterpart in other hooks
+
+##### mounted
+
+##### beforeUpdate
+
+##### updated
+
+Associated to DOM update
+
+When you need to do some DOM manipulation (for instance re-mesure the size of the element)
+
+##### beforeDestroy
+
+A component will first destroy his child component before destroy himslef
+
+##### destroyed
 
 ### Security rules
 
