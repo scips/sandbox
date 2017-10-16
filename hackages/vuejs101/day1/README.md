@@ -175,7 +175,69 @@ So we need to delcare it in the vue app
       },
       methods: {
 
+#### v-model
 
+##### Check boxes
+
+        <input v-model="checked" type="checkbox" />
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        checked: true,
+
+Mutliple check box can be binded to one model
+
+##### Radio buttons
+
+Must be have the same v-model and vue will consider them as the same radiobutton
+
+        <input v-model="radio" value="one" type="radio" />
+        <input v-model="radio" value="two" type="radio" />
+        <input v-model="radio" value="three" type="radio" />
+        {{ radio }}
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        checked: true,
+        radio: 'three'
+        ...
+
+## Excercie 1 (next)
+
+### Add checkboxes
+
+    <input v-model="newTodo" @keyup.enter="addNewTodo" />
+    <ul>
+        <li v-for="todo in todos" :class="{done: todo.done}" @click="toggle(todo)">
+            <input type="checkbox" v-model="todo.done"> - {{ todo.text }}
+        </li>
+    </ul>
+
+
+
+      el: '#app',
+      data: {
+        todos: [
+            {text: 'Learn Javascript', done: true},
+            {text: 'Learn Vue', done: false},
+        ],
+        newTodo: ''
+      },
+      methods: {
+        toggle(todo) {
+            todo.done = !todo.done;
+        },
+        addNewTodo(){
+            if (this.newTodo) {
+                this.todos.push({text: this.newTodo, done: false});
+                this.newTodo=''
+            }
+        }
+      }
+
+see https://github.com/vuejs/vue/tree/dev/examples/todomvc
 
 ### Modifiers
 
@@ -224,6 +286,8 @@ then
             @customCheck () => {console.log('test')}
         }
         })
+
+
 
 ### Security rules
 
