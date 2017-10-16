@@ -4,37 +4,31 @@
 </style>
 
 <div id="app">
-  <app>
-    <div slot="header">Header!</div>
-    <div slot="footer">Footer!</div>
-    <div slot="content">Content!</div>
-    <span slot="header">additional stuff here</span>
-  </app>
+  <child>
+    <!-- access to both parent scope and child scope -->
+    <div slot-scope="data">{{ message }} + {{ data.msg }} </div>
+  </child>
 </div>
 
 <template id="app-tmpl">
-    <div class="app-root">
-      <div class="app-header">
-        <slot name="header"></slot>
-      </div>
-      <div class="app-content">
-        <slot name="content"></slot>
-      </div>
-      <div class="app-footer">
-        <slot name="footer"></slot>
-      </div>
+    <div class="child-root">
+        <slot :msg="msg"></slot>
     </div>
 </template>
 
 <script>
-    Vue.component('app', {
-      props: ['value', 'label'],
+    Vue.component('child', {
+      data () {
+        return {
+          msg: 'from child'
+        }
+      },
       template: '#app-tmpl'
     })
 
     const vm = new Vue({
       data: {
-        foo: 'bar'
+        message: 'test'
       }
     }).$mount('#app')
 
