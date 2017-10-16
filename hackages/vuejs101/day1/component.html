@@ -1,10 +1,13 @@
 <script src="https://unpkg.com/vue"></script>
 <style>
+.done {
+    text-decoration: line-through;
+}
 </style>
 <!-- DOM -->
 
     <div id="el">
-        <todo v-for ="todo in todos" v-bind:todo="todo"></todo>
+        <todo :class="todo.done?`done`:``" v-for="todo in todos" v-bind:todo="todo" @toggle="toggleTodo(todo)"></todo>
     </div>
 
 <!-- Code + Data -->
@@ -12,17 +15,12 @@
 <script>
     // Register the component globaly
     Vue.component('todo', {
-        template: `<div>{{ todo.text }}</div>`,
+        template: `
+        <div @click="$emit('toggle')">
+            {{ todo.text }}
+        </div>`,
         props: {
             todo: {
-                validator (value) {
-                    const result = typeof value === 'object'
-                        && typeof value.text === 'string'
-                        && value.text.length > 0
-                    if (!result) {
-                        console.error("Bad props value for todo")
-                    }
-                },
                 type: Object,
                 required: true,
                 default: () => ({ text: 'foo '+Math.random(), done: false})

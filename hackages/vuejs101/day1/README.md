@@ -394,6 +394,29 @@ You can create complex validator by simply specifying the validator in the props
 
 You will have an error for the second component because this is an object but not the right type (in this case must have text property with length > 0)
 
+#### Real app with component
+
+Logic that mutate the variable of an app must stay in the app logic
+
+    new Vue({
+        el: '#el',
+        data: {
+            todos: [
+                {text: 'hello', done: true},
+                {text: 'bye', done: false},
+            ]
+        },
+        methods: {
+            toggleTodo (todo) {
+                todo.done = !todo.done
+            }
+        }
+    })
+
+here the application set the data and change the data state, the logic stays in the application (toggleTodo) it's a good pratcice to avoid deep component issue.
+
+Instead we will use custome event "toggle".
+
 
 
 ### Security rules
