@@ -1,17 +1,14 @@
 <script src="https://unpkg.com/vue"></script>
 <style>
-.active {color: red;}
-.done {color: green; }
-.notdone {color: black;}
+.done {text-decoration: line-through; }
 </style>
 <!-- DOM -->
 
-
 <div id="app">
-    <input v-model="todoitem" v-on:keyup.enter="add"/>
+    <input @keyup.enter="add"/>
     <ul>
-        <li v-for="(item,i) in todos" :class="item.done?'done':'notdone'" @click="toggle(i)">
-            {{ item.text }}
+        <li v-for="todo in todos" :class="{done: todo.done}" @click="toggle(todo)">
+            {{ todo.text }}
         </li>
     </ul>
 </div>
@@ -33,15 +30,12 @@ const vm = new Vue({
     todoitem: ''
   },
   methods: {
-    toggle(index) {
-        if (this.todos[index]) {
-            this.todos[index].done = !this.todos[index].done
-        }
+    toggle(todo) {
+        todo.done = !todo.done;
     },
-    add(elem){
-        console.log(this.todoitem);
-        this.todos.push({text: this.todoitem, done: false});
-        this.todoitem = '';
+    add(event){
+        console.log(event.target.value);
+        this.todos.push({text: event.target.value, done: false});
     }
   }
 }).$mount("#app")

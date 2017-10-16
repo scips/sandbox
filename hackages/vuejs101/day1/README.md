@@ -116,6 +116,86 @@ Need to be linked with a method defined in **methods** section.
 
 ### TODO List
 
+1. use v-for
+2. Each class should have a different visual status :class
+3. If you click on it it should toggle
+
+Basic app
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        todos: [
+            {text: 'Learn Javascript', done: true},
+            {text: 'Learn Vue', done: false},
+        ],
+    ...
+
+
+Once it's done
+
+4. Use an input to add todos
+
+    <input @input="add" />
+
+by default if no args are passed to the method the native event object is passed as argument
+
+    <input :value='todo' @input="add" />
+
+Than can be replaced by
+
+    <input v-model="todo" />
+
+v-model is just a sugar that do binding + data modification handling
+
+### Modifiers
+
+#### @keydown.prevent
+
+prohibit keydown on the element
+
+#### @click.stop
+
+prohibit the click propagation
+
+#### @click.self
+
+prohibit click from sons element to interfer with click in the father element
+
+#### @keyup.enter, (tab, space, 13, 31, arrow-left)
+
+Key modifier that only hanlde 'Enter', (tab, space, enter, 'a', <-)
+
+#### @keyup.shift.ctrl.enter="CtrlShiftEnterPressed"
+
+You can chain modifier with special modifier
+
+#### @keyup.shift.exact="ShiftPressed"
+
+You can use excat to handle specifict key press on special modifier
+
+### Use the decorator pattern to enhance keypress
+
+    function customCheck(fn){
+        return function() {
+            if(...) {
+                return;
+            }
+            fn()
+        }
+    }
+
+then
+
+     const vm = new Vue({
+        data: {
+
+        },
+        methods: {
+            @customCheck () => {console.log('test')}
+        }
+        })
+
 ### Security rules
 
 Don't ever use component that you can't control/trust
