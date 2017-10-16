@@ -21,7 +21,12 @@
 <script>
     Vue.component('my-input', {
       props: ['value', 'label'],
-      template: '#my-input'
+      template: '#my-input',
+      data () {
+        return {
+          internalValue: this.value
+        }
+      }
     })
 
     const vm = new Vue({

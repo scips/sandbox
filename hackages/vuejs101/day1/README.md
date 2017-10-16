@@ -556,9 +556,16 @@ This will break at first click, you cannot change the value foo like this
 [Two way example](two-way-sync.html)
 
 
-#### Execrice TODO + component
+#### Exercise TODO + component
 
 [start with todo component html](todo-component.html)
+
+**Challenge**:
+* turn each todo into a component
+* remember the props down, up events pattern
+* Bonus: double click edit todo in pace
+    - hint: use v-if to toggle plaintext -> input box
+    - on enter, emit an event to let parent update todo with new value
 
 ##### The contract
 
@@ -577,15 +584,16 @@ todo-item must have:
 * a todo item with a key
 
 
+#### Input Components
 
-**Challenge**:
-* turn each todo into a component
-* remember the props down, up events pattern
-* Bonus: double click edit todo in pace
-    - hint: use v-if to toggle plaintext -> input box
-    - on enter, emit an event to let parent update todo with new value
+Create a common set of component that can works with v-model.
+
+V-model by default works only on input element.
+
+See: [form-component.html](form-component.html)
 
 
+#### Slots
 
 
 
