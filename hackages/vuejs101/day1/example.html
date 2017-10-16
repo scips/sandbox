@@ -35,8 +35,10 @@ const vm = new Vue({
         todo.done = !todo.done;
     },
     addNewTodo(){
-        console.log(this.newTodo);
-        this.todos.push({text: this.newTodo, done: false});
+        if (this.newTodo) {
+            this.todos.push({text: this.newTodo, done: false});
+            this.newTodo=''
+        }
     }
   }
 }).$mount("#app")
