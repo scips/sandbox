@@ -173,7 +173,7 @@ Once it's done
 
 **see**:
 * [Exercise 1-1 online](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise1-1.html)
-* [Exercise 1-1 complete code](exercise1-1.html)
+* [Exercise 1-1 complete code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/exercise1-1.html)
 
 
 by default if no args are passed to the method the native event object is passed as argument
@@ -256,7 +256,7 @@ Must be have the same v-model and vue will consider them as the same radiobutton
 
 see []()
 * [Form online](https://scips.github.io/sandbox/hackages/vuejs101/day1/radio-check-select.html)
-* [Form code](radio-check-select.html)
+* [Form code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/radio-check-select.html)
 
 ## Exercise 1-2
 
@@ -297,7 +297,7 @@ see []()
 
 **see**:
 * [Exercise 1-2 online](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise1-2.html)
-* [Exercise 1-2 complete code](exercise1-2.html)
+* [Exercise 1-2 complete code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/exercise1-2.html)
 
 see [TodoMVC](https://github.com/vuejs/vue/tree/dev/examples/todomvc)
 
@@ -740,7 +740,7 @@ This will break at first click, you cannot change the value foo like this
 
 Instead use the **.sync** modifier and emit an update
 
-[Two way example](two-way-sync.html)
+[Two way example](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/two-way-sync.html)
 
 Good practice is to use the **.sync** shortener and in general emit event
 
@@ -773,7 +773,7 @@ Here below the two version of the same thing
 
 ### Exercise 2: TODO + component
 
-[start with todo component html](todo-component.html)
+[start with todo component html](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/todo-component.html)
 
 **Challenge**:
 * turn each todo into a component
@@ -784,11 +784,11 @@ Here below the two version of the same thing
 
 **see**:
 * [Exercise 2](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise2-1.html)
-* [Exercise 2 code](exercise2-1.html)
+* [Exercise 2 code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/exercise2-1.html)
 * [Solution Exercise 2](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise2-2.html)
-* [Solution Exercise 2 code](exercise2-2.html)
+* [Solution Exercise 2 code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/exercise2-2.html)
 * [Solution Exercise 2 even better](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise2-3.html)
-* [Solution Exercise 2 even better code](exercise2-3.html)
+* [Solution Exercise 2 even better code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/exercise2-3.html)
 
 #### The component contract
 
@@ -821,7 +821,7 @@ V-model by default works only on native input element.
 But you can create your own input element and make it works with v-model.
 
 **See:**
-* [Own form component code](form-component.html)
+* [Own form component code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/form-component.html)
 * [Own form component in action](https://scips.github.io/sandbox/hackages/vuejs101/day1/form-component.html)
 
 ### Slots
@@ -830,13 +830,13 @@ Usefull to combine and append element together then render them in specific sect
 
 **see**:
 * [Slots Placeholder](https://scips.github.io/sandbox/hackages/vuejs101/day1/slots-placeholder.html)
-* [Slots Placeholder code](slots-placeholder.html)
+* [Slots Placeholder code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/slots-placeholder.html)
 
 Also slots have access to parent and to their own scope.
 
 **see**:
 * [Slots Placeholder](https://scips.github.io/sandbox/hackages/vuejs101/day1/slots-data-access.html)
-* [Slots Placeholder code](slots-data-access.html)
+* [Slots Placeholder code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/slots-data-access.html)
 
 Usage: Calendar picker or list&lt;component&gt;. It allows to inject arbitrary DOM content in the component.
 
@@ -844,7 +844,7 @@ Usage: Calendar picker or list&lt;component&gt;. It allows to inject arbitrary D
 
 Create a select component and expose it as a v-model interface
 
-[bonus-vmodel-interface.html](bonus-vmodel-interface.html)
+[bonus-vmodel-interface.html](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/bonus-vmodel-interface.html)
 
 ## Security Remarks
 
