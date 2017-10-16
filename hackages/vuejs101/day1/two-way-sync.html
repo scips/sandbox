@@ -3,7 +3,8 @@
 
     <div id="el">
         {{ msg }}
-        <child :foo.sync="foo"></child>
+        <child :foo.sync="msg1"></child>
+        <child :foo="msg2" @update:foo="val => msg2 = val"></comp>
     </div>
 
 <!-- Code + Data -->
@@ -19,7 +20,8 @@
         el: '#el',
         data: {
             msg: 'hello',
-            foo: 'some message'
+            msg1: 'some message',
+            msg2: 'some other message'
         },
 
     })

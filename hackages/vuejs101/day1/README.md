@@ -555,6 +555,29 @@ This will break at first click, you cannot change the value foo like this
 
 [Two way example](two-way-sync.html)
 
+Good practice is to use the **.sync** shortener and in general emit event
+
+Here below the two version of the same thing
+
+    <div id="el">
+        {{ msg }}
+        <child :foo.sync="msg1"></child>
+        <child :foo="msg2" @update:foo="val => msg2 = val"></comp>
+    </div>
+
+    Vue.component('child', {
+        props: ['foo'],
+        template: `<div @click="$emit('update:foo','bar')">{{ foo }}</div>`
+    })
+    var vm = new Vue({
+        el: '#el',
+        data: {
+            msg: 'hello',
+            msg1: 'some message',
+            msg2: 'some other message'
+        },
+    })
+
 
 
 ### Security rules
