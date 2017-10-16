@@ -1,0 +1,93 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+.done {
+  text-decoration: line-through;
+}
+</style>
+
+<div id="app">
+  <p>
+    <label v-for="m in modes">
+      <input type="radio" :value="m" v-model="mode"> {{ m }}
+    </label>
+  </p>
+  <input
+    v-model="newTodo"
+    @keyup.enter="addNewTodo">
+  <ul>
+    <div id="el">
+        <todo
+            v-for="todo in filteredTodos"
+            :class="{ done: todo.done }"
+            :todo="todo"
+            :key="todo.id"
+            @toggle="toggleTodo(todo)"></todo>
+    </div>
+
+  </ul>
+</div>
+
+<script>
+    Vue.component('todo', {
+        template: `
+        <div @click="isEditing?$emit('toggle-editing'):$emit('toggle')">
+            <input type="checkbox" v-model="todo.done">
+                <span @dblclick="isEditing = !isEditing">
+                    <span v-if="!isEditing">{{ todo.text }}</span>
+                    <span v-else="!isEditing"><input v-model="todo.text" @keyup.enter="isEditing = !isEditing"/></span>
+                </span> {{ isEditing?"Editing... press enter to confirm":"" }}
+        </div>`,
+        props: {
+            todo: {
+                type: Object,
+                required: true,
+                default: () => ({ text: 'foo '+Math.random(), done: false})
+            }
+        },
+        data () {
+            return {
+                isEditing: false
+            }
+        }
+    })
+
+    const vm = new Vue({
+        data: {
+            modes: ['all', 'done', 'not done'],
+            newTodo: '',
+            // Source state
+            mode: 'all',
+            todos: [
+              { text: 'Learn JavaScript', done: true  },
+              { text: 'Learn Vue', done: false  }
+            ]
+          },
+        computed: {
+            // Derived state
+            filteredTodos () {
+              switch (this.mode) {
+                case 'done':
+                  return this.todos.filter(todo => todo.done)
+                case 'not done':
+                  return this.todos.filter(todo => !todo.done)
+                default:
+                  return this.todos
+              }
+            }
+        },
+        methods: {
+            toggleTodo (todo) {
+              todo.done = !todo.done
+            },
+            addNewTodo () {
+              const newTodo = {
+                text: this.newTodo,
+                done: false
+              }
+              this.todos.push(newTodo)
+              this.newTodo = ''
+            }
+        }
+    }).$mount('#app')
+
+</script>
