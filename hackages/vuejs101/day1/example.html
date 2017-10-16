@@ -5,12 +5,10 @@
 <!-- DOM -->
 
 <div id="app">
-    <div v-if="ok" key="one">
-        One
+    <div>
+        {{ message }}
     </div>
-    <div v-else="ok" key="two">
-        Two
-    </div>
+    <button @click="rev">Reverse Message</button>
 </div>
 
 <pre>
@@ -22,7 +20,12 @@
 const vm = new Vue({
   el: '#app',
   data: {
-    ok: true
+    message: 'Hello'
+  },
+  methods: {
+    rev() {
+        this.message = this.message.split('').reverse().join('')
+    }
   }
 }).$mount("#app")
 </script>

@@ -68,7 +68,7 @@ The template block is an abstract component treated as a block
 They only exist in the virtual dom. v-show has no effect on virtual dom element.
 
 
-#### v-if
+#### v-if / v-else
 
 Completely remove the element.
 If it's used once, it's better to use v-if (especially when it's not supposed to be there).
@@ -88,6 +88,29 @@ When data change by default only values are modified
 Use the **:key** to ensure that the whole dom element will be moved and not just the text inside. This can be usefull for input fields with focus for instance. The focus will be kept after the sort.
 
 A good idea is to use an object with unique ids.
+
+**key** are used to identify different element in the differenciation process (while going through the tree). **Key** is especially used for element identification.
+
+#### Event handling v-on / @
+
+Need to be linked with a method defined in **methods** section.
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello'
+      },
+      methods: {
+        rev() {
+            this.message = this.message.split('').reverse().join('')
+        }
+      }
+    }).$mount("#app")
+
+**@** is the shortcut for v-on
+
+    <button v-on:click="rev">Reverse Message</button>
+    <button @click="rev">Reverse Message</button>
 
 ### Security rules
 
