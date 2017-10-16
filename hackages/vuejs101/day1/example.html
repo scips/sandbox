@@ -8,7 +8,7 @@
     <input v-model="newTodo" @keyup.enter="addNewTodo" />
     <ul>
         <li v-for="todo in todos" :class="{done: todo.done}" @click="toggle(todo)">
-            {{ todo.text }}
+            <input type="checkbox" v-model="todo.done"> - {{ todo.text }}
         </li>
     </ul>
 </div>
@@ -20,6 +20,7 @@
     // 2. Each class should have a different visual status :class
     // 3. If you click on it it should toggle
     // 4. Add input box
+    // 5. Add check box to each todo
 const vm = new Vue({
   el: '#app',
   data: {
