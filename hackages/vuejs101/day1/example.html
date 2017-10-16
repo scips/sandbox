@@ -5,12 +5,14 @@
 <!-- DOM -->
 
     <div id="app">
-        <select v-model="multiSelect" multiple="true">
-            <option>One</option>
-            <option>Two</option>
-            <option>Three</option>
-        </select>
-        {{ multiSelect }}
+        <label v-for="m in modes">
+            <input type="radio" :value="m" v-model="mode">{{ m }}
+        </label>
+        <ul>
+            <li v-for="todo in filteredTodos">
+                <input type="checkbox" v-model="todo.done"> - {{ todo.text }}
+            </li>
+        </ul>
     </div>
 
 <!-- Code + Data -->
@@ -19,9 +21,28 @@
     const vm = new Vue({
       el: '#app',
       data: {
-        multiSelect: [],
+        mode: 'all',
+        modes: ['all', 'done', 'notdone'],
+        newTodo: '',
+        todos: [
+            {text: 'Learn JS', done: true},
+            {text: 'Learn VueJS', done: false},
+        ],
       },
       methods: {
+
+      },
+      computed: {
+        filteredTodos() {
+            switch(this.mode) {
+                case 'done':
+                    return this.todos.filter(todo => todo.done)
+                case 'notdone':
+                    return this.todos.filter(todo => !todo.done)
+                default:
+                    return this.todos
+            }
+        }
       }
     }).$mount("#app")
 </script>
