@@ -30,6 +30,8 @@ In arrays it doesn't intercept immutable methods such as concat
 
 #### Mustache templating system
 
+{% raw %}
+
     {{ }} // is the mustache template system
 
 inside there is a javascript expression => expression are evaluated to get a value. It is not a statement.
@@ -664,6 +666,8 @@ Here below the two version of the same thing
             msg2: 'some other message'
         },
     })
+
+{% endraw %}
 
 ### Exercise 2: TODO + component
 
