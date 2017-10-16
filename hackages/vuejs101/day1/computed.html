@@ -1,0 +1,28 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+</style>
+
+<!-- DOM -->
+
+    <div id="el">
+        <input v-model="msg">
+        <p>{{ msg }}</p>
+        <p>{{ reverseMsg }}</p>
+    </div>
+
+<!-- Code + Data -->
+
+<script>
+    var vm = new Vue({
+      el: '#el',
+      data: {
+        msg: 'Hello',
+      },
+      computed: {
+        reverseMsg() { return this.msg.split('').reverse().join('') }
+      },
+      methods: {
+      }
+    })
+</script>
+

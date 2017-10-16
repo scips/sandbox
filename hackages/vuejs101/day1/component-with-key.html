@@ -1,0 +1,59 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+.done {
+    text-decoration: line-through;
+}
+</style>
+<!-- DOM -->
+
+    <div id="el">
+        <todo :class="todo.done?`done`:``" v-for="todo in todos" :todo="todo" :key="todo.id" @toggle="toggleTodo(todo)"></todo>
+    </div>
+    <pre>
+        Click first item, you will see "true"
+
+        In console:
+
+                vm.todos.reverse()
+
+        Now the isEditing is moving thanks to the key attribute
+    </pre>
+
+<!-- Code + Data -->
+
+<script>
+    // Register the component globaly
+    Vue.component('todo', {
+        template: `
+        <div @click="isEditing = !isEditing">
+            {{ todo.text }} / {{ isEditing }}
+        </div>`,
+        props: {
+            todo: {
+                type: Object,
+                required: true,
+                default: () => ({ text: 'foo '+Math.random(), done: false})
+            }
+        },
+        data () {
+            return {
+                isEditing: false
+            }
+        }
+    })
+
+    var vm = new Vue({
+        el: '#el',
+        data: {
+            todos: [
+                {text: 'hello', done: true, id: 1},
+                {text: 'bye', done: false, id: 2},
+            ]
+        },
+        methods: {
+            toggleTodo (todo) {
+                todo.done = !todo.done
+            }
+        }
+    })
+</script>

@@ -1,0 +1,45 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+.done {text-decoration: line-through; }
+</style>
+<!-- DOM -->
+
+<div id="app">
+    <input v-model="newTodo" @keyup.enter="addNewTodo" />
+    <ul>
+        <li v-for="todo in todos" :class="{done: todo.done}" @click="toggle(todo)">
+            <input type="checkbox" v-model="todo.done"> - {{ todo.text }}
+        </li>
+    </ul>
+</div>
+
+<!-- Code + Data -->
+
+<script>
+    // 1. use v-for
+    // 2. Each class should have a different visual status :class
+    // 3. If you click on it it should toggle
+    // 4. Add input box
+    // 5. Add check box to each todo
+const vm = new Vue({
+  el: '#app',
+  data: {
+    todos: [
+        {text: 'Learn Javascript', done: true},
+        {text: 'Learn Vue', done: false},
+    ],
+    newTodo: ''
+  },
+  methods: {
+    toggle(todo) {
+        todo.done = !todo.done;
+    },
+    addNewTodo(){
+        if (this.newTodo) {
+            this.todos.push({text: this.newTodo, done: false});
+            this.newTodo=''
+        }
+    }
+  }
+}).$mount("#app")
+</script>
