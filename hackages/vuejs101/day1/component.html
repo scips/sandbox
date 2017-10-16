@@ -4,9 +4,7 @@
 <!-- DOM -->
 
     <div id="el">
-        <todo v-bind:todo="{ text: 'hello', done: true}"></todo>
-        <todo v-bind:todo="{ }"></todo>
-        <todo></todo>
+        <todo v-for ="todo in todos" v-bind:todo="todo"></todo>
     </div>
 
 <!-- Code + Data -->
@@ -35,6 +33,15 @@
     new Vue({
         el: '#el',
         data: {
+            todos: [
+                {text: 'hello', done: true},
+                {text: 'bye', done: false},
+            ]
+        },
+        methods: {
+            toggleTodo (todo) {
+                todo.done = !todo.done
+            }
         }
     })
 </script>
