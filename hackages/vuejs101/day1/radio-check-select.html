@@ -1,0 +1,46 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+.done {text-decoration: line-through; }
+</style>
+<!-- DOM -->
+    <h1>V-model on native input</h1>
+    <div id="app">
+        <div>
+            <h2>Radio</h2>
+            <p>Current value is: <strong>{{ formRadio }}</strong></p>
+            <label><input type="radio" v-model="formRadio" value="one"> One</label>
+            <label><input type="radio" v-model="formRadio" value="two"> Two</label>
+            <label><input type="radio" v-model="formRadio" value="three"> Three</label>
+        </div>
+        <div>
+            <h2>Checkbox</h2>
+            <p>Current value is: <strong>{{ formCheckbox }}</strong></p>
+            <label><input type="checkbox" v-model="formCheckbox" value="one"> One</label>
+            <label><input type="checkbox" v-model="formCheckbox" value="two"> Two</label>
+            <label><input type="checkbox" v-model="formCheckbox" value="three"> Three</label>
+        </div>
+        <div>
+            <h2>Mutli-Select</h2>
+            <p>Current value is: <strong>{{ formMultiselect }}</strong></p>
+            <select v-model="formMultiselect" multiple="true">
+                <option>one</option>
+                <option>two</option>
+                <option>three</option>
+            </select>
+        </div>
+    </div>
+
+<!-- Code + Data -->
+
+<script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        formRadio: 'three',
+        formCheckbox: ['one','two'],
+        formMultiselect: ['one','three']
+      },
+      methods: {
+      },
+    }).$mount("#app")
+</script>

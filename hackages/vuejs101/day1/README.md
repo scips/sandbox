@@ -120,7 +120,7 @@ Need to be linked with a method defined in **methods** section.
     <button v-on:click="rev">Reverse Message</button>
     <button @click="rev">Reverse Message</button>
 
-### Exercise 1
+### Exercise 1-1
 
 #### TODO List
 
@@ -146,15 +146,17 @@ Once it's done
 
     <input @input="add" />
 
+
+**see**:
+* [Exercise 1-1 online](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise1-1.html)
+* [Exercise 1-1 complete code](exercise1-1.html)
+
+
 by default if no args are passed to the method the native event object is passed as argument
 
     <input :value='todo' @input="add" />
 
-and in vue
-
-
-
-Than can be replaced by
+and in vue that can be replaced by
 
     <input v-model="newTodo" />
 
@@ -164,7 +166,7 @@ You will get a warning because it's not declared.
 
 If it's not declared that make things confusing, need a source of truth in one place and it should be in javascript not in the template.
 
-So we need to delcare it in the vue app
+So we need to declare it in the vue app
 
     const vm = new Vue({
       el: '#app',
@@ -177,7 +179,83 @@ So we need to delcare it in the vue app
       },
       methods: {
 
+#### Some note on v-model and inputs
 
+##### Check boxes
+
+        <input v-model="checked" type="checkbox" />
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        checked: true,
+
+Mutliple check box can be binded to one model
+
+##### Radio buttons
+
+Must be have the same v-model and vue will consider them as the same radiobutton
+
+        <input v-model="radio" value="one" type="radio" />
+        <input v-model="radio" value="two" type="radio" />
+        <input v-model="radio" value="three" type="radio" />
+        {{ radio }}
+
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        checked: true,
+        radio: 'three'
+        ...
+
+##### Select
+
+            <select v-model="formMultiselect" multiple="true">
+                <option>one</option>
+                <option>two</option>
+                <option>three</option>
+            </select>
+
+see []()
+* [Form online](https://scips.github.io/sandbox/hackages/vuejs101/day1/radio-check-select.html)
+* [Form code](radio-check-select.html)
+
+## Exercise 1-2
+
+### Add checkboxes
+
+    <input v-model="newTodo" @keyup.enter="addNewTodo" />
+    <ul>
+        <li v-for="todo in todos" :class="{done: todo.done}" @click="toggle(todo)">
+            <input type="checkbox" v-model="todo.done"> - {{ todo.text }}
+        </li>
+    </ul>
+
+      el: '#app',
+      data: {
+        todos: [
+            {text: 'Learn Javascript', done: true},
+            {text: 'Learn Vue', done: false},
+        ],
+        newTodo: ''
+      },
+      methods: {
+        toggle(todo) {
+            todo.done = !todo.done;
+        },
+        addNewTodo(){
+            if (this.newTodo) {
+                this.todos.push({text: this.newTodo, done: false});
+                this.newTodo=''
+            }
+        }
+      }
+
+**see**:
+* [Exercise 1-2 online](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise1-2.html)
+* [Exercise 1-2 complete code](exercise1-2.html)
+
+see [TodoMVC](https://github.com/vuejs/vue/tree/dev/examples/todomvc)
 
 ### Modifiers
 
