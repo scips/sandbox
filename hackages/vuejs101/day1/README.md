@@ -225,6 +225,10 @@ then
         }
         })
 
+### Computed
+
+Computed data are just function that use data and are computed everytime the data linked to it has changed
+
 ### Security rules
 
 Don't ever use component that you can't control/trust
