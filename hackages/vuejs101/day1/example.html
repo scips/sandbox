@@ -1,12 +1,14 @@
 <script src="https://unpkg.com/vue"></script>
 <style>
 .active {color: red;}
-.done {color: green;}
+.done {color: green; }
 .notdone {color: black;}
 </style>
 <!-- DOM -->
 
+
 <div id="app">
+    <input v-model="todoitem" v-on:keyup.enter="add"/>
     <ul>
         <li v-for="(item,i) in todos" :class="item.done?'done':'notdone'" @click="toggle(i)">
             {{ item.text }}
@@ -20,19 +22,26 @@
     // 1. use v-for
     // 2. Each class should have a different visual status :class
     // 3. If you click on it it should toggle
+    // 4. Add input box
 const vm = new Vue({
   el: '#app',
   data: {
     todos: [
         {text: 'Learn Javascript', done: true},
         {text: 'Learn Vue', done: false},
-    ]
+    ],
+    todoitem: ''
   },
   methods: {
     toggle(index) {
         if (this.todos[index]) {
             this.todos[index].done = !this.todos[index].done
         }
+    },
+    add(elem){
+        console.log(this.todoitem);
+        this.todos.push({text: this.todoitem, done: false});
+        this.todoitem = '';
     }
   }
 }).$mount("#app")
