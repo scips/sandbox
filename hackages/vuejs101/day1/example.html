@@ -1,9 +1,11 @@
 <script src="https://unpkg.com/vue"></script>
-
+<style>
+.active {color: red;}
+</style>
 <!-- DOM -->
 
 <div id="app">
-    <div v-html="someHTML"></div>
+    <div :class="someVariable">Click me</div>
 </div>
 
 <!-- Code + Data -->
@@ -12,7 +14,7 @@
 const vm = new Vue({
   el: '#app',
   data: {
-    someHTML: "<h1>Test</h1><script>alert('hello')</"+"script>"
+    someVariable: ['foo', 'bar', 'active']
   }
 }).$mount("#app")
 </script>
