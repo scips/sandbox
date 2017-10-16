@@ -8,7 +8,7 @@
     <div>
         {{ message }}
     </div>
-    <button @click="rev">Reverse Message</button>
+    <button @click="rev('l')">Reverse Message</button>
 </div>
 
 <pre>
@@ -23,8 +23,8 @@ const vm = new Vue({
     message: 'Hello'
   },
   methods: {
-    rev() {
-        this.message = this.message.split('').reverse().join('')
+    rev(splitTerm='') {
+        this.message = this.message.split(splitTerm).reverse().join(splitTerm)
     }
   }
 }).$mount("#app")
