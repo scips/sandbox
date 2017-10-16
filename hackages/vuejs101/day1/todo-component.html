@@ -22,7 +22,7 @@
             :todo="todo"
             :key="todo.id"
             @toggle="toggleTodo(todo)"
-            @edit="editTodo(todo, arguments[0])"></todo>
+            @edit="editTodo"></todo>
     </div>
 
   </ul>
@@ -55,7 +55,7 @@
         },
         methods: {
             onEditDone () {
-                this.$emit('edit', event.target.value)
+                this.$emit('edit', this.todo, event.target.value)
                 this.isEditing = false
             }
         }
