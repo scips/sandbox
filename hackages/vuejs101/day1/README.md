@@ -492,7 +492,7 @@ So it's good practice to add it to items and link **key** attribute to that *id*
 
 ![VuesJS lifecycle](https://vuejs.org/images/lifecycle.png)
 
-Most usefull hooks are: **created**, **mounted**, **updated**.
+Most usefull hooks are: **created**, **mounted**, **updated**, **destroyed**.
 
 Other are for very advanced usage.
 
@@ -500,13 +500,15 @@ Other are for very advanced usage.
 
 ##### created
 
-Most usefull
+Very usefull for data and stage manipulation, or to start timers.
 
 ##### beforeMount
 
 Not really usefull, but included because there is a counterpart in other hooks
 
 ##### mounted
+
+When you need to have low level DOM access and want to take some DOM actions
 
 ##### beforeUpdate
 
@@ -521,6 +523,35 @@ When you need to do some DOM manipulation (for instance re-mesure the size of th
 A component will first destroy his child component before destroy himslef
 
 ##### destroyed
+
+Cleaning what you component created outside his own scope.
+could be used to clean a timer (setInterval, ...).
+
+#### Sync modifier
+
+If you want to change some value you can write something like that
+
+    <div id="el">
+        {{ msg }}
+        <child :foo="foo"></child>
+    </div>
+
+    // Register the component globaly
+    Vue.component('child', {
+        props: ['foo'],
+        template: '<div @click="foo = 123">{{ foo }}</div>'
+    })
+    var vm = new Vue({
+        el: '#el',
+        data: {
+            msg: 'hello',
+            foo: 'some message'
+        }
+    })
+
+This will break at first click, you cannot change the value foo like this
+
+
 
 ### Security rules
 
