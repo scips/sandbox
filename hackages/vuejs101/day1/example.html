@@ -1,30 +1,38 @@
 <script src="https://unpkg.com/vue"></script>
 <style>
 .active {color: red;}
+.done {color: green;}
+.notdone {color: black;}
 </style>
 <!-- DOM -->
 
 <div id="app">
-    <div>
-        {{ message }}
-    </div>
-    <button @click="rev('l')">Reverse Message</button>
+    <ul>
+        <li v-for="(item,i) in todos" :class="item.done?'done':'notdone'" @click="toggle(i)">
+            {{ item.text }}
+        </li>
+    </ul>
 </div>
 
-<pre>
-    in console, do: vm.ok = false
-</pre>
 <!-- Code + Data -->
 
 <script>
+    // 1. use v-for
+    // 2. Each class should have a different visual status :class
+    // 3. If you click on it it should toggle
 const vm = new Vue({
   el: '#app',
   data: {
-    message: 'Hello'
+    todos: [
+        {text: 'Learn Javascript', done: true},
+        {text: 'Learn Vue', done: false},
+    ]
   },
   methods: {
-    rev(splitTerm='') {
-        this.message = this.message.split(splitTerm).reverse().join(splitTerm)
+    toggle(index) {
+        if (this.todos[index]) {
+            this.todos[index].done = !this.todos[index].done
+        }
     }
   }
 }).$mount("#app")

@@ -112,6 +112,10 @@ Need to be linked with a method defined in **methods** section.
     <button v-on:click="rev">Reverse Message</button>
     <button @click="rev">Reverse Message</button>
 
+## Execrice 1
+
+### TODO List
+
 ### Security rules
 
 Don't ever use component that you can't control/trust
