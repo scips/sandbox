@@ -1,4 +1,6 @@
-# Hackages 101
+# Hackages - VueJS 101 - day 1
+
+by Evan You - @youyuxi
 
 Wifi: S14-Hackages / H-102017
 
@@ -42,7 +44,7 @@ inside there is a javascript expression => expression are evaluated to get a val
 
     {{ if (foo) {} }}
 
-So how to do conditional?
+So how to do conditional? Simply use ternary operator
 
     {{ ok ? 'true':'false' }}
 
@@ -118,9 +120,9 @@ Need to be linked with a method defined in **methods** section.
     <button v-on:click="rev">Reverse Message</button>
     <button @click="rev">Reverse Message</button>
 
-## Execrice 1
+### Exercise 1
 
-### TODO List
+#### TODO List
 
 1. use v-for
 2. Each class should have a different visual status :class
@@ -203,7 +205,7 @@ You can chain modifier with special modifier
 
 You can use excat to handle specifict key press on special modifier
 
-### Use the decorator pattern to enhance keypress
+##### Use the decorator pattern to enhance keypress
 
     function customCheck(fn){
         return function() {
@@ -218,7 +220,6 @@ then
 
      const vm = new Vue({
         data: {
-
         },
         methods: {
             @customCheck () => {console.log('test')}
@@ -488,7 +489,7 @@ In console type:
 The isEditing is linked to the item but the item change without **key** so the state is not maintained and linked.
 So it's good practice to add it to items and link **key** attribute to that *id*
 
-#### Hooks and vue components lifecycle
+### Hooks and vue components lifecycle
 
 ![VuesJS lifecycle](https://vuejs.org/images/lifecycle.png)
 
@@ -496,38 +497,38 @@ Most usefull hooks are: **created**, **mounted**, **updated**, **destroyed**.
 
 Other are for very advanced usage.
 
-##### beforeCreate
+#### beforeCreate
 
-##### created
+#### created
 
 Very usefull for data and stage manipulation, or to start timers.
 
-##### beforeMount
+#### beforeMount
 
 Not really usefull, but included because there is a counterpart in other hooks
 
-##### mounted
+#### mounted
 
 When you need to have low level DOM access and want to take some DOM actions
 
-##### beforeUpdate
+#### beforeUpdate
 
-##### updated
+#### updated
 
 Associated to DOM update
 
 When you need to do some DOM manipulation (for instance re-mesure the size of the element)
 
-##### beforeDestroy
+#### beforeDestroy
 
 A component will first destroy his child component before destroy himslef
 
-##### destroyed
+#### destroyed
 
 Cleaning what you component created outside his own scope.
 could be used to clean a timer (setInterval, ...).
 
-#### Sync modifier
+### Sync modifier
 
 [Two way example](two-way.html)
 
@@ -538,7 +539,6 @@ If you want to change some value you can write something like that
         <child :foo="foo"></child>
     </div>
 
-    // Register the component globaly
     Vue.component('child', {
         props: ['foo'],
         template: '<div @click="foo = 123">{{ foo }}</div>'
@@ -553,10 +553,29 @@ If you want to change some value you can write something like that
 
 This will break at first click, you cannot change the value foo like this
 
+Instead use the **.sync** modifier and emit an update
+
 [Two way example](two-way-sync.html)
 
+    <div id="el">
+        {{ msg }}
+        <child :foo.sync="foo"></child>
+    </div>
 
-#### Exercise TODO + component
+    Vue.component('child', {
+        props: ['foo'],
+        template: `<div @click="$emit('update:foo','bar')">{{ foo }}</div>`
+    })
+    var vm = new Vue({
+        el: '#el',
+        data: {
+            msg: 'hello',
+            foo: 'some message'
+        },
+    })
+
+
+### Exercise 2: TODO + component
 
 [start with todo component html](todo-component.html)
 
@@ -567,7 +586,7 @@ This will break at first click, you cannot change the value foo like this
     - hint: use v-if to toggle plaintext -> input box
     - on enter, emit an event to let parent update todo with new value
 
-##### The contract
+#### The contract
 
         <todo-item
             v-for="todo in filteredTodos"
@@ -584,7 +603,7 @@ todo-item must have:
 * a todo item with a key
 
 
-#### Input Components
+### Input Components
 
 Create a common set of component that can works with v-model.
 
@@ -593,11 +612,20 @@ V-model by default works only on input element.
 See: [form-component.html](form-component.html)
 
 
-#### Slots
+### Slots
 
+Usefull to combine and append element together then render them in specific section.
 
+Also slots have access to parent and to their own scope.
 
+Usage: Calendar picker or huge list of component. It allows to inject arbitrary DOM content in the component
 
-### Security rules
+### Exercise 3: Bonus
+
+Create a select component and expose it as a v-model interface
+
+[bonus-vmodel-interface.html](bonus-vmodel-interface.html)
+
+## Security Remarks
 
 Don't ever use component that you can't control/trust
