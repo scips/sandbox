@@ -30,25 +30,31 @@ In arrays it doesn't intercept immutable methods such as concat
 
 #### Mustache templating system
 
-{% raw %}
-
+```vue
     {{ }} // is the mustache template system
+```
 
 inside there is a javascript expression => expression are evaluated to get a value. It is not a statement.
 
 **Those are expression**
 
+```vue
     {{ message }}
 
     {{ message.split('').reverse().join('') }}
+```
 
 **This is not an expression**
 
+```vue
     {{ if (foo) {} }}
+```
 
 So how to do conditional? Simply use ternary operator
 
+```vue
     {{ ok ? 'true':'false' }}
+```
 
 ### v-*
 
@@ -57,8 +63,9 @@ Any attrivute that start with **v-** is a javscript expression
 #### v-html
 
 **v-html** is dangerous, use it only on things you can trust
-
+```vue
     <div v-html="someHTML + 'foo'"></div>
+```
 
 #### v-pre
 
@@ -105,6 +112,7 @@ A good idea is to use an object with unique ids.
 
 Need to be linked with a method defined in **methods** section.
 
+```vue
     const vm = new Vue({
       el: '#app',
       data: {
@@ -116,11 +124,14 @@ Need to be linked with a method defined in **methods** section.
         }
       }
     }).$mount("#app")
+```
 
 **@** is the shortcut for v-on
 
+```vue
     <button v-on:click="rev">Reverse Message</button>
     <button @click="rev">Reverse Message</button>
+```
 
 ### Exercise 1-1
 
@@ -132,6 +143,7 @@ Need to be linked with a method defined in **methods** section.
 
 Basic app
 
+```vue
     const vm = new Vue({
       el: '#app',
       data: {
@@ -140,14 +152,14 @@ Basic app
             {text: 'Learn Vue', done: false},
         ],
     ...
-
+```
 
 Once it's done
 
 4. Use an input to add todos
-
+```vue
     <input @input="add" />
-
+```
 
 **see**:
 * [Exercise 1-1 online](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise1-1.html)
@@ -156,11 +168,15 @@ Once it's done
 
 by default if no args are passed to the method the native event object is passed as argument
 
+```vue
     <input :value='todo' @input="add" />
+```
 
 and in vue that can be replaced by
 
+```vue
     <input v-model="newTodo" />
+```
 
 v-model is just a sugar that do binding + data modification handling
 
@@ -170,6 +186,7 @@ If it's not declared that make things confusing, need a source of truth in one p
 
 So we need to declare it in the vue app
 
+```vue
     const vm = new Vue({
       el: '#app',
       data: {
@@ -180,17 +197,20 @@ So we need to declare it in the vue app
         newTodo: ''
       },
       methods: {
+```
 
 #### Some note on v-model and inputs
 
 ##### Check boxes
 
+```vue
         <input v-model="checked" type="checkbox" />
 
     const vm = new Vue({
       el: '#app',
       data: {
         checked: true,
+```
 
 Mutliple check box can be binded to one model
 
@@ -198,6 +218,7 @@ Mutliple check box can be binded to one model
 
 Must be have the same v-model and vue will consider them as the same radiobutton
 
+```vue
         <input v-model="radio" value="one" type="radio" />
         <input v-model="radio" value="two" type="radio" />
         <input v-model="radio" value="three" type="radio" />
@@ -209,14 +230,17 @@ Must be have the same v-model and vue will consider them as the same radiobutton
         checked: true,
         radio: 'three'
         ...
+```
 
 ##### Select
 
+```vue
             <select v-model="formMultiselect" multiple="true">
                 <option>one</option>
                 <option>two</option>
                 <option>three</option>
             </select>
+```
 
 see []()
 * [Form online](https://scips.github.io/sandbox/hackages/vuejs101/day1/radio-check-select.html)
@@ -226,13 +250,16 @@ see []()
 
 ### Add checkboxes
 
+```vue
     <input v-model="newTodo" @keyup.enter="addNewTodo" />
     <ul>
         <li v-for="todo in todos" :class="{done: todo.done}" @click="toggle(todo)">
             <input type="checkbox" v-model="todo.done"> - {{ todo.text }}
         </li>
     </ul>
+```
 
+```vue
       el: '#app',
       data: {
         todos: [
@@ -252,6 +279,7 @@ see []()
             }
         }
       }
+```
 
 **see**:
 * [Exercise 1-2 online](https://scips.github.io/sandbox/hackages/vuejs101/day1/exercise1-2.html)
@@ -287,6 +315,7 @@ You can use excat to handle specifict key press on special modifier
 
 ##### Use the decorator pattern to enhance keypress
 
+```vue
     function customCheck(fn){
         return function() {
             if(...) {
@@ -295,9 +324,11 @@ You can use excat to handle specifict key press on special modifier
             fn()
         }
     }
+```
 
 then
 
+```vue
      const vm = new Vue({
         data: {
         },
@@ -305,6 +336,7 @@ then
             @customCheck () => {console.log('test')}
         }
         })
+```
 
 ### Computed
 
@@ -314,14 +346,17 @@ What if someone use Date.now() inside computed properties.
 
 For instance:
 
+```vue
     computed: {
         myMessage () {
             return this.message + Date.now()
         }
     }
+```
 
 You need to make the time a dependency
 
+```vue
     data: {
         now: Date.now()
     },
@@ -330,11 +365,13 @@ You need to make the time a dependency
             return this.message + this.now
         }
     }
+```
 
 #### computed get, set
 
 Watchout using get / set in computed stuff you must keep consistency because you will modify some data.
 
+```vue
     computed: {
         myMessage: {
             get () {
@@ -345,6 +382,7 @@ Watchout using get / set in computed stuff you must keep consistency because you
             }
         }
     }
+```
 
 ### Watch
 
@@ -356,6 +394,7 @@ When you need to compare old and new value specifically
 
 In things that cannot be incorporated in the vue component: API, Canvas paint, ... anything that has side effects
 
+```vue
     data: {
         msg: '',
         arr: [1, 2, 3]
@@ -370,28 +409,35 @@ In things that cannot be incorporated in the vue component: API, Canvas paint, .
             // is using reference so it's pointing to the same value
         }
     }
+```
 
 If you want to watch an array you need to change the array by overwriting it.
 
+```vue
     vm.arr.push(4) // will simply mutate the object
     vm.arr = vm.arr.concat(5) // will work because the newValue and oldValue are refering to different references
+```
 
 ## Components
 
 To create a **Component** **Class** simply extend Vue
 
+```vue
     var Component = Vue.extend(options)
+```
 
 You need to register your component globally
 
 Don't declare a **data** section in vue component because the data will be shared accross all component of the same class.
 
+```vue
     Vue.component('my-component', {
         template: `<div>{{ msg }}</div>`,
         data: {
             msg : 'foo'
         }
     })
+```
 
 You need to use the **data: () =>** or the shorter version **data () {}** to reate a fresh copy of data for every new instance.
 
@@ -401,36 +447,45 @@ You need to use the **data: () =>** or the shorter version **data () {}** to rea
 
 **props** are property of the component, it is a custom attribute
 
+```vue
     <div id="el">
         <todo v-bind:todo="{ text: 'hello'}"></todo>
     </div>
+```
 
+```vue
     Vue.component('todo', {
         template: `<div>{{ todo.text }}</div>`,
         props: ['todo']
     })
+```
 
 Will handle the todo property from attribute
 
 ##### Specific type check
 
+```vue
     Vue.component('todo', {
         template: `<div>{{ todo.text }}</div>`,
         props: {
             todo: Object
         }
     })
+```
 
 Now it will check for an object
 
 ##### Even more specific checking + default values
 
+```vue
     <div id="el">
         <todo v-bind:todo="{ text: 'hello'}"></todo>
         <todo></todo>
         <todo></todo>
     </div>
+```
 
+```vue
     Vue.component('todo', {
         template: `<div>{{ todo.text }}</div>`,
         props: {
@@ -441,6 +496,7 @@ Now it will check for an object
             }
         }
     })
+```
 
 default must be a function otherwise all occurence will share the same object reference
 
@@ -448,12 +504,15 @@ default must be a function otherwise all occurence will share the same object re
 
 You can create complex validator by simply specifying the validator in the props
 
+```vue
     <div id="el">
         <todo v-bind:todo="{ text: 'hello'}"></todo>
         <todo v-bind:todo="{ }"></todo>
         <todo></todo>
     </div>
+```
 
+```vue
     Vue.component('todo', {
         template: `<div>{{ todo.text }}</div>`,
         props: {
@@ -472,6 +531,7 @@ You can create complex validator by simply specifying the validator in the props
             }
         }
     })
+```
 
 You will have an error for the second component because this is an object but not the right type (in this case must have text property with length > 0)
 
@@ -479,6 +539,7 @@ You will have an error for the second component because this is an object but no
 
 Logic that mutate the variable of an app must stay in the app logic
 
+```vue
     new Vue({
         el: '#el',
         data: {
@@ -493,14 +554,18 @@ Logic that mutate the variable of an app must stay in the app logic
             }
         }
     })
+```
 
 here the application set the data and change the data state, the logic stays in the application (toggleTodo) it's a good pratcice to avoid deep component issue.
 
 Instead we will use custome event "toggle".
 
+```vue
         <todo :class="todo.done?`done`:``" v-for="todo in todos" v-bind:todo="todo" @toggle="toggleTodo(todo)"></todo>
+```
 
-        Vue.component('todo', {
+```vue
+    Vue.component('todo', {
         template: `
         <div @click="$emit('toggle')">
             {{ todo.text }}
@@ -528,6 +593,7 @@ Instead we will use custome event "toggle".
             }
         }
     })
+```
 
 #### Adding keys
 
@@ -541,10 +607,13 @@ There is a warning in the console that tells us that we need to use key.
 
 For instance:
 
+```vue
     <div id="el">
         <todo :class="todo.done?`done`:``" v-for="todo in todos" v-bind:todo="todo" @toggle="toggleTodo(todo)"></todo>
     </div>
+```
 
+```vue
     Vue.component('todo', {
         template: `
         <div @click="isEditing = !isEditing">
@@ -563,12 +632,14 @@ For instance:
             }
         }
     })
-
+```
 
 Click first item, you will see "true"
 In console type:
 
+```vue
         vm.todos.reverse()
+```
 
 The isEditing is linked to the item but the item change without **key** so the state is not maintained and linked.
 So it's good practice to add an *id* for instance to items and link **key** attribute to that *id*
@@ -621,11 +692,14 @@ could be used to clean a timer (setInterval, ...).
 
 If you want to change some value you can write something like that
 
+```vue
     <div id="el">
         {{ msg }}
         <child :foo="foo"></child>
     </div>
+```
 
+```vue
     Vue.component('child', {
         props: ['foo'],
         template: '<div @click="foo = 123">{{ foo }}</div>'
@@ -637,6 +711,7 @@ If you want to change some value you can write something like that
             foo: 'some message'
         }
     })
+```
 
 This will break at first click, you cannot change the value foo like this
 
@@ -648,12 +723,15 @@ Good practice is to use the **.sync** shortener and in general emit event
 
 Here below the two version of the same thing
 
+```vue
     <div id="el">
         {{ msg }}
         <child :foo.sync="msg1"></child>
         <child :foo="msg2" @update:foo="val => msg2 = val"></comp>
     </div>
+```
 
+```vue
     Vue.component('child', {
         props: ['foo'],
         template: `<div @click="$emit('update:foo','bar')">{{ foo }}</div>`
@@ -666,8 +744,8 @@ Here below the two version of the same thing
             msg2: 'some other message'
         },
     })
+```
 
-{% endraw %}
 
 ### Exercise 2: TODO + component
 
