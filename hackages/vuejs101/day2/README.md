@@ -435,4 +435,30 @@ This is a global router hook but we can also handle in component hook
 **beforeRouterEnter hook**: Can handle all the wait and data handling before the navigation occurs
 **beforeRouterUpdate hook**: will take care of updating the component once the component is already there
 
+#### Scoping components
 
+```js
+const Inbox = {
+    template: ``,
+    components: {
+        InboxMails
+    }
+}
+```
+
+The Inbox component will have access to InboMails component
+
+**!!! Dom sensitive stuff, the html element are case insensitive ```<FooBar>``` will be transfromed to ```<foobar>``` before vue can even see it.**
+
+### Exercise
+
+**Use:** https://jsonplaceholder.typicode.com/
+
+1. One page to display a list of page
+2. One page for post detail
+
+#### Hint
+
+For ajax call, use **axios** if possible or jqury ajax
+
+**axios** is iso morphic (idem server/client)
