@@ -1,0 +1,45 @@
+<script src="https://unpkg.com/vue"></script>
+<script>
+// goal:
+// - display foo when url is at #foo
+// - display bar when url is at #bar
+// - bonus: implement links that navigate between #foo and #bar
+
+// to access the current hash:
+window.location.hash
+// to listen for hash changes:
+window.addEventListener('hashchange', () => {
+  // read hash and update app
+})
+</script>
+
+<div id="app">
+  <!-- render main view here -->
+  <a href="#foo">foo</a>
+  <a href="#bar">bar</a>
+  <a href="#baz">baz</a>
+  <component :is="currentView"></component>
+</div>
+
+<script>
+window.addEventListener('hashchange', () => {
+  app.currentView = window.location.hash.split('#')[1]
+})
+
+Vue.component('foo', {
+  template: `<div>Foo</div>`
+})
+
+Vue.component('bar', {
+  template: `<div>Bar</div>`
+})
+
+
+const app = new Vue({
+  data: {
+    currentView: window.location.hash.split('#')[1],
+  },
+  methods: {
+  }
+}).$mount('#app')
+</script>
