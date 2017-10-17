@@ -300,7 +300,74 @@ There is an option in dev mode to do that:
 ```js
 devServer: {
     historyApiFallback: true,
+}
+```
+
+##### Handling states
+
+```js
+const Post = {template: `<div>Post {{ $route.params.id }}</div>`}
+
+// ...
+
+{ path: '/post/:id', component: Post }, // a route with a specific state
+```
+
+But a better way is to make a nicer component that will handle this properly
+
+```js
+const Post = {
+  props: ['id'],
+  template: `<div>Post {{ id }}</div>`
+}
+
+{ path: '/post/:id', component: Post, props: true }, // a route with a specific state + props
+```
+
+##### Named path
+
+Named path are usefull to refer to path further on.
+
+```vue
+<router-link :to="{ name: 'posts', params: { id: 789}}">Name routing to Post 789</router-link>
+```
+
+```js
+    {
+      name: 'posts',
+      path: '/post/:id',
+      component: Post,
+      props: true
+    }, // a route with a specific state + props + name
+```
+
+##### Navigating
+
+**With router link**
+
+```vue
+<router-link :to="{ name: 'posts', params: { id: 789}}">Name routing to Post 789</router-link>
 ```
 
 
+**With code**
 
+
+```js
+
+router.push('/bar')
+router.push({name: 'posts', params: {id: 123}}) // no need to stringify path, just use object
+
+this.$router.push('/bar')
+this.$router.push({name: 'posts', params: {id: 123}})
+```
+
+The great thing about passing object is that you need to stringify or think avout the url, just put all the param handled by the componant
+
+##### Component that stay on a page while navigating
+
+Think about gmail and the side, top and footer bar the main content change but the others.
+
+Some route:
+* /inbox/mails -> app
+* /inbox/mail/12345 -> a detail of a mail

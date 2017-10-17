@@ -8,6 +8,10 @@ Vue.use(VueRouter)
 const Foo = {template: `<div>Foo</div>`}
 const Bar = {template: `<div>Bar</div>`}
 const NotFound = {template: `<div>NotFound</div>`}
+const Post = {
+  props: ['id'],
+  template: `<div>Post {{ id }}</div>`
+}
 
 // 2. create a router instance
 const router = new VueRouter({
@@ -15,6 +19,12 @@ const router = new VueRouter({
   routes: [
     // define our routes
     { path: '/', redirect: '/foo' }, // base route
+    {
+      name: 'posts',
+      path: '/post/:id',
+      component: Post,
+      props: true
+    }, // a route with a specific state + props + name
     { path: '/foo', component: Foo },
     { path: '/bar', component: Bar },
     { path: '*', component: NotFound },
