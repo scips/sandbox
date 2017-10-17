@@ -1,0 +1,28 @@
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-router"></script>
+
+<div id="app">
+  <!-- render main view here -->
+  <a href="#foo">foo</a>
+  <a href="#bar">bar</a>
+  <h2>{{ message }}</h2>
+</div>
+
+<script>
+const app = new Vue({
+  data: {
+    message: '',
+    routes: {
+        foo: 'foo',
+        bar: 'bar'
+    }
+  },
+  methods: {
+    changeRoute (route) {
+        if (this.routes[route]) {
+            this.message = this.routes[route];
+        }
+    }
+  }
+}).$mount('#app')
+</script>

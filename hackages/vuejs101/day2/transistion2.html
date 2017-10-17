@@ -1,0 +1,41 @@
+<script src="https://unpkg.com/vue"></script>
+    <style>
+        .fade-leave, .fade-enter-to {
+            opacity: 1;
+        }
+        .fade-leave-to,.fade-enter {
+            opacity: 0;
+        }
+        .fade-leave-active, .fade-enter-active {
+            transition: opacity 0.5s ease;
+        }
+    </style>
+
+<!-- DOM -->
+
+    <div id="el">
+        <button @click="ok = !ok">toggle</button>
+        <transition @enter="onEnter" @leave="onLeave">
+            <div v-if="ok">ok</div>
+        </transition>
+    </div>
+
+<!-- Code + Data -->
+
+<script>
+    var vm = new Vue({
+      el: '#el',
+      data: {
+        ok: true
+      },
+      methods: {
+        onEnter (el, done) {
+
+        },
+        onLeave (el,done) {
+
+        }
+      }
+    })
+</script>
+
