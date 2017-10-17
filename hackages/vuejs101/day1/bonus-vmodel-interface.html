@@ -1,0 +1,95 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="el">
+  <my-select v-model="myselect.current" :options="myselect.options" :multiple="myselect.multiple">
+  </my-select>
+</div>
+
+<div id="el2">
+  <my-select v-model="myselect.current" :options="myselect.options" :multiple="myselect.multiple">
+  </my-select>
+</div>
+
+<template id='my-select-tpl'>
+    <select :multiple="multiple" @input="onChange">
+        <option v-for="opt in options" :selected="checkSelected(opt)">{{ opt }}</option>
+    </select>
+</template>
+
+<script>
+Vue.component('my-select', {
+  props: {
+    multiple: {
+        default: false,
+        mandatory: false,
+        type: Boolean
+    },
+    options: {
+        mandatory: true,
+        type: Array
+    },
+    value: {
+        mandatory: true,
+        type: Array
+    }
+  },
+  data () {
+    return {
+    }
+  },
+  mounted () {
+    console.log(this)
+  },
+  methods: {
+    checkSelected (option) {
+        return this.value.includes(option)
+    },
+    onChange (event) {
+        var newListOfSelectedElement = []
+        newListOfSelectedElement.push(event.target.value)
+        console.log(newListOfSelectedElement)
+        this.$emit('input', newListOfSelectedElement)
+    }
+  },
+  template: '#my-select-tpl'
+})
+
+var vm = new Vue({
+  el: '#el',
+  data: {
+    myselect: {
+        current: [
+            'two'
+        ],
+        options: [
+            'one',
+            'two',
+            'three'
+        ],
+        multiple: false
+    }
+  },
+  methods: {
+  }
+})
+
+var vm2 = new Vue({
+  el: '#el2',
+  data: {
+    myselect: {
+        current: [
+            'two',
+            'three'
+        ],
+        options: [
+            'one',
+            'two',
+            'three'
+        ],
+        multiple: true
+    }
+  },
+  methods: {
+  }
+})
+</script>

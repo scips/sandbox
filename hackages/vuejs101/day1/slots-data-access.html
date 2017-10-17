@@ -1,0 +1,36 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+.app-header {color: red;}
+</style>
+
+<div id="app">
+  <child>
+    <!-- access to both parent scope and child scope -->
+    <div slot-scope="data">{{ message }} + {{ data.msg }} </div>
+  </child>
+</div>
+
+<template id="app-tmpl">
+    <div class="child-root">
+        <slot :msg="msg"></slot>
+    </div>
+</template>
+
+<script>
+    Vue.component('child', {
+      data () {
+        return {
+          msg: 'from child'
+        }
+      },
+      template: '#app-tmpl'
+    })
+
+    const vm = new Vue({
+      data: {
+        message: 'test'
+      }
+    }).$mount('#app')
+
+</script>
+

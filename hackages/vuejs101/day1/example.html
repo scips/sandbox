@@ -1,18 +1,48 @@
 <script src="https://unpkg.com/vue"></script>
-
+<style>
+.done {text-decoration: line-through; }
+</style>
 <!-- DOM -->
 
-<div id="app">
-  {{ message }}
-</div>
+    <div id="app">
+        <label v-for="m in modes">
+            <input type="radio" :value="m" v-model="mode">{{ m }}
+        </label>
+        <ul>
+            <li v-for="todo in filteredTodos">
+                <input type="checkbox" v-model="todo.done"> - {{ todo.text }}
+            </li>
+        </ul>
+    </div>
 
 <!-- Code + Data -->
 
 <script>
-const vm = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
-}).$mount("#app")
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        mode: 'all',
+        modes: ['all', 'done', 'notdone'],
+        newTodo: '',
+        todos: [
+            {text: 'Learn JS', done: true},
+            {text: 'Learn VueJS', done: false},
+        ],
+      },
+      methods: {
+
+      },
+      computed: {
+        filteredTodos() {
+            switch(this.mode) {
+                case 'done':
+                    return this.todos.filter(todo => todo.done)
+                case 'notdone':
+                    return this.todos.filter(todo => !todo.done)
+                default:
+                    return this.todos
+            }
+        }
+      }
+    }).$mount("#app")
 </script>

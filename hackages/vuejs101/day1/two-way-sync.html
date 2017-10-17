@@ -1,0 +1,28 @@
+<script src="https://unpkg.com/vue"></script>
+<!-- DOM -->
+
+    <div id="el">
+        {{ msg }}
+        <child :foo.sync="msg1"></child>
+        <child :foo="msg2" @update:foo="val => msg2 = val"></comp>
+    </div>
+
+<!-- Code + Data -->
+
+<script>
+    // Register the component globaly
+    Vue.component('child', {
+        props: ['foo'],
+        template: `<div @click="$emit('update:foo','bar')">{{ foo }}</div>`
+    })
+
+    var vm = new Vue({
+        el: '#el',
+        data: {
+            msg: 'hello',
+            msg1: 'some message',
+            msg2: 'some other message'
+        },
+
+    })
+</script>

@@ -1,0 +1,112 @@
+<script src="https://unpkg.com/vue"></script>
+<style>
+.done {
+  text-decoration: line-through;
+}
+</style>
+
+<div id="app">
+  <p>
+    <label v-for="m in modes">
+      <input type="radio" :value="m" v-model="mode"> {{ m }}
+    </label>
+  </p>
+  <input
+    v-model="newTodo"
+    @keyup.enter="addNewTodo">
+  <ul>
+    <div id="el">
+        <todo-item
+            v-for="todo in filteredTodos"
+            :class="{ done: todo.done }"
+            :todo="todo"
+            :key="todo.id"
+            @toggle="toggleTodo"
+            @edit="editTodo"></todo-item>
+    </div>
+
+  </ul>
+</div>
+
+<template id="todo-template">
+    <li :class="{ done: todo.done }">
+        <input type="checkbox"
+            :checked="todo.done"
+            @change="toggle">
+        <span v-if="!isEditing" @dblclick="isEditing = true">{{ todo.text }}</span>
+        <!-- Don't bind to v-model otherwise is bad practice for instance no cancel possible -->
+        <input v-else
+            @keyup.enter="onEditDone"
+            @blur="isEditing = false"
+            :value="todo.text"/>
+    </li>
+</template>
+
+<script>
+    Vue.component('todo-item', {
+        template: '#todo-template',
+        props: {
+            todo: {
+                type: Object,
+                required: true
+            }
+        },
+        data () {
+            return {
+                isEditing: false
+            }
+        },
+        methods: {
+            onEditDone () {
+                this.$emit('edit', this.todo, event.target.value)
+                this.isEditing = false
+            },
+            toggle () {
+                this.$emit('toggle', this.todo)
+            }
+        }
+    })
+
+    const vm = new Vue({
+        data: {
+            modes: ['all', 'done', 'not done'],
+            newTodo: '',
+            // Source state
+            mode: 'all',
+            todos: [
+              { id: 1, text: 'Learn JavaScript', done: true  },
+              { id: 2, text: 'Learn Vue', done: false  }
+            ]
+          },
+        computed: {
+            // Derived state
+            filteredTodos () {
+              switch (this.mode) {
+                case 'done':
+                  return this.todos.filter(todo => todo.done)
+                case 'not done':
+                  return this.todos.filter(todo => !todo.done)
+                default:
+                  return this.todos
+              }
+            }
+        },
+        methods: {
+            toggleTodo (todo) {
+              todo.done = !todo.done
+            },
+            editTodo (todo, newValue) {
+                todo.text = newValue
+            },
+            addNewTodo () {
+              const newTodo = {
+                text: this.newTodo,
+                done: false
+              }
+              this.todos.push(newTodo)
+              this.newTodo = ''
+            }
+        }
+    }).$mount('#app')
+
+</script>
