@@ -1,12 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
-    <router-link to="/foo">Foo</router-link>
-    <router-link to="/bar">Bar</router-link>
-    <router-link to="/post/123">Post 123</router-link>
-    <router-link to="/post/456">Post 456</router-link>
-    <router-link :to="{ name: 'posts', params: { id: 789}}">Name routing to Post 789</router-link>
-    <div><a href="#/foo">Also foo but hardcoded it won't work with mode history activated</a></div>
+    <router-link to="/inbox">Inbox</router-link>
+    <router-link to="/settings">Settings</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
