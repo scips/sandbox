@@ -371,3 +371,63 @@ Think about gmail and the side, top and footer bar the main content change but t
 Some route:
 * /inbox/mails -> app
 * /inbox/mail/12345 -> a detail of a mail
+
+
+**In the main vue**
+
+{% raw %}
+```vue
+<template>
+  <div id="app">
+    <router-link to="/inbox">Inbox</router-link>
+    <router-link to="/settings">Settings</router-link>
+    <router-view></router-view>
+  </div>
+</template>
+```
+{% endraw %}
+
+**In the app**
+
+```js
+  routes: [
+    // define our routes
+    {
+      path: '/inbox',
+      component: Inbox,
+      // nested routes
+      children: [
+        {path: '', component: InboxMails }, // empty means default
+        {path: 'mail/:id', component: InboxMail, props: true },
+      ]
+    },
+  ]
+```
+
+##### Handling common stuff to do on each page change
+
+*Analytics*, *View count*...
+
+To handle this, simply use **beforeEach**
+
+* **meta**: to allow us to pass information from the router such as authentication settings enabled or not
+
+```js
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  if (to.meta.auth) {
+    if (isUserLoggedIn) {
+      next()
+    } else {
+      next('/login?from='+next.fullPath)
+    }
+  } else {
+    next()
+  }
+  next()  // must be called in order to perform the navigation
+})
+```
+
+This is a global router hook but we can also handle in component hook
+
+##### Handling in component hooks

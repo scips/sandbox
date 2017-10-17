@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
+import Settings from './Settings.vue'
 
 // 1. Install it and handle router props in Vue : handle 2 compoent: router-view and router-link
 Vue.use(VueRouter)
@@ -27,13 +28,28 @@ const InboxMails = {
 
 const InboxMail = {
   props: ['id'],
+  // called only once
+  beforeRouteEnter (to, form, next) {
+    console.log("enter hook called")
+    next()
+  },
+  // called on every update
+  beforeRouteUpdate (to, form, next) {
+    console.log("update hook called")
+    next()
+  },
   template: `<div>
     Just one mail {{ id }}
-  </div>`
+    <pre>
+      In console do router.push('/inbox/mail/123') to see that enter hook is not called
+    </pre>
+
+  </div>
+  `
 }
 
 // 2. create a router instance
-const router = new VueRouter({
+const router = window.router = new VueRouter({
   mode: 'history',
   routes: [
     // define our routes
@@ -44,12 +60,33 @@ const router = new VueRouter({
       children: [
         {path: '', component: InboxMails }, // empty means default
         {path: 'mail/:id', component: InboxMail, props: true },
-      ]
+      ],
     },
+    {
+      path: '/settings',
+      component: Settings,
+      meta: {
+        auth: true
+      }
+    }
   ]
 })
 
-new Vue({
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  if (to.meta.auth) {
+    if (true) {
+      next()
+    } else {
+      next('/login?from='+next.fullPath)
+    }
+  } else {
+    next()
+  }
+  next()  // must be called in order to perform the navigation
+})
+
+var app = new Vue({
   el: '#app',
   // 3. connect the router to the app
   router: router,
