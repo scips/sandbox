@@ -28,6 +28,17 @@ const InboxMails = {
 
 const InboxMail = {
   props: ['id'],
+  data () {
+    return {
+      isLoading: true
+    }
+  },
+  // to handle loading
+  created () {
+    setTimeout(()=>{
+      this.isLoading = false
+    }, 1000)
+  },
   // called only once
   beforeRouteEnter (to, form, next) {
     console.log("enter hook called")
@@ -39,7 +50,12 @@ const InboxMail = {
     next()
   },
   template: `<div>
+    <div v-if="isLoading">
+    Loading ...
+    </div>
+    <div v-else>
     Just one mail {{ id }}
+    </div>
     <pre>
       In console do router.push('/inbox/mail/123') to see that enter hook is not called
     </pre>

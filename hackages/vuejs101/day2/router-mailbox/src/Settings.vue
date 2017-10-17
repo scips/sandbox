@@ -23,6 +23,7 @@ export default {
         })
     }).catch(next) // propagate error to the router and cancel navigation properly
     */
+    next()
   },
   beforeRouteLeave (to, from, next) {
     if (this.isSave || confirm("sure?")) {

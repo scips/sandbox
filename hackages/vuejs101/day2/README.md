@@ -431,3 +431,8 @@ router.beforeEach((to, from, next) => {
 This is a global router hook but we can also handle in component hook
 
 ##### Handling in component hooks
+
+**beforeRouterEnter hook**: Can handle all the wait and data handling before the navigation occurs
+**beforeRouterUpdate hook**: will take care of updating the component once the component is already there
+
+
