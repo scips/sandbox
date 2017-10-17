@@ -16,8 +16,9 @@ Wifi: S14-Hackages / H-102017
     + Basic router
     + `vue-router`
 - Data fetching
-- Code splitting + async
+- Code spliting + async
 - State mngmt
+- Vuex
 
 
 ### Transitions
@@ -462,3 +463,163 @@ The Inbox component will have access to InboMails component
 For ajax call, use **axios** if possible or jqury ajax
 
 **axios** is iso morphic (idem server/client)
+
+Not ideal but exists: ```Vue.prototype.$http = axios```
+
+#### Use promise
+
+```js
+const p1 = axios.get ...
+const p2 = axios.get ...
+
+Promise.all([p1,p2]).then(console.log('all promise done'))
+```
+
+#### Components
+
+Don't use components until you need them ... as soon as it is too big split it.
+
+don't over split in advance
+
+### Code Splitting + Async
+
+#### Async component
+
+is defined as a function that return a promise
+
+```js
+    const Foo = () => {
+        return new Promise((resolve, reject) => {
+        resolve({
+            template: `...`
+        })
+        })
+    }
+```
+
+**WHY?**
+
+Because the ```import('./Post.vue')``` will return a Promise in future browser. It's called: **dynamic import**
+
+**Webpack** is transparently doing this for you
+
+So it's identical to
+
+```js
+    const Foo = () => import('./Foo.vue')
+```
+
+Difference between synchronous and asynchronous
+
+```js
+    // synchrone
+    import Foo from './Foo.vue'
+
+    // asynchrone
+    const Foo = () => import('./Foo.vue')
+```
+
+*You need an extra plugin to do it* because babel doesn't know how to do it: **syntax-dynamic-import**
+
+**.babelrc**
+```js
+{
+    plugins:[
+        'syntax-dynamic-import'
+    ]
+}
+```
+
+**common chunk plugins** is used when there is a dependency issue between chunk, its to avoid duplication, but duplication is not a real problem because everything is cached.
+
+#### Multiple component async
+
+Use webpack webpackChunkName common to make multiple component inot the same chunck
+
+```js
+    // asynchrone
+    const Foo = () => import(/* webpackChunkName: post */ './Post.vue')
+    const Foo = () => import(/* webpackChunkName: post */ './Comment.vue')
+```
+
+### State
+
+To cache the data and keep data across several page.
+
+The idea is to store the information at application level in a centralized state management.
+
+The state will be shared accross components.
+
+All component should then refer to the same state.
+
+All library such as flex, vuex ... are designed to handle state but also have a lot of constraint.
+
+see [state.html](state.html)
+
+
+
+#### State managment
+
+State management is done via a **store**
+
+```js
+    const obj = {
+        foo: 123
+    }
+
+    let fooValue
+
+    Object.defineProperty(obj, 'foo', {
+        get () {
+            // obj.foo
+            // track dependency
+            return fooValue
+        },
+        set (newValue) {
+            // obj.foo = 1234
+            // trigger update
+            fooValue = newValue
+        }
+    })
+```
+
+To handle dependency the getter must be invoked. To be invoked it needs to be accessed via the **.**
+
+```js
+let bar = obj.foo // tracking dep.
+// using
+bar
+// will not track dependency anymore
+```
+
+So you always need to use the **.** notation of the state object to ensure that the getter is triggered
+
+so in component you need to avoid
+
+```js
+    Vue.component('counter', {
+        template: `<div>{{ count }}</div>`,
+        data () {
+            return { count: store.state.count }
+        }
+    })
+```
+
+but instead
+
+```js
+    Vue.component('counter', {
+        template: `<div>{{ count }}</div>`,
+        data () {
+            return { store.state }
+        }
+    })
+```
+
+In Vuex store are created as follow
+
+```js
+const store = new Vuex.store({
+
+})
+```

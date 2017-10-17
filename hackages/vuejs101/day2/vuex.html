@@ -1,0 +1,39 @@
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vuex"></script>
+
+<div id="el">
+  <counter></counter>
+  <counter></counter>
+  <counter></counter>
+  <counter></counter>
+  <button @click="inc">inc</button>
+</div>
+
+<script>
+const store = new Vuex.Store({
+    state: {
+        count: 0
+    },
+    mutations: {
+        inc (state) {
+            state.count++
+        }
+    }
+})
+
+Vue.component('counter', {
+    template: `<div>{{ count }}</div>`,
+    data () {
+        return store.state
+    }
+})
+
+var vm = new Vue({
+  el: '#el',
+  methods: {
+    inc() {
+        store.commit('inc')
+    }
+  }
+})
+</script>
