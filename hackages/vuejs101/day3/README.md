@@ -715,7 +715,8 @@ Or see: https://jsfiddle.net/yyx990803/kyt43L2r/
 Component give a good way to expose complex logic and make it reusable.
 
 Abstract component add a functionallity without touching an existing set of component / app.
-
+{% raw %}
+```vue
         <fetch url="https://jsonplaceholder.typicode.com/postsERRROR">
             <template slot-scope="{ status, data, error }">
                 <div v-if="data">{{ data }}</div>
@@ -729,17 +730,20 @@ Abstract component add a functionallity without touching an existing set of comp
                 <div v-if="data">{{ data }}</div>
             </template>
         </better-fetch>
+```
+{% endraw %}
 
 and will handle
-
+```vue
                 <div v-else-if="status === 'error'">Something went wrong: {{ error }}</div>
                 <div v-else>Loading ...</div>
+```
 
 as a common feature
 
 or even better
-
+```vue
         <better-fetch url="https://jsonplaceholder.typicode.com/postsERRROR">
             <div slot-scope="data">{{ data }}</div>
         </better-fetch>
-
+```
