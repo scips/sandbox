@@ -355,3 +355,9 @@ By using the
 * add a plugin that will use the validate prop
 * use watch and an input to handle change
 
+**see**:
+* [my solution](exercise.html)
+* [evan solution](exercise-solution.html)
+* [evan solution enhanced](exercise-solution-enhanced.html)
+
+
