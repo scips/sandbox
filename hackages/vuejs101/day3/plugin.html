@@ -1,0 +1,54 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+</div>
+
+<script>
+const mixin = {
+    created () {
+        console.log('hook triggered from mixin')
+    }
+}
+
+const Mycomponent = {
+    mixins= [mixin],
+    created () {
+        console.log('hook triggered from component itself')
+    }
+}
+
+const Plugin = {
+    install (Vue) {
+        // do somehtign
+        Vue.component('foo-bar', {})
+        Vue.directive('my-dir', {})
+
+        //
+        // Vue.prototype.$http = axios
+
+        // merge other components
+        Vue.mixin({
+            created () {
+                if (this.$options.router) {
+                    // init router
+                }
+                if (this.$options.store) {
+                    // init store
+                }
+            }
+        })
+        // or apply mixin globaly
+        // Vue.mixin(mixin)
+    }
+}
+
+Vue.use(Plugin)
+
+const vm = new Vue({
+  el: '#app',
+  data: {
+    color: 'red'
+  }
+})
+</script>
+

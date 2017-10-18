@@ -1,0 +1,56 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <div>
+        <pre>
+            in Console do:
+            vm.value=0
+            vm.foo=5
+        </pre>
+    </div>
+</div>
+
+<script>
+
+const Plugin = {
+    install (Vue) {
+        // merge other components
+        Vue.mixin({
+            created () {
+                if (this.$options.validate) {
+                    console.log('here', this.$options.validate)
+                    for(key in this.$options.validate) {
+                        console.log(key)
+                        this.$watch(key, function (newVal, oldVal) {
+                            console.log('watcher called with newVal ' + newVal + ' oldVal ' + oldVal)
+                            if (this.$options.validate[key](newVal)){
+                                console.log('warning not a good value: '+newVal+ ' for '+key)
+                            }
+                        })
+                    }
+
+                }
+            }
+        })
+    }
+}
+
+Vue.use(Plugin)
+
+const vm = new Vue({
+  el: '#app',
+  data: {
+    value: 1,
+    foo: 0
+  },
+  validate: {
+    value: newValue => newValue > 1,
+    foo: newValue => newValue < 1,
+  }
+})
+
+vm.value = 0
+
+// use $this.watch
+</script>
+

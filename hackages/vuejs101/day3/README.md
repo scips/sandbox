@@ -327,3 +327,31 @@ To register it
 
 Only use it if you have no other choice and you need to touch the DOM
 
+### Plugins
+
+#### Mixin
+
+Merge component, avoid using global ```Vue.mixin(mixin)``` mixin especially if they are expensive.
+
+#### $options
+
+Options are available in
+
+    const Foo = Vue.extend({componentOptions: []})
+    const foo = new Foo({instanceOptions: []})
+    foo.$options // {componentOptions: [], instanceOptions: []}
+
+Mixin could be a good place to initialize stuff.
+
+By using the
+
+    Vue.mixin({created(){
+        
+    }})
+
+#### Exercise
+
+* add a validate prop
+* add a plugin that will use the validate prop
+* use watch and an input to handle change
+
