@@ -1,0 +1,34 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+</div>
+
+<!-- Templates are limited -->
+<template>
+    <div> {{ foo }}
+</template>
+
+<script>
+    export default {
+        render (h) { // hyper script <= hyper text <= HTML
+            return h('div', {}, [
+                this.foo
+            ])
+        }
+    }
+    render (createElement) {
+        // will return {tag: 'div', data: {}, children: [this.foo]}
+        // it's pure JS so you can do things you cannot do with a template
+        const children = []
+        /*
+        // iterate over things
+        for () {
+
+        }
+        */
+        return createElement('div', {}, [
+            this.foo
+        ])
+    }
+</script>
+

@@ -369,4 +369,105 @@ With Mixin you still remain with one component.
 
 in the vue context components are expensive so it's faster to use mixin.
 
+### Render functions
 
+* **returns** a new virtual DOM
+
+Actual DOM is an HTMLDivElement
+
+Virtual DOM is an Object {tag: 'div', data: { attrs: {}, ...}, children: []}
+
+* **tag** type of node it is
+* **data** attribute the node have binding kids
+* **children** to continue the tree
+
+#### Missconceptions
+
+* Direct access to DOM is slower? False!
+
+But jump to the wrapper of the browser that represent the DOM is expensive
+
+Virtual DOM was invented because:
+- we wanted to reduce the number of jump between JS and the browser wrapper
+
+```vue
+    <!-- Templates are limited -->
+    <template>
+        <div> {{ foo }}
+    </template>
+
+    <script>
+        render (createElement) {
+            // will return {tag: 'div', data: {}, children: [this.foo]}
+            // it's pure JS so you can do things you cannot do with a template
+            const children = []
+            /*
+            // iterate over things
+            for () {
+
+            }
+            */
+            return createElement('div', {}, [
+                this.foo
+            ])
+        }
+    </script>
+```
+
+Simply using 'h' is a convention
+
+```js
+    export default {
+        render (h) { // hyper script <= hyper text <= HTML
+            return h('div', {}, [
+                this.foo
+            ])
+        }
+    }
+```
+
+#### render function arguments
+
+##### The object
+
+```js
+    export default {
+        render (h) { // hyper script <= hyper text <= HTML
+            return h('div', {
+                    key: 123,
+                    attrs: {id: 'foo'},
+                    class: {foo: true, bar: this.isBar},
+                    style: {color: 'red'}
+                }, [
+                this.foo
+            ])
+        }
+    }
+```
+
+##### The children
+
+```js
+    import Component from './Component.vue'
+    export default {
+        render (h) { // hyper script <= hyper text <= HTML
+            return h('div', {
+                    key: 123,
+                    attrs: {id: 'foo'},
+                    class: {foo: true, bar: this.isBar},
+                    style: {color: 'red'},
+                    props: {}
+                }, [
+                '123',
+                123,
+                h('span', 'foo'),
+                h('span', 'bar'),
+                h(Component)
+            ])
+        }
+    }
+```
+
+#### Exercise
+
+* 
