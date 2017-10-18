@@ -1,0 +1,44 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <p v-color="color">test</p>
+    <button @click="color = 'blue'">Blue</button>
+</div>
+
+<script>
+    Vue.directive('color',{
+        //
+        bind (domElement, binding, vnode) {
+            console.log(binding.value)
+            domElement.style.color = binding.value
+        },
+        // called just once it's in the DOM
+        inserted () {
+
+        },
+        // called on every update before child node could be updated
+        update (domElement, binding, vnode) {
+            if(binding.value != binding.oldValue) {
+                console.log('Value has changed')
+                domElement.style.color = binding.value
+            }
+        },
+        // called once the child node are updated
+        componentUpdated () {
+
+        },
+        // called once removed from the DOM
+        unbind () {
+
+        }
+    })
+
+
+const vm = new Vue({
+  el: '#app',
+  data: {
+    color: 'red'
+  }
+})
+</script>
+

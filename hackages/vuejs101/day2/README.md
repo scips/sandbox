@@ -16,8 +16,9 @@ Wifi: S14-Hackages / H-102017
     + Basic router
     + `vue-router`
 - Data fetching
-- Code splitting + async
+- Code spliting + async
 - State mngmt
+- Vuex
 
 
 ### Transitions
@@ -435,4 +436,330 @@ This is a global router hook but we can also handle in component hook
 **beforeRouterEnter hook**: Can handle all the wait and data handling before the navigation occurs
 **beforeRouterUpdate hook**: will take care of updating the component once the component is already there
 
+#### Scoping components
 
+```js
+const Inbox = {
+    template: ``,
+    components: {
+        InboxMails
+    }
+}
+```
+
+The Inbox component will have access to InboMails component
+
+**!!! Dom sensitive stuff, the html element are case insensitive ```<FooBar>``` will be transfromed to ```<foobar>``` before vue can even see it.**
+
+### Exercise
+
+**Use:** https://jsonplaceholder.typicode.com/
+
+1. One page to display a list of page
+2. One page for post detail
+
+#### Hint
+
+For ajax call, use **axios** if possible or jqury ajax
+
+**axios** is iso morphic (idem server/client)
+
+Not ideal but exists: ```Vue.prototype.$http = axios```
+
+#### Use promise
+
+```js
+const p1 = axios.get ...
+const p2 = axios.get ...
+
+Promise.all([p1,p2]).then(console.log('all promise done'))
+```
+
+#### Components
+
+Don't use components until you need them ... as soon as it is too big split it.
+
+don't over split in advance
+
+### Code Splitting + Async
+
+#### Async component
+
+is defined as a function that return a promise
+
+```js
+    const Foo = () => {
+        return new Promise((resolve, reject) => {
+        resolve({
+            template: `...`
+        })
+        })
+    }
+```
+
+**WHY?**
+
+Because the ```import('./Post.vue')``` will return a Promise in future browser. It's called: **dynamic import**
+
+**Webpack** is transparently doing this for you
+
+So it's identical to
+
+```js
+    const Foo = () => import('./Foo.vue')
+```
+
+Difference between synchronous and asynchronous
+
+```js
+    // synchrone
+    import Foo from './Foo.vue'
+
+    // asynchrone
+    const Foo = () => import('./Foo.vue')
+```
+
+*You need an extra plugin to do it* because babel doesn't know how to do it: **syntax-dynamic-import**
+
+**.babelrc**
+```js
+{
+    plugins:[
+        'syntax-dynamic-import'
+    ]
+}
+```
+
+**common chunk plugins** is used when there is a dependency issue between chunk, its to avoid duplication, but duplication is not a real problem because everything is cached.
+
+#### Multiple component async
+
+Use webpack webpackChunkName common to make multiple component inot the same chunck
+
+```js
+    // asynchrone
+    const Foo = () => import(/* webpackChunkName: post */ './Post.vue')
+    const Foo = () => import(/* webpackChunkName: post */ './Comment.vue')
+```
+
+### State
+
+To cache the data and keep data across several page.
+
+The idea is to store the information at application level in a centralized state management.
+
+The state will be shared accross components.
+
+All component should then refer to the same state.
+
+All library such as flex, vuex ... are designed to handle state but also have a lot of constraint.
+
+see [state.html](state.html)
+
+
+
+#### State managment
+
+State management is done via a **store**
+
+```js
+    const obj = {
+        foo: 123
+    }
+
+    let fooValue
+
+    Object.defineProperty(obj, 'foo', {
+        get () {
+            // obj.foo
+            // track dependency
+            return fooValue
+        },
+        set (newValue) {
+            // obj.foo = 1234
+            // trigger update
+            fooValue = newValue
+        }
+    })
+```
+
+To handle dependency the getter must be invoked. To be invoked it needs to be accessed via the **.**
+
+```js
+let bar = obj.foo // tracking dep.
+// using
+bar
+// will not track dependency anymore
+```
+
+So you always need to use the **.** notation of the state object to ensure that the getter is triggered
+
+so in component you need to avoid
+
+```js
+    Vue.component('counter', {
+        template: `<div>{{ count }}</div>`,
+        data () {
+            return { count: store.state.count }
+        }
+    })
+```
+
+but instead
+
+```js
+    Vue.component('counter', {
+        template: `<div>{{ count }}</div>`,
+        data () {
+            return { store.state }
+        }
+    })
+```
+
+In Vuex store are created as follow
+
+```js
+const store = new Vuex.store({
+    state: {
+        count: 0
+    },
+    mutations: {
+        inc (state) {
+            state.count++
+        }
+    }
+})
+```
+
+
+For synchronous operation we use **mutations**
+
+For asynchronous operation we use **actions**
+
+#### Actions
+
+Use **dispatch**
+
+#### Mutations
+
+Use **commit**
+
+Similar to COMMIT in DB
+
+#### Getters
+
+Getters provide caching and provide a way to retrieve data.
+
+Equivalent to SELECT in DB
+
+### mapState
+
+To avoid declaring every computed access within the component, there is an helper.
+
+```js
+Vuex.mapState(['foo', 'bar']) => {
+    foo() {return this.$store.state.foo},
+    bar() {return this.$store.state.bar},
+}
+```
+
+### Basic store application
+
+```js
+import Vue from 'vue'
+import Vuex, { Store } from 'vuex'
+import axios from 'axios'
+
+const API_BASE = ''
+
+let fetchingPost = false
+
+export default new Store({
+  state: {
+    posts: [],
+    error: null
+  },
+  actions: {
+    fetchAllPosts ({ commit }) {
+      if (!fetchingPost) {
+        axios.get(API_BASE + '/posts').then(({ data }) => {
+          commit('saveAllPosts', {
+            posts: data // use object it helps with debugging
+          })
+        })
+        .catch(err => {
+          commit('error', { err: err })
+        })
+      }
+    }
+  },
+  mutations: {
+    saveAllPosts (state, payload) {
+      state.posts = payload.posts
+    },
+    error (state, error) {
+      state.error = error.err
+    }
+  }
+})
+```
+
+to use it now you can drastically reduce the component
+
+```js
+
+// Posts list
+exports default {
+    computed: {
+        posts () {
+            return this.$store.state.posts
+        }
+    }
+}
+
+// Post detail
+exports default {
+    props: ['id']
+    computed: {
+        posts () {
+            return this.$store.state.posts.find( post => {
+                return post.id === this.id
+            })
+        };
+        comments () {
+            return this.$store.state.comments.filter( comment => {
+                return comment.postId === this.id
+            })
+        }
+    },
+    created () {
+        this.$store.dispatch('fetchCommentsForPost', {id: this.id})
+    }
+}
+
+```
+
+### Modules
+
+What if 2 persons are working on the store.
+
+You can split the store n several Module and in the store add them.
+
+```js
+export default {
+    namespaced: true,
+    state: {
+        // ...
+    }
+}
+```
+
+To use it
+
+```js
+export default new Store({
+    modules: {
+        posts: postsModule
+    }
+})
+```

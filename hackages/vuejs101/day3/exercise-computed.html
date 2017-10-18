@@ -1,0 +1,75 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <div>
+        <label><input type="number" v-model="value"> Value</label>
+        <label><input type="number" v-model="foo"> Foo</label>
+        <ul v-if="warnings.length">
+            <li v-for="warning in warnings">
+                {{ warning }}
+            </li>
+        </ul>
+        <pre>
+            in Console do:
+            vm.value=0
+            vm.foo=5
+        </pre>
+    </div>
+</div>
+
+<script>
+
+const validationMixinComputed = {
+            computed: {
+                warnings () {
+                    const warnings = []
+                    if (this.$options.validate) {
+                        const validations = this.$options.validate
+                        // iterate over
+                        Object.keys(validations).forEach(key => {
+                            const value = this[key]
+                            const {assert, message} = validations[key]
+                            const result = assert(value)
+                            if ( !result ) {
+                                warnings.push(message(key, value))
+                                console.error(message(key, value))
+                            }
+                        })
+                    }
+                    return warnings
+                }
+            }
+        }
+
+const Plugin = {
+    install (Vue) {
+        // merge other components
+        Vue.mixin(validationMixinComputed)
+    }
+}
+
+Vue.use(Plugin)
+
+const vm = new Vue({
+  el: '#app',
+  data: {
+    value: 1,
+    foo: 0
+  },
+  validate: {
+    value: {
+        assert: newValue => newValue > 1,
+        message:(key, value) => `${key} failed with value ${value}`
+    },
+    foo: {
+        assert:  newValue => newValue < 1,
+        message:(key, value) => `${key} failed with value ${value}`
+    }
+  }
+})
+
+vm.value = 0
+
+// use $this.watch
+</script>
+
