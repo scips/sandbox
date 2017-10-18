@@ -647,5 +647,99 @@ The transition is good candidate
     const addOne = addFactory(1)
     const addTwo = addFactory(2)
 
+**see** [hox.html](hox.html)
 
+#### Abstract component
+
+The transition component is an abstract component. It adds functionality but no DOM node.
+
+    <div id="app">
+        <transition>
+            <div v-if="ok">foo</div>
+        </transition>
+    </div>
+
+will render as
+
+    <div id="app"><div>foo</div></div>
+
+To make your own abstract simply return the $slots in your component
+
+```vue
+    <div id="app">
+        <abstract>
+            <div v-if="ok">default</div>
+        </abstract>
+    </div>
+
+    <script>
+
+    Vue.component('abstract', {
+        render (h, context) {
+            const vnode = this.$slots.default[0]
+            if (!vnode.data) vnode.data = {}
+            vnode.data.style = { color: 'red'}
+            return vnode
+        }
+    })
+```
+
+**see** [abstract.html](abstract.html)
+
+#### Error Boundaries
+
+We want it to be an abstract component
+
+We can easily do some error handling with abstract component
+
+**see** [abstract-errorhandling.html](abstract-errorhandling.html)
+
+#### Scope Slots
+
+Scope slots was modeled after a pattern when you use render functions.
+
+**see** [scope-slot-example.html](scope-slot-example.html)
+
+**Imagine a Github page**
+
+1. Get github user info
+2. Get github organisations list
+3. Get github repo for each organisation
+
+To do that, you can chain promises or compose component and handle error at different level properly
+
+Or see: https://jsfiddle.net/yyx990803/kyt43L2r/
+
+### Summary
+
+Component give a good way to expose complex logic and make it reusable.
+
+Abstract component add a functionallity without touching an existing set of component / app.
+
+        <fetch url="https://jsonplaceholder.typicode.com/postsERRROR">
+            <template slot-scope="{ status, data, error }">
+                <div v-if="data">{{ data }}</div>
+                <div v-else-if="status === 'error'">Something went wrong: {{ error }}</div>
+                <div v-else>Loading ...</div>
+            </template>
+        </fetch>
+
+        <better-fetch url="https://jsonplaceholder.typicode.com/postsERRROR">
+            <template slot-scope="{ status, data, error }">
+                <div v-if="data">{{ data }}</div>
+            </template>
+        </better-fetch>
+
+and will handle
+
+                <div v-else-if="status === 'error'">Something went wrong: {{ error }}</div>
+                <div v-else>Loading ...</div>
+
+as a common feature
+
+or even better
+
+        <better-fetch url="https://jsonplaceholder.typicode.com/postsERRROR">
+            <div slot-scope="data">{{ data }}</div>
+        </better-fetch>
 

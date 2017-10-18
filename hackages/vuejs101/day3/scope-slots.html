@@ -1,0 +1,61 @@
+<script src="https://unpkg.com/vue"></script>
+
+    <div id="app">
+    </div>
+
+    <div id="app2">
+        <my-awesome-list2>
+            <template slot="renderItem" slot-scope="data">
+                <div>{{ data.msg }}</div>
+            </template>
+        </my-awesome-list2>
+    </div>
+
+    <!-- Do not -->
+    <div id="app3">
+        <my-awesome-list2>
+            <li v-for="item in items">
+                {{ item }}
+            </li>
+        </my-awesome-list2>
+    </div>
+
+
+    <script>
+    const MyAwesomeList = {
+        props: ['renderItem'],
+        data: {
+            list: [] // ajax to fill this
+        },
+        render (h) {
+            return h('div',this.list.map(item => this.renderItem(item)))
+        }
+    }
+
+    const MyAwesomeList2 = {
+        props: ['renderItem'],
+        data: {
+            list: [] // ajax to fill this
+        },
+        render (h) {
+            return h('div', this.list.map( item => {
+                this.$scopeSlots.renderItem(item)
+            }))
+        }
+    }
+
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            ok: true
+        },
+        render (h) {
+            return h(MyAwesomeList, {
+                props: {
+                    renderItem: msg =>h('div', data.msg)
+                }
+            })
+        }
+    })
+</script>
+
