@@ -4,7 +4,7 @@
     <div>
         <label><input type="number" v-model="value"> Value</label>
         <label><input type="number" v-model="foo"> Foo</label>
-        <ul v-if="warnings">
+        <ul v-if="warnings.length">
             <li v-for="warning in warnings">
                 {{ warning }}
             </li>

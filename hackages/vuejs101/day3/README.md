@@ -346,7 +346,6 @@ Mixin could be a good place to initialize stuff.
 By using the
 
     Vue.mixin({created(){
-        
     }})
 
 #### Exercise
@@ -359,5 +358,15 @@ By using the
 * [my solution](exercise.html)
 * [evan solution](exercise-solution.html)
 * [evan solution enhanced](exercise-solution-enhanced.html)
+
+#### When to use mixin
+
+Mixin is an easy way to add some functionnality to highly used component without wrapping a lot of components.
+
+It's much more efficient to use a component and use mixin to enhance it.
+
+With Mixin you still remain with one component.
+
+in the vue context components are expensive so it's faster to use mixin.
 
 
