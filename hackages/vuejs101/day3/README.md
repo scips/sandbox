@@ -25,6 +25,21 @@ Wifi: S14-Hackages / H-102017
     - createElement API
 * Exercises
 
+* Advanced Component Patterns
+    - Functionnal components
+        - Understanding the functional render context
+    - Advanced Async components
+        - Loading, error, delay ad timeout
+    - Higher-order Components
+        - enhancing another comp
+        - example: CustomTransition components
+    - Abstract componennts
+        -enahncing slot children
+        - example: ErrorBoundary component
+    - Advanced usage of Scoped Slots
+        - Example : ajax fetch
+        - https://jsfiddle.net/yyx990803/kyt43L2r/
+
 ## Testing
 
 With **JSDOM** you don't need a real browser anymore, so it's easier.
@@ -126,6 +141,8 @@ You test must test the component with the pulbic contract.
 
 For the **Counter** component: the only
 
+{% raw %}
+
     <template>
         <div @click="$emit('increment')">{{ count }}</div>
     </template>
@@ -134,7 +151,7 @@ For the **Counter** component: the only
             props: ['count']
         }
     </script>
-
+{% endraw %}
 
 
     import { Counter } from './Counter.vue'
@@ -390,6 +407,7 @@ But jump to the wrapper of the browser that represent the DOM is expensive
 Virtual DOM was invented because:
 - we wanted to reduce the number of jump between JS and the browser wrapper
 
+{% raw %}
 ```vue
     <!-- Templates are limited -->
     <template>
@@ -413,6 +431,7 @@ Virtual DOM was invented because:
         }
     </script>
 ```
+{% endraw %}
 
 Simply using 'h' is a convention
 
@@ -533,3 +552,198 @@ In JSX you can use direct tags.
 ```
 
 You can go from JSX to JS with a simple **{**
+
+### Advanced Components Patterns
+
+#### Functionnal Components
+
+To make a functional component simply add
+
+    functional: true
+
+Now you have access to **context** and you must use it to handle the component.
+
+If you nest 2 component you get 2 Virtual DOM trees.
+
+If you do that with functionnal compoent you end up with 1 Virtual DOM Tree
+
+For performance reason slots are not directly available you need to call the function ```const slots = context.slots()```
+
+If props are not explicitely defined, every attribute are props
+
+Functional component has an 100% boost but they don't have **this**.
+
+#### Template functional
+
+{% raw %}
+```vue
+    <template functional>
+        <div>
+            {{ props.foo }}
+            <div @click="listeners.click">Test</div>
+            <slot name="foo" />
+        </div>
+    </template>
+```
+{% endraw %}
+
+In functional template you get access to the **context**
+
+#### Advance async component
+
+To make the component async, simply
+
+    const FooAsync = () => import('./foo')
+
+Or make it return via an object to have more control over it (such has a loading property)
+
+    const FooAsyncObject = () => ({
+        component: import('./foo'),
+        loading: { template: `<div>Loading</div>`},
+        error: { template: `<div>Failed to load comp</div>`},
+        delay: 200,
+    })
+
+By adding a **loading**, **error**, **delay** (before showing loading), **timeout** you can finelly control how to component will be loaded and handle error cases
+
+This syntax can be used anywhere. However in a router configuration all the **loading**, **error**, **delay**, **timeout** will be ignored. Because everything must be resolved before routing occurs.
+
+#### High order components
+
+**currying**
+
+    function add (a, b) {
+        return a + b
+    }
+
+
+If we need a lot of
+
+    add(foo, 1)
+    add(bar, 1)
+
+Why not create addOne
+
+    function addOnce(a) {
+        return add(a, 1)
+    }
+
+And what if we neet addTwo?
+
+    function addFactory (b) {
+        return function (a) {
+            return add(a, b)
+        }
+    }
+
+Now we can generate the function we need
+
+We can do the same thing with component.
+
+We can make a component that renders a component by passing some props
+
+The transition is good candidate
+
+    const addOne = addFactory(1)
+    const addTwo = addFactory(2)
+
+**see** [hox.html](hox.html)
+
+#### Abstract component
+
+The transition component is an abstract component. It adds functionality but no DOM node.
+
+    <div id="app">
+        <transition>
+            <div v-if="ok">foo</div>
+        </transition>
+    </div>
+
+will render as
+
+    <div id="app"><div>foo</div></div>
+
+To make your own abstract simply return the $slots in your component
+
+```vue
+    <div id="app">
+        <abstract>
+            <div v-if="ok">default</div>
+        </abstract>
+    </div>
+
+    <script>
+
+    Vue.component('abstract', {
+        render (h, context) {
+            const vnode = this.$slots.default[0]
+            if (!vnode.data) vnode.data = {}
+            vnode.data.style = { color: 'red'}
+            return vnode
+        }
+    })
+```
+
+**see** [abstract.html](abstract.html)
+
+#### Error Boundaries
+
+We want it to be an abstract component
+
+We can easily do some error handling with abstract component
+
+**see** [abstract-errorhandling.html](abstract-errorhandling.html)
+
+#### Scope Slots
+
+Scope slots was modeled after a pattern when you use render functions.
+
+**see** [scope-slot-example.html](scope-slot-example.html)
+
+**Imagine a Github page**
+
+1. Get github user info
+2. Get github organisations list
+3. Get github repo for each organisation
+
+To do that, you can chain promises or compose component and handle error at different level properly
+
+Or see: https://jsfiddle.net/yyx990803/kyt43L2r/
+
+### Summary
+
+Component give a good way to expose complex logic and make it reusable.
+
+Abstract component add a functionallity without touching an existing set of component / app.
+{% raw %}
+```vue
+        <fetch url="https://jsonplaceholder.typicode.com/postsERRROR">
+            <template slot-scope="{ status, data, error }">
+                <div v-if="data">{{ data }}</div>
+                <div v-else-if="status === 'error'">Something went wrong: {{ error }}</div>
+                <div v-else>Loading ...</div>
+            </template>
+        </fetch>
+
+        <better-fetch url="https://jsonplaceholder.typicode.com/postsERRROR">
+            <template slot-scope="{ status, data, error }">
+                <div v-if="data">{{ data }}</div>
+            </template>
+        </better-fetch>
+```
+{% endraw %}
+
+and will handle
+```vue
+                <div v-else-if="status === 'error'">Something went wrong: {{ error }}</div>
+                <div v-else>Loading ...</div>
+```
+
+as a common feature
+
+or even better
+```vue
+        <better-fetch url="https://jsonplaceholder.typicode.com/postsERRROR">
+            <div slot-scope="data">{{ data }}</div>
+        </better-fetch>
+```

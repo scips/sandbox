@@ -1,0 +1,57 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <div>
+        <transition @enter="onEnter" @leave="onLeave">
+            <div v-if="ok">foo</div>
+        </transition>
+        <my-transition>
+            <div v-if="ok">foo my transition</div>
+        </my-transition>
+        <button @click="toggle">Toggle</button>
+    </div>
+</div>
+
+<script>
+    const enter = (el, done) => {
+        console.log("enter here")
+        done()
+    }
+    const leave = (el, done) => {
+        console.log("leave here")
+        done()
+    }
+
+    Vue.component('my-transition', {
+        functional: true,
+        render (h, context) {
+            return h('transition', {
+                ...context.data,
+                on: {
+                    ...context.data.on,
+                    enter,
+                    leave
+                }
+            }, context.children)
+        }
+    })
+
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            ok: true
+        },
+        methods: {
+            onEnter () {
+                console.log("enter")
+            },
+            onLeave () {
+                console.log("leave")
+            },
+            toggle () {
+                this.ok = !this.ok
+            }
+        }
+    })
+</script>
+

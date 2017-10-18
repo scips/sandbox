@@ -1,0 +1,38 @@
+<script src="https://unpkg.com/vue"></script>
+
+    <div id="app">
+        <abstract>
+            <div v-if="ok">default</div>
+        </abstract>
+    </div>
+
+    <script>
+
+    Vue.component('abstract', {
+        render (h, context) {
+            const vnode = this.$slots.default[0]
+            if (!vnode.data) vnode.data = {}
+            vnode.data.style = { color: 'red'}
+            return vnode
+        }
+    })
+
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            ok: true
+        },
+        methods: {
+            onEnter () {
+                console.log("enter")
+            },
+            onLeave () {
+                console.log("leave")
+            },
+            toggle () {
+                this.ok = !this.ok
+            }
+        }
+    })
+</script>
+

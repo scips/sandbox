@@ -1,0 +1,58 @@
+<script src="https://unpkg.com/vue"></script>
+
+    <div id="app">
+        <error-boundary>
+            <foo></foo>
+        </error-boundary>
+    </div>
+
+    <script>
+
+    Vue.component('foo', {
+        created() {
+            throw new Error('oops')
+        },
+        render (h, context) {
+        }
+    })
+
+    Vue.component('ErrorBoundary', {
+        data () {
+            return {
+                error: null
+            }
+        },
+        errorCaptured (err) {
+            this.error = err.message
+        },
+        render (h) {
+            if (this.error) {
+                return h('div',
+                {
+                    style: { color: 'red'}
+                },
+                `erro from children ${this.error}`
+            )}
+            return this.$slots.default[0]
+        }
+    })
+
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            ok: true
+        },
+        methods: {
+            onEnter () {
+                console.log("enter")
+            },
+            onLeave () {
+                console.log("leave")
+            },
+            toggle () {
+                this.ok = !this.ok
+            }
+        }
+    })
+</script>
+

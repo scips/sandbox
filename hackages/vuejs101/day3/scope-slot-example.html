@@ -1,0 +1,84 @@
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/lodash"></script>
+
+    <div id="app">
+        <fetch url="https://jsonplaceholder.typicode.com/postsERRROR">
+            <template slot-scope="{ status, data, error }">
+                <div v-if="data">{{ data }}</div>
+                <div v-else-if="status === 'error'">Something went wrong: {{ error }}</div>
+                <div v-else>Loading ...</div>
+            </template>
+        </fetch>
+    </div>
+
+    <script>
+    Vue.component('fetch', {
+      props: ['url'],
+      data () {
+        const res = {
+          status: 'pending',
+          data: null,
+          error: null
+        }
+
+        let activePromise = null
+
+        const fetchData = _.debounce(url => {
+          if (!url) {
+            return
+          }
+
+          const currentPromise = activePromise = fetch(url)
+          res.status = 'pending'
+
+          currentPromise.then(response => {
+            if (activePromise != currentPromise) {
+              return
+            }
+            if (response.status >= 200 && response.status < 300) {
+              return response.json()
+            } else {
+              activePromise = null
+              res.status = 'error'
+              res.data = null
+              res.error = response.status
+            }
+          }).then(data => {
+            if (activePromise != currentPromise) {
+              return
+            }
+            activePromise = null
+            res.status = 'success'
+            res.data = data
+            res.error = null
+          }).catch(error => {
+            if (activePromise != currentPromise) {
+              return
+            }
+            activePromise = null
+            res.status = 'error'
+            res.data = null
+            res.error = error
+          })
+        }, 300)
+
+        setTimeout(() => {
+          this.$watch(() => this.url, fetchData, { immediate: true })
+        }, 0)
+
+        return { res }
+      },
+
+      render () {
+        return this.$scopedSlots.default(this.res)[0]
+      }
+    })
+
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            ok: true
+        }
+    })
+</script>
+
