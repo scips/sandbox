@@ -156,6 +156,8 @@ To pass args to the command use the **--**
 
 To continuously test
 
+Not all the component should be tested. Ideally test component that will be used in different places and in different situations.
+
 ##### Emitted
 
 Emitted() return an object containing properties (emitted event + arrays of all the data emitted each time) a kind of history of everything taht has been emitted
@@ -193,4 +195,55 @@ Emitted() return an object containing properties (emitted event + arrays of all 
             })
 
 It's better (best practice) and faster
+
+##### Mocks
+
+In last resource if the component is bound with some library
+For instance when you use **axios** use **inject-loader**
+It uses webpack magic:
+- **!!** ignore conf of webpack
+- **vue-loader?inject!
+
+Otherwise simply use **best practice**
+
+    mocks: {
+        $store: {} /...
+    }
+
+You can also provide a real vuex store
+
+    import { shallow, createLocalVue } from 'vue-test-utils'
+    import Vue from 'vue'
+    import Vuex from 'vue'
+    Vue.use(Vuex) // this will affect all unit test as it is global !!!
+    // ..
+    describe('demo', () => {
+      it('should load the componet', () => {
+        const mockStore = new Vuex.store()
+        const counter = shallow(Counter, {
+            store:mockStore,
+            //..
+
+If you want a fresh copy of vue for each unit test its better to do it like this
+
+    import { shallow, createLocalVue } from 'vue-test-utils'
+    import Vue from 'vue'
+    import Vuex from 'vue'
+    // ..
+    describe('demo', () => {
+      it('should load the componet', () => {
+        const mockStore = new Vuex.store()
+        const LocalVue = createLocaLVue()
+        LocalVue.use(Vuex)
+        const counter = shallow(Counter, {
+            localVue: LocalVue
+            store:mockStore,
+        //..
+
+
+#### End 2 end test
+
+Don't use testing with mocha-webpack-expect for end 2 end testing.
+
+Don't test app transition from page to page.
 
