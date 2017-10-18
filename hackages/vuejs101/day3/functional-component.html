@@ -1,0 +1,73 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <div>
+        <foo id="hello"></foo>
+        <foo2 id="hello" data-whatever="hi">
+            <div slot="header">I am a header</div>
+        </foo2>
+        <foo3 id="hello" data-whatever="hi">
+            <div slot="header">I am a header</div>
+        </foo3>
+        <foo4 id="hello" @click="onclick">
+        </foo4>
+    </div>
+</div>
+
+<script>
+    Vue.component('foo',{
+        functional: true,
+        props: ['id'],
+        render (h, context) {
+            return h('div',context.props.id)
+        }
+    })
+    Vue.component('foo2',{
+        functional: true,
+        props: ['id'],
+        render (h, context) {
+            context.props // { id: xxx }
+            context.children // Array <VNode>
+            context.data // Vnode.data
+            console.log(context.data)
+            context.parent
+            console.log(context.parent)
+            // need to call the functionto perform the slots it's for performance reason
+            const slots = context.slots()
+            return h('div',slots.header)
+        }
+    })
+    Vue.component('foo3',{
+        functional: true,
+        // props not listed
+        render (h, context) {
+            console.log(context.props) // everything is considered as props
+            // need to call the functionto perform the slots it's for performance reason
+            return h('div')
+        }
+    })
+    Vue.component('foo4',{
+        functional: true,
+        // props not listed
+        render (h, context) {
+            context.listeners // { click: () => {} }
+            return h('div', {
+                on:{
+                    keyup: context.listeners.click
+                }
+            },
+            context.props.id)
+        }
+    })
+    const vm = new Vue({
+        el: '#app',
+        data: {
+        },
+        methods: {
+            onclick () {
+                console.log("clicked")
+            }
+        }
+    })
+</script>
+
