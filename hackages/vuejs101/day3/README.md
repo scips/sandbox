@@ -247,3 +247,34 @@ Don't use testing with mocha-webpack-expect for end 2 end testing.
 
 Don't test app transition from page to page.
 
+You can use **Nightwatch**.
+
+End2End testing need to use a real browser. Typically we will use **Selenium** but it needs java + selenium + driver for each browser adapted to the OS. It's not easy.
+
+With the full **webpack** template it provide nightwatch.
+
+```bash
+    day3$ vue init webpack e2e
+    day3$  cd e2e
+    day3/e2e$ yarn install
+    ? Project name e2e
+    ? Project description A Vue.js project
+    ? Author Sébastien Barbieri <sebastien.barbieri@gmail.com>
+    ? Vue build standalone
+    ? Install vue-router? No
+    ? Use ESLint to lint your code? No
+    ? Setup unit tests with Karma + Mocha? Yes
+    ? Setup e2e tests with Nightwatch? Yes
+```
+
+
+**Selenium** by itself doen't have the test level. **Nightwatch** does provide the layer you need in between.
+
+**Nightwatch** is easy to run on browserstack, saucelab.
+
+See ./test/e2e/ for details
+
+The package provide an additional elementCount assertion. You can write additional repetitive assertion and add them in the custom-assertions folder.
+
+
+
