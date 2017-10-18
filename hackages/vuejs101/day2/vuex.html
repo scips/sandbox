@@ -7,25 +7,52 @@
   <counter></counter>
   <counter></counter>
   <button @click="inc">inc</button>
+  <button @click="incAsync">inc Async</button>
 </div>
 
 <script>
 const store = new Vuex.Store({
     state: {
-        count: 0
+        count: 0,
+        mode: '',
+        todos: []
+    },
+    actions: {
+        incAsync (store) {
+            setTimeout(()=> {
+                store.commit('inc')
+            }, 1000)
+        }
     },
     mutations: {
         inc (state) {
             state.count++
         }
+    },
+    // getters provide cache mechanism
+    getters: {
+        countPlusOne (state) {
+            return state.count + 1
+        },
+        filteredTodos () {
+            // return todo based on mode
+            // everything must be in the state no args
+        }
     }
 })
 
+const { mapState, mapGetters, mapMutations } = Vuex
+
 Vue.component('counter', {
     template: `<div>{{ count }}</div>`,
-    data () {
-        return store.state
+    // time travel is usable with computed
+
+    computed: {
+        count() {
+            return store.state.count
+        }
     }
+//    computed : Vuex.mapState(['count'])
 })
 
 var vm = new Vue({
@@ -33,6 +60,9 @@ var vm = new Vue({
   methods: {
     inc() {
         store.commit('inc')
+    },
+    incAsync() {
+        store.dispatch('incAsync')
     }
   }
 })

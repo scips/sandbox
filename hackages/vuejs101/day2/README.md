@@ -620,6 +620,146 @@ In Vuex store are created as follow
 
 ```js
 const store = new Vuex.store({
+    state: {
+        count: 0
+    },
+    mutations: {
+        inc (state) {
+            state.count++
+        }
+    }
+})
+```
 
+
+For synchronous operation we use **mutations**
+
+For asynchronous operation we use **actions**
+
+#### Actions
+
+Use **dispatch**
+
+#### Mutations
+
+Use **commit**
+
+Similar to COMMIT in DB
+
+#### Getters
+
+Getters provide caching and provide a way to retrieve data.
+
+Equivalent to SELECT in DB
+
+### mapState
+
+To avoid declaring every computed access within the component, there is an helper.
+
+```js
+Vuex.mapState(['foo', 'bar']) => {
+    foo() {return this.$store.state.foo},
+    bar() {return this.$store.state.bar},
+}
+```
+
+### Basic store application
+
+```js
+import Vue from 'vue'
+import Vuex, { Store } from 'vuex'
+import axios from 'axios'
+
+const API_BASE = ''
+
+let fetchingPost = false
+
+export default new Store({
+  state: {
+    posts: [],
+    error: null
+  },
+  actions: {
+    fetchAllPosts ({ commit }) {
+      if (!fetchingPost) {
+        axios.get(API_BASE + '/posts').then(({ data }) => {
+          commit('saveAllPosts', {
+            posts: data // use object it helps with debugging
+          })
+        })
+        .catch(err => {
+          commit('error', { err: err })
+        })
+      }
+    }
+  },
+  mutations: {
+    saveAllPosts (state, payload) {
+      state.posts = payload.posts
+    },
+    error (state, error) {
+      state.error = error.err
+    }
+  }
+})
+```
+
+to use it now you can drastically reduce the component
+
+```js
+
+// Posts list
+exports default {
+    computed: {
+        posts () {
+            return this.$store.state.posts
+        }
+    }
+}
+
+// Post detail
+exports default {
+    props: ['id']
+    computed: {
+        posts () {
+            return this.$store.state.posts.find( post => {
+                return post.id === this.id
+            })
+        };
+        comments () {
+            return this.$store.state.comments.filter( comment => {
+                return comment.postId === this.id
+            })
+        }
+    },
+    created () {
+        this.$store.dispatch('fetchCommentsForPost', {id: this.id})
+    }
+}
+
+```
+
+### Modules
+
+What if 2 persons are working on the store.
+
+You can split the store n several Module and in the store add them.
+
+```js
+export default {
+    namespaced: true,
+    state: {
+        // ...
+    }
+}
+```
+
+To use it
+
+```js
+export default new Store({
+    modules: {
+        posts: postsModule
+    }
 })
 ```
