@@ -276,5 +276,54 @@ See ./test/e2e/ for details
 
 The package provide an additional elementCount assertion. You can write additional repetitive assertion and add them in the custom-assertions folder.
 
+### Custom Directive
 
+Is a way to get low level access to the DOM node.
+
+In a component you don't touch the DOM, you don't have to do it.
+
+A custom directive is added to the **v-** stuff.
+
+For instance having a red text
+
+    <p style="color: red">test</p>
+
+If you want to have access to the color
+
+    <p :style="{ color: someColor }">test</p>
+
+Or you can create a custm directive
+
+    <p v-red>text</p>
+
+To register it
+
+```vue
+    <p v-red>test</p>
+
+    Vue.directive('red',{
+        bind (domElement, binding, vnode) {
+            console.log(binding)
+        },
+        inserted () {
+
+        },
+        update () {
+
+        },
+        componentUpdated () {
+
+        }
+    })
+```
+
+**see** [custom-directive.html](custom-directive.html)
+
+**domElement**: the DOM element
+
+**binding**: give access to the changed value and the oldValue
+
+**vnode**: give access to vnode context
+
+Only use it if you have no other choice and you need to touch the DOM
 
