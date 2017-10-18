@@ -470,4 +470,66 @@ Simply using 'h' is a convention
 
 #### Exercise
 
-* 
+Create a component that will return
+
+    <div id="app">
+        <div>
+            <div>0</div>
+            <span>1</span>
+            <p>2</p>
+        </div>
+    </div>
+
+
+**see**:
+* (exercise-component.html)[exercise-component.html]
+* (exercise-component-solution.html)[exercise-component-solution.html]
+
+Use If and Elsif in component.
+
+You can avoid using other component such as v-if, v-else, v-for.
+
+Simply code it in your component.
+
+#### v-model in render function
+
+It's not usable directly but there is a way to do something equivalent.
+
+**input**:
+
+```js
+    export default {
+        render (h) { // hyper script <= hyper text <= HTML
+            return h('input', {
+                    domProps: {
+                        value: this.foo
+                    },
+                    input(e) {
+                        this.foo = e.taget.value
+                    }
+                }, [])
+        }
+    }
+```
+
+**!! input type attribute and property are 2 different things** so you need domProps to handle this properly
+
+#### JSX
+
+JSX is an extra layer on to p of Javascript.
+
+They are Babel plugins on top of JSX, its like a language feature which is not part of the language.
+
+In JSX you can use direct tags.
+
+```vue
+    export default {
+        render (h) { // hyper script <= hyper text <= HTML
+            return <div id={ this.someId } style="color: red">
+                {this.tags.map((Tag, i) => <Tag>{i}</Tag>)}
+            </div>
+        }
+    }
+```
+
+You can go from JSX to JS with a simple **{**
