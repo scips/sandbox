@@ -22,3 +22,22 @@ Wifi: S14-Hackages / H-102017
     * [Slots](day1/README.md#slots)
     * [Exercise 3: non native input component](day1/README.md#exercise-3-bonus)
 * [Security Remarks](day1/README.md#security-remarks)
+
+## Day 2
+
+* [Transitions](day2/README.md#transitions)
+* [CLI](day2/README.md#cli)
+* [Webpack](day2/README.md#webpack)
+* [Routing](day2/README.md#routing)
+* [Code Splitting + Async](day2/README.md#code-splitting-async)
+* [State](day2/README.md#state)
+* [Modules](day2/README.md#modules)
+
+## Day 3
+
+* [Testing](day3/README.md#testing)
+* [Custom Directive](day3/README.md#custom-directive)
+* [Plugins](day3/README.md#plugins)
+* [Render function](day3/README.md#render-function)
+* [Advanced Components Patterns](day3/README.md#advanced-components-patterns)
+* [Summary](day3/README.md#summary)

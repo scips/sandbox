@@ -386,7 +386,7 @@ With Mixin you still remain with one component.
 
 in the vue context components are expensive so it's faster to use mixin.
 
-### Render functions
+### Render function
 
 * **returns** a new virtual DOM
 

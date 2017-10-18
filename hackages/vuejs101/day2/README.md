@@ -192,7 +192,7 @@ provide a list of existing official template
 
 Files will be manged by webpack
 
-#### Webpack
+### Webpack
 
 Has the ability to pipe the source file to do source file transformation.
 
@@ -477,7 +477,7 @@ Promise.all([p1,p2]).then(console.log('all promise done'))
 
 #### Components
 
-Don't use components until you need them ... as soon as it is too big split it.
+Don't use components until you need them ... as soon as it is too big, split it.
 
 don't over split in advance
 
