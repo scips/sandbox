@@ -97,7 +97,7 @@ require('jsdom-global')()
 global.expect = require('expect')
 ```
 
-Add in the test script ```--before setup.js```
+Add in the test script ```--require setup.js```
 
 
     import Post from '../src/Post.vue'
