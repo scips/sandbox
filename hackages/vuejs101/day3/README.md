@@ -180,3 +180,17 @@ Emitted() return an object containing properties (emitted event + arrays of all 
       })
     })
 
+##### mount & shallow
+
+**Mount** mount the component and the children component if you don't want the child component, use **shallow** instead.
+
+    import { shallow } from 'vue-test-utils'
+    // ...
+    const counter = shallow(Counter, {
+              propsData: {
+                count: 1
+              }
+            })
+
+It's better (best practice) and faster
+
