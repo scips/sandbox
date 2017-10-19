@@ -7,24 +7,27 @@ Wifi: S14-Hackages / H-102017
     npm install -g http-server
     http-server -p 8080 hackages/
 
-## The way vue works
+## The way Vue works
 
 Vue is essentially doing a: **whenDataChanges** => doStuff
 
 You don't have a good way to divide the work until you have a framework that allows you to split the work in small component.
 
-You need a clear interface between the components to split the work and share the work. As long as the public API (Interface) stay consistant.
+You need a clear interface between the components to split the work and share the work. As long as the public API (Interface) stay consistent.
 
 ### Vue use: Virtual dom
 
 * It will use a virtual dom and a copy of the virtual dom then compare both (previous and actual) and determine what to do on the diff between the 2.
-* Why using virtual dom? To reduce the way we touch the dom, because dom is slow. And going through a tree of items is really fast. It also garantee that we only change the DOM that have change and not everything
+* Why using virtual dom? To reduce the way we touch the dom, because dom is slow. And going through a tree of items is really fast. It also guarantee that we only change the DOM that have change and not everything
 
 ### Vue intercept mutable methods
 
 In arrays it intercept push, pull, splice, reverse, sort ...
 
 In arrays it doesn't intercept immutable methods such as concat
+
+**see**:
+* [Mutation-Methods Doc] (https://vuejs.org/v2/guide/list.html#Mutation-Methods)
 
 ### Bindings
 
@@ -66,7 +69,7 @@ So how to do conditional? Simply use ternary operator
 
 ### v-*
 
-Any attrivute that start with **v-** is a javscript expression
+Any attribute that start with **v-** is a javascript expression
 
 #### v-html
 
@@ -112,11 +115,11 @@ you can use either **in** or **of** and it does a for around them and reproduce 
 
 When data change by default only values are modified
 
-Use the **:key** to ensure that the whole dom element will be moved and not just the text inside. This can be usefull for input fields with focus for instance. The focus will be kept after the sort.
+Use the **:key** to ensure that the whole dom element will be moved and not just the text inside. This can be useful for input fields with focus for instance. The focus will be kept after the sort.
 
 A good idea is to use an object with unique ids.
 
-**key** are used to identify different element in the differenciation process (while going through the tree). **Key** is especially used for element identification.
+**key** are used to identify different element in the differentiation process (while going through the tree). **Key** is especially used for element identification.
 
 #### Event handling v-on / @
 
@@ -147,7 +150,7 @@ Need to be linked with a method defined in **methods** section.
 
 #### TODO List
 
-1. use v-for
+1. Use v-for
 2. Each class should have a different visual status :class
 3. If you click on it it should toggle
 
@@ -167,6 +170,7 @@ Basic app
 Once it's done
 
 4. Use an input to add todos
+
 ```vue
     <input @input="add" />
 ```
@@ -182,7 +186,7 @@ by default if no args are passed to the method the native event object is passed
     <input :value='todo' @input="add" />
 ```
 
-and in vue that can be replaced by
+and in Vue that can be replaced by
 
 ```vue
     <input v-model="newTodo" />
@@ -194,7 +198,7 @@ You will get a warning because it's not declared.
 
 If it's not declared that make things confusing, need a source of truth in one place and it should be in javascript not in the template.
 
-So we need to declare it in the vue app
+So we need to declare it in the Vue app
 
 ```vue
     const vm = new Vue({
@@ -222,11 +226,11 @@ So we need to declare it in the vue app
         checked: true,
 ```
 
-Mutliple check box can be binded to one model
+Multiple check box can be binded to one model
 
 ##### Radio buttons
 
-Must be have the same v-model and vue will consider them as the same radiobutton
+Must be have the same v-model and Vue will consider them as the same radio button
 
 {% raw %}
 ```vue
@@ -313,11 +317,11 @@ prohibit the click propagation
 
 #### @click.self
 
-prohibit click from sons element to interfer with click in the father element
+prohibit click from sons elements to interfere with click in the father element
 
 #### @keyup.enter, (tab, space, 13, 31, arrow-left)
 
-Key modifier that only hanlde 'Enter', (tab, space, enter, 'a', <-)
+Key modifier that only handle 'Enter', (tab, space, enter, 'a', <-)
 
 #### @keyup.shift.ctrl.enter="CtrlShiftEnterPressed"
 
@@ -325,7 +329,7 @@ You can chain modifier with special modifier
 
 #### @keyup.shift.exact="ShiftPressed"
 
-You can use excat to handle specifict key press on special modifier
+You can use exact to handle specific key press on special modifier
 
 ##### Use the decorator pattern to enhance keypress
 
@@ -354,7 +358,7 @@ then
 
 ### Computed
 
-Computed data are just function that use data and are computed everytime the data linked to it has changed.
+Computed data are just functions that use data and are computed every time the data linked to it has changed.
 
 What if someone use Date.now() inside computed properties.
 
@@ -406,7 +410,7 @@ Most of the time, you don't need watch
 
 When you need to compare old and new value specifically
 
-In things that cannot be incorporated in the vue component: API, Canvas paint, ... anything that has side effects
+In things that cannot be incorporated in the Vue component: API, Canvas paint, ... anything that has side effects
 
 ```vue
     data: {
@@ -429,7 +433,7 @@ If you want to watch an array you need to change the array by overwriting it.
 
 ```vue
     vm.arr.push(4) // will simply mutate the object
-    vm.arr = vm.arr.concat(5) // will work because the newValue and oldValue are refering to different references
+    vm.arr = vm.arr.concat(5) // will work because the newValue and oldValue are referring to different references
 ```
 
 ## Components
@@ -442,7 +446,7 @@ To create a **Component** **Class** simply extend Vue
 
 You need to register your component globally
 
-Don't declare a **data** section in vue component because the data will be shared accross all component of the same class.
+Don't declare a **data** section in Vue component because the data will be shared across all component of the same class.
 
 ```vue
     Vue.component('my-component', {
@@ -453,7 +457,7 @@ Don't declare a **data** section in vue component because the data will be share
     })
 ```
 
-You need to use the **data: () =>** or the shorter version **data () {}** to reate a fresh copy of data for every new instance.
+You need to use the **data: () =>** or the shorter version **data () {}** to create a fresh copy of data for every new instance.
 
 ### Communication between parent and component
 
@@ -475,6 +479,23 @@ You need to use the **data: () =>** or the shorter version **data () {}** to rea
 ```
 
 Will handle the todo property from attribute
+
+##### camelCase vs. kebab-case
+
+HTML attributes are case-insensitive, so when using non-string templates, camelCased prop names need to use their kebab-case (hyphen-delimited) equivalents:
+
+```vue
+<!-- kebab-case in HTML -->
+<child my-message="hello!"></child>
+
+Vue.component('child', {
+  // camelCase in JavaScript
+  props: ['myMessage'],
+  template: '<span>{{ myMessage }}</span>'
+})
+```
+
+Again, if you’re using string templates, then this limitation does not apply.
 
 ##### Specific type check
 
@@ -514,7 +535,7 @@ Now it will check for an object
 ```
 {% endraw %}
 
-default must be a function otherwise all occurence will share the same object reference
+default must be a function otherwise all occurrence will share the same object reference
 
 ##### Validators
 
@@ -574,9 +595,9 @@ Logic that mutate the variable of an app must stay in the app logic
     })
 ```
 
-here the application set the data and change the data state, the logic stays in the application (toggleTodo) it's a good pratcice to avoid deep component issue.
+Here the application set the data and change the data state, the logic stays in the application (toggleTodo) it's a good practice to avoid deep component issue.
 
-Instead we will use custome event "toggle".
+Instead we will use custom event name "toggle". The event is triggered in the component with `$emit(eventName)` and listened with `:eventName` in the template.
 
 ```vue
         <todo :class="todo.done?`done`:``" v-for="todo in todos" v-bind:todo="todo" @toggle="toggleTodo(todo)"></todo>
@@ -662,7 +683,7 @@ In console type:
         vm.todos.reverse()
 ```
 
-The isEditing is linked to the item but the item change without **key** so the state is not maintained and linked.
+The `isEditing` is linked to the item but the item change without **key** so the state is not maintained and linked.
 So it's good practice to add an *id* for instance to items and link **key** attribute to that *id*
 
 **see:**
@@ -672,7 +693,7 @@ So it's good practice to add an *id* for instance to items and link **key** attr
 
 ![VuesJS lifecycle](https://vuejs.org/images/lifecycle.png)
 
-Most usefull hooks are: **created**, **mounted**, **updated**, **destroyed**.
+Most useful hooks are: **created**, **mounted**, **updated**, **destroyed**.
 
 Other are for very advanced usage.
 
@@ -680,11 +701,11 @@ Other are for very advanced usage.
 
 #### created
 
-Very usefull for data and stage manipulation, or to start timers.
+Very useful for data and stage manipulation, or to start timers.
 
 #### beforeMount
 
-Not really usefull, but included because there is a counterpart in other hooks
+Not really useful, but included because there is a counterpart in other hooks
 
 #### mounted
 
@@ -705,7 +726,7 @@ A component will first destroy his child component before destroy himslef
 #### destroyed
 
 Cleaning what you component created outside his own scope.
-could be used to clean a timer (setInterval, ...).
+Could be used to clean a timer (setInterval, ...).
 
 ### Sync modifier
 
@@ -736,7 +757,7 @@ If you want to change some value you can write something like that
 ```
 {% endraw %}
 
-This will break at first click, you cannot change the value foo like this
+This will break at first click, you cannot change the value `foo` like this
 
 Instead use the **.sync** modifier and emit an update
 
@@ -826,7 +847,7 @@ But you can create your own input element and make it works with v-model.
 
 ### Slots
 
-Usefull to combine and append element together then render them in specific section.
+Useful to combine and append element together then render them in specific section.
 
 **see**:
 * [Slots Placeholder](https://scips.github.io/sandbox/hackages/vuejs101/day1/slots-placeholder.html)
