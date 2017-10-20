@@ -32,7 +32,7 @@
             todo: {
                 type: Object,
                 required: true,
-                default: () => ({ text: 'foo '+Math.random(), done: false})
+                default: () => ({ text: 'foo ' + Math.random(), done: false})
             }
         },
         data () {
@@ -46,8 +46,8 @@
         el: '#el',
         data: {
             todos: [
-                {text: 'hello', done: true, id: 1},
-                {text: 'bye', done: false, id: 2},
+                {text: 'hello', done: true},
+                {text: 'bye', done: false},
             ]
         },
         methods: {
