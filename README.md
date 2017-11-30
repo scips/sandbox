@@ -1,7 +1,12 @@
-sandbox
-=======
+# Sandbox
 
-Some helper scripts / works in progress
+Also available on https://scips.github.io/sandbox/
+
+*Some helper scripts / works in progress / conference / training notes*
+
+## xpdays
+
+* [XPDays 2017 Day 1 & 2](xpdays/)
 
 ## hackages
 
