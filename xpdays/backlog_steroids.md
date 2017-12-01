@@ -48,3 +48,20 @@ Canvas to fill in:
 ### Share
 
 Every group share is view with other groups, moving to one group at a time
+
+### Gather sharing and conclusion
+
+* Use less info = more focus
+    - less metrics
+    - less precise info (not dd/m/yyyy but simply Q1/YYYY, Q2/YYYY ....)
+* Automate!!!
+    - microsoft solution
+    - jira integration with google spreadsheet
+* co-create with the stakeholder
+    - have a workshop session where the stakeholder build up their dashboard
+* Don't go wild!
+
+![Worth and season passing view](https://lh3.googleusercontent.com/PZDhmvHKOAnGXB_-bWUwgtw85D0dkZ03vL2Oz0bzMeX8ZO_Eh7d5015bNAfLIAaSQBO-cilTLcqdZMp7bjCY-uqr8BgpzyXQjncbsmr0CuA-zpDyus6looNf8oIGyMcjthhaTRIHIVkWamp5v-4J1AscL3gttCOL-830594T_izZEIeyLqTGHMPh3-jP5LFfwO8CE98PKWZmNryLqjU1kHP8FVN0at3bze2t2-wmnD0v_gNAUx6KFs4sfjXocgmXdmuFEr1LAuInw8Tid69pEh3jYxPJr7ShCHNi87DR7OoLsmvN0f6P8_hyMhf87teRNOsxX7XezrPcEa4nvX_8JC1vSu6b7_1oskKnnHQ_YdpDKqMnJc9OBBcqS-tpxobpxgsggSLpSEVS25yjj0qQPWPqdK4J2i8wYatNGVqM-_p48TxiOsRvo__hyfEimJGMWWk4iZ1iPOBCBg_e17J39ggttsrjGb-bBZmZc4MCd0ENQ9EbwhXZvg6VYkdc1kjrl877SCER5Jt4UEpQSMoW6kZgpqclwz9rfDR7qIs9Rx6F81vw36M0M9dLvLZJOxLZ4_TZh113suIRObLP37mmWiI3tLKmxFfymM0O1TtsZ80=w760-h959-no)
+*the worth (evalution vs value chain graph) & the season view*
+
+for more info on worth view see also http://blog.gardeviance.org/2016/09/
