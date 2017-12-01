@@ -13,6 +13,6 @@
 # Friday 01/11
 
 * [Market Place / Flux](market_place.md#flux)
-* [Market Place / Flux](market_place.md#bowling-kata)
+* [Market Place / Bowling Kata](market_place.md#bowling-kata)
 * [Put your backlog on Steroids](backlog_steroids.md)
 * [Game on your assumption](game_on_your_assumptions.md)
