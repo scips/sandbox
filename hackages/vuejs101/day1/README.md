@@ -850,14 +850,14 @@ But you can create your own input element and make it works with v-model.
 Useful to combine and append element together then render them in specific section.
 
 **see**:
-* [Slots Placeholder](https://scips.github.io/sandbox/hackages/vuejs101/day1/slots-placeholder.html)
-* [Slots Placeholder code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/slots-placeholder.html)
+* [Slots Placeholder](https://scips.github.io/sandbox/hackages/vuejs101/day1/slots-place-holder.html)
+* [Slots Placeholder code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/slots-place-holder.html)
 
 Also slots have access to parent and to their own scope.
 
 **see**:
-* [Slots Placeholder](https://scips.github.io/sandbox/hackages/vuejs101/day1/slots-data-access.html)
-* [Slots Placeholder code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/slots-data-access.html)
+* [Slots Data Access](https://scips.github.io/sandbox/hackages/vuejs101/day1/slots-data-access.html)
+* [Slots Data Access code](https://github.com/scips/sandbox/blob/v1.0/hackages/vuejs101/day1/slots-data-access.html)
 
 Usage: Calendar picker or list&lt;component&gt;. It allows to inject arbitrary DOM content in the component.
 
