@@ -501,8 +501,8 @@ Create a component that will return
 
 
 **see**:
-* (exercise-component.html)[exercise-component.html]
-* (exercise-component-solution.html)[exercise-component-solution.html]
+* [exercise-component.html](exercise-component.html)
+* [exercise-component-solution.html](exercise-component-solution.html)
 
 Use If and Elsif in component.
 
