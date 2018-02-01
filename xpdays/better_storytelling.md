@@ -77,7 +77,7 @@ Ask someone to stand up and chare a story
 
 The 9 hollywood steps
 
-#### get the audience listening and walk in your choose
+#### get the audience listening and walk in your shoes
 
 1. set the scene
 2. characters
