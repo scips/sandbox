@@ -1,4 +1,4 @@
-# Hackages - VueJS 101 - day 2
+# Hackages - VueJS 101 - day 3
 
 by Evan You - @youyuxi
 
