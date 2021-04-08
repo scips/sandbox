@@ -1,0 +1,92 @@
+# Status
+
+Présent: LUG; david.ledantec@alphanetworks.tv; CHRH; SCAP; SEBA; MATL; VVK; BPS; PWE; maureen.cardinael@alphanetworks.tv
+
+## Demo
+
+### Back office
+
+#### Portails
+
+3 portails qui travaille avec 1 catalogue
+
+* Web
+* iOS
+* Android
+
+#### Carousel
+
+Gestion des mise en avant via le Back office 
+
+#### Ingest
+
+1. Le media
+2. Sous-titres
+3. Fichier XML avec meta-data qui déclenche l'upload
+
+##### Chez alpha
+
+Watcher sur le SFTP sur l'xml
+
+Si xml
+
+Check des fichiers
+Upload
+Ingest
+
+Si tout va bien l'asset est livré
+
+##### Chez RTBF
+
+### Réévaluation de l'encodage
+
+Alphanetwork ne charge pas à l'encodage
+
+Notre contrat avec hubee charge à l'encodage
+
+Ils reviennent vers nous avec une proposition commerciale pour résoudre ce problème
+
+### Page de payement
+
+Template Noir RTBF Auvio à mettre en place chez ingenico
+
+### Carousel
+
+Element du carousel géré depuis le BO via 
+
+### Questions
+
+Combien de dev bossent en front sur le produit RTBF: 3 full time: 1 web, 1 ios, 1 android
+
+## TODO
+
+| What | Who | When | PDCA |
+|------|-----|------|------|
+| Page ingenico: template aux couleur auvio -> david | SEBA | 10/10/2018 | Planned |
+| Page ingenico: retour automatique vers le site vendeur (auvio) | David | | |
+| Problème de compte si loggué via yopmail pas de vidéo message d'erreur | David | | |
+| Sanity check avec échantillon uncut Film pour le 22/10 | LUG | 12/10 | |
+| Tester les 5 formats web d'uncut + chuncks | SEBA | 12/10 | |
+| Fournir contact expert delivery | maureen | 12/10 | | 
+| Dev chez Alphanetwork | MATL | 11/10 | Planned |
+| Infra front-end plannifier stress test | Maureen | 16/10 | Planned |
+| Revoir le Balsamiq de ludo Quel rail sont possibles?| Maureen | 16/10 | Planned |
+| Envoyer les scenario de tests | SCAP | 11/10 | Planned |
+| Fournir les critères des fichiers envoyés (langues, sous-titres, signalétique, ...) -> xls | THADEEE | 10/10 | Planned |
+| Préparer les test avec uncut ensemble | LUG | | |
+| Roadmap TVOD avant fin octobre | SEBA | | |
+
+
+### Uncut
+
+* MP4 pas bon car pas de manifest, besoin de l'ism qui décrit les différents fichiers avec les différentes qualités.
+* XML ne pointe que vers un seul des mp4 --> besoin du manifest
+* ism 
+** ISMV contient mutli format vidéo MP4 packagé et chuncké
+** ISMA multi pistes audio, 
+** ISMT multi sous-titres, captions
+
+
+
+
+
