@@ -1,3 +1,2 @@
 theme: jekyll-theme-cayman
-exclude:
-- workspaces/coffeescript
+exclude: [workspaces/coffeescript/]
