@@ -10,7 +10,7 @@ $$
 
 Si $a\not=0$ il existe deux solutions a l'équation $a x^2 + b x + c = 0$ qui sont:
 $$
-x = \frac{-b \plusmn \sqrt{b^2-4ac} }{2a}
+x = \frac{-b \pm \sqrt{b^2-4ac} }{2a}
 $$
 
 Nous avons
@@ -24,10 +24,10 @@ $$
 
 On pose: $\Delta = b^2 - 4 ac$ qu'on appelle le **Discrimant** de l'équation
 
-Comme l'équation comprend une racine carrée de $\Delta$, dans $\Reals: $  $\sqrt{\Delta}$ n'existe que si $\Delta$ est null ou positif.
+Comme l'équation comprend une racine carrée de $\Delta$, dans $\mathbb{R}: $  $\sqrt{\Delta}$ n'existe que si $\Delta$ est null ou positif.
 
 $$
-\sqrt{\Delta} \in \Reals \iff \Delta \ge 0 
+\sqrt{\Delta} \in \mathbb{R} \iff \Delta \ge 0 
 $$
 
 ### Démonstration
