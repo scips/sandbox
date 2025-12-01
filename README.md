@@ -25,6 +25,8 @@ A good vimrc file: editors/.vimrc
 
 A sandbox workspace with 101 on some topics (coffeescript, ...)
 
+* [Maths](workspaces/maths/)
+
 ### coffeescript/
 
 Some coffeescript 101 exercices from Trevor Burnham's book: http://pragprog.com/book/tbcoffee/coffeescript
